@@ -1,2 +1,2 @@
-# DATA_609_final
-Group final project for Computational Mathematics
+# DATA 609 final project
+Daina Bouquin, Christophe Hunt, Christina Taylor
