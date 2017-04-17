@@ -315,12 +315,12 @@ plot_all <- plot_all +
   geom_point(aes(colour=Simulation_Size)) + 
   scale_colour_gradient(low = "#80cdc1", high = "black")
 plot_all <- plot_all + xlab("Player Strategy")
-plot_all <- plot_all + ylab("Winnings in Dollars")
+plot_all <- plot_all + ylab("Average Winnings in Dollars")
 plot_all <- plot_all + ggtitle("Black Jack Winnings by Strategy and Simulation Size")
 plot_all
 ```
 ```{r, echo=FALSE}
-kable(plot_df2, caption = "Winnings by Strategy and Simulation Size")
+kable(plot_df2, caption = "Average Winnings by Strategy and Simulation Size")
 ```
 
 As the number of simulations increases, the results converge. It appears to be that standing at 18 is the best option, as standing at 19 leaves the player with fewer winnings. Similarly, standing at 16, 17, or 20 results in fewer winnings overall. Therefore if the dealer stands at 17, the player should stand at 18.
