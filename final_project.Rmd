@@ -310,7 +310,10 @@ plot_df <- melt(plot_df, id.vars="Simulation_Size",
                 variable.name="Strategy")
 plot_all <- ggplot(data=plot_df, 
         aes(x=Strategy, y=value, group=Simulation_Size, colour=Simulation_Size))
-plot_all <- plot_all + geom_line(aes(colour=Simulation_Size)) + geom_point(aes(colour=Simulation_Size))
+plot_all <- plot_all + 
+  geom_line(aes(colour=Simulation_Size)) + 
+  geom_point(aes(colour=Simulation_Size)) + 
+  scale_colour_gradient(low = "#80cdc1", high = "black")
 plot_all <- plot_all + xlab("Player Strategy")
 plot_all <- plot_all + ylab("Winnings in Dollars")
 plot_all <- plot_all + ggtitle("Black Jack Winnings by Strategy and Simulation Size")
