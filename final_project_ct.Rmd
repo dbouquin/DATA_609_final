@@ -1,0 +1,117 @@
+---
+title: "609 Final Project"
+author: "Christina Taylor"
+date: "April 11, 2017"
+output: html_document
+---
+
+A farmer has 30 acres on which to grow tomatoes and corn. Each 100 bushels of tomatoes require 1000 gallons of water and 5 acres of land. Each 100 bushels of corn require 6000 gallons of water and 2.5 acres of land. Labor costs are $1 per bushel for both corn and tomatoes. The farm has available 30,000 gallons of water and $750 in capital. He knows he cannot sell more than 500 bushels of tomatoes and 475 bushels of corn. He estimates a profit of $2 on each bushel of tomatoes and $3 on each bushel of corn.
+
+(a) How many bushels should he raise to maximize profits?
+
+Let
+$t$ = bushels of tomatoes (in hundreds)
+$c$ = bushels of corn (in hundreds)
+$w$ = gallons of water (in thousands)
+$p$ = profit (in dollars)
+$a$ = land (in acres)
+
+The farmer's problem can be modeled as 
+Maximizing Profit: $200t + 300c$
+
+Subject to the following constraints:
+Non-negativity: $t \geq 0, c \geq 0$
+Water: $t + 6c \leq 30$
+Land: $5t + 2.5c \leq 30$
+Labor cost: $t + c \leq 7.5$
+Demand: $t \leq 5, c \leq 4.75$
+
+Apply linear programming solution
+```{r}
+library(lpSolve)
+library(lpSolveAPI)
+
+#create LP object with 2 decision variables
+lprec = make.lp(0,2)
+#set objective function and direction (maximize)
+set.objfn(lprec,c(200,300))
+lp.control(lprec,sense='max')
+
+#add constraints
+add.constraint(lprec, c(1,6), "<=", 30)
+add.constraint(lprec, c(5,2.5), "<=", 30)
+add.constraint(lprec, c(1,1), "<=", 7.5)
+#set boundaries
+set.bounds(lprec, lower = c(0,0), upper = c(5,4.75))
+
+#rename for printing
+RowNames <- c("water", "land", "labor")
+ColNames <- c("tomatoes","corn")
+dimnames(lprec) <- list(RowNames, ColNames)
+#verify the model
+lprec
+
+#solve the model (0 means there is a feasible solution)
+solve(lprec)
+#find extreme point
+get.variables(lprec)
+#find maximize objective function value
+get.objective(lprec)
+```
+
+We can see that if the farmer grows 300 bushels of tomatoes and 450 bushels of corn, he can maximize his profit at $1950. 
+
+(b) Assume the farmer has the oppertunity to sign a contract with grocery store to grow and deliver at least 300 bushels of tomatoes and 500 bushels of corn. Should he sign the contract?
+
+The new demand constraint is now $t \geq 3, c \geq 5$
+Intuitively, we can easily see that this condition is incompatible with the constraint of labor costs. We can verify this using linear programming: 
+```{r}
+lprec = make.lp(0,2)
+#set objective function and direction (maximize)
+set.objfn(lprec,c(200,300))
+lp.control(lprec,sense='max')
+
+#add constraints
+add.constraint(lprec, c(1,6), "<=", 30)
+add.constraint(lprec, c(5,2.5), "<=", 30)
+add.constraint(lprec, c(1,1), "<=", 7.5)
+#set boundaries
+set.bounds(lprec, lower = c(3,5))
+
+#solve the model
+solve(lprec)
+```
+
+As shown, there is no feasible solution. The farmer should not sign the contract, because realistically, he cannot deliver. 
+
+(c) Assume the farmer can obtain an additional 10,000 gallons of water for $50. Should he obtain the additional water?
+
+The new water constraint is now $t + 6c \leq 40$
+The farmer's profit is $200t + 300c - 50$
+
+```{r}
+lprec = make.lp(0,2)
+#set objective function and direction (maximize)
+set.objfn(lprec,c(200,300))
+lp.control(lprec,sense='max')
+
+#add constraints
+add.constraint(lprec, c(1,6), "<=", 40)
+add.constraint(lprec, c(5,2.5), "<=", 30)
+add.constraint(lprec, c(1,1), "<=", 7.5)
+#set boundaries
+set.bounds(lprec, lower = c(0,0), upper = c(5,4.75))
+
+RowNames <- c("water", "land", "labor")
+ColNames <- c("tomatoes","corn")
+dimnames(lprec) <- list(RowNames, ColNames)
+
+#solve the model
+solve(lprec)
+#find extreme point
+get.variables(lprec)
+#find maximize profit
+get.objective(lprec) - 50
+```
+
+If the farmer grows 275 bushels of tomatoes and 475 bushels of corn, he can maximize his profit at \$1975. However, given the \$50 cost in acquiring extra water, his net profit actually went down to $1925. Therefore, he should not obtain additional water. 
