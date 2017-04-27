@@ -65,3 +65,16 @@ where k_1 is a positive proportionality constant.
 
 (B) Food moves out of the abomasum at a rate proportional to the amout of food in the abomasum. Since at the same time food is moving into the abomasum at the rate given by Equation (2), the assumption says
 (3) $a'(t) = k_1r(t)-k_2a(t)$
+
+where k_2 is another positive proprtionality constant.
+
+### The solutions of the equations
+
+#### Solving for $r(t)$
+
+It is straightforward to solve Equation (2) for $r(t)$. We just divide through by $r(t)$ and then integrate from 0 to t:
+
+[NEED TO ADD THE EQUATION HERE]
+
+
+
