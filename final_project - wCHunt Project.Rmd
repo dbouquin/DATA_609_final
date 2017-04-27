@@ -54,4 +54,14 @@ $d(t)$ = the amount which by then has arrived in the duodenum.
 So $r(0) = R$, $a(0)$ = $d(0)$ = 0, and, for all t>0, 
 r(t) + a(t) + d(t) = R. 
 
-### 
+### The assumptions
+
+Two assumptions are made:
+(A) Food moves out of the rumen at a rate proportional to the amount of food in the rumen. Mathematically this says:
+
+$r'(t) = -k_1r(t)$    
+
+where k_1 is a positive proportionality constant.
+
+(B) Food moves out of the abomasum at a rate proportional to the amout of food in the abomasum. Since at the same time food is moving into the abomasum at the rate given by Equation (2), the assumption says
+(3) $a'(t) = k_1r(t)-k_2a(t)$

@@ -127,7 +127,52 @@ The process is illustrated below:
   \draw [arrow] (d) -- (f);
 \end{tikzpicture}
 
-{[}Christophe's work{]}
+\subsubsection{The experiment}\label{the-experiment}
+
+The digestive process is most observable at the beginning and at the
+end, we can observer and control what goes in and what comes out.
+
+\subsubsection{The model}\label{the-model}
+
+Suppose that at \(t = 0\) a sheep is fed an amount \(R\) of food which
+goes immediately into its rumen. This food will pass gradually from the
+rumen through the abomasum into the duodenum. At any later time \(t\) we
+shall define:
+
+\(r(t)\) = the amount of food still in the rumen; \(a(t)\) = the amount
+in the abomasum; \(d(t)\) = the amount which by then has arrived in the
+duodenum.
+
+So \(r(0) = R\), \(a(0)\) = \(d(0)\) = 0, and, for all t\textgreater{}0,
+r(t) + a(t) + d(t) = R.
+
+\subsubsection{The assumptions}\label{the-assumptions}
+
+Two assumptions are made: (A) Food moves out of the rumen at a rate
+proportional to the amount of food in the rumen. Mathematically this
+says:
+
+\(r'(t) = -k_1r(t)\)
+
+where k\_1 is a positive proportionality constant.
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Food moves out of the abomasum at a rate proportional to the amout of
+  food in the abomasum. Since at the same time food is moving into the
+  abomasum at the rate given by Equation (2), the assumption says
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \(a'(t) = k_1r(t)-k_2a(t)\)
+\end{enumerate}
 
 
 \end{document}
