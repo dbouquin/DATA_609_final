@@ -90,4 +90,4 @@ Equation (5) probably looks quite different from any you have seen before. Let u
 (6) if $a(t) = u(t) \bullet v(t) $
     then $a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)$
     
-Can we 
+Can we pick $u(t)$ and $v(t)$ so the terms in Equation (6) match up with the terms in Equation (5)? In other words, can we pick $u(t)$ and $v(t)$ so that 
