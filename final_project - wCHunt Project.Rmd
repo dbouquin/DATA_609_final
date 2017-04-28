@@ -52,14 +52,14 @@ $a(t)$ = the amount in the abomasum;
 $d(t)$ = the amount which by then has arrived in the duodenum.
 
 So $r(0) = R$, $a(0)$ = $d(0)$ = 0, and, for all t>0, 
-r(t) + a(t) + d(t) = R. 
+(1) $r(t) + a(t) + d(t) = R.$
 
 ### The assumptions
 
 Two assumptions are made:
 (A) Food moves out of the rumen at a rate proportional to the amount of food in the rumen. Mathematically this says:
 
-$r'(t) = -k_1r(t)$    
+(2) $r'(t) = -k_1r(t)$    
 
 where k_1 is a positive proportionality constant.
 
@@ -74,7 +74,20 @@ where k_2 is another positive proprtionality constant.
 
 It is straightforward to solve Equation (2) for $r(t)$. We just divide through by $r(t)$ and then integrate from 0 to t:
 
-[NEED TO ADD THE EQUATION HERE]
+$\int_0^t \frac{r'(t)}{r(t)} dt= - \int_0^t k_1dt$    
+$ln(\frac{r(t)}{R}) = -k_1t$,
+since r(0) = R, and finally
+(4) $r(t) = Re^{-k_1t}$ 
 
+#### Solving for $a(t)$
 
+Finding $a(t)$ is a bit more tricky. Applying Equations (4) to Equation (3) we get:
 
+(5) $a'(t) = k_1Re^{-k_1t}-k_2a(t)$
+
+Equation (5) probably looks quite different from any you have seen before. Let us try to make a shrew quess what kind of solution it has. It says that the derivative of $a(t)$ is the sume of two terms, $k_1Re^{-k_1t}$ and $-k_2a(t)$. With luck, this might remind us of the product rule:
+
+(6) if $a(t) = u(t) \bullet v(t) $
+    then $a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)$
+    
+Can we 
