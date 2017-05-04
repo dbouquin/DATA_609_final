@@ -144,7 +144,7 @@ in the abomasum; \(d(t)\) = the amount which by then has arrived in the
 duodenum.
 
 So \(r(0) = R\), \(a(0)\) = \(d(0)\) = 0, and, for all t\textgreater{}0,
-r(t) + a(t) + d(t) = R.
+(1) \(r(t) + a(t) + d(t) = R.\)
 
 \subsubsection{The assumptions}\label{the-assumptions}
 
@@ -152,7 +152,13 @@ Two assumptions are made: (A) Food moves out of the rumen at a rate
 proportional to the amount of food in the rumen. Mathematically this
 says:
 
-\(r'(t) = -k_1r(t)\)
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \(r'(t) = -k_1r(t)\)
+\end{enumerate}
 
 where k\_1 is a positive proportionality constant.
 
@@ -173,6 +179,108 @@ where k\_1 is a positive proportionality constant.
 \item
   \(a'(t) = k_1r(t)-k_2a(t)\)
 \end{enumerate}
+
+where k\_2 is another positive proprtionality constant.
+
+\subsubsection{The solutions of the
+equations}\label{the-solutions-of-the-equations}
+
+\paragraph{\texorpdfstring{Solving for
+\(r(t)\)}{Solving for r(t)}}\label{solving-for-rt}
+
+It is straightforward to solve Equation (2) for \(r(t)\). We just divide
+through by \(r(t)\) and then integrate from 0 to t:
+
+\(\int_0^t \frac{r'(t)}{r(t)} dt= - \int_0^t k_1dt\)\\
+\(ln(\frac{r(t)}{R}) = -k_1t\), since r(0) = R, and finally (4)
+\(r(t) = Re^{-k_1t}\)
+
+\paragraph{\texorpdfstring{Solving for
+\(a(t)\)}{Solving for a(t)}}\label{solving-for-at}
+
+Finding \(a(t)\) is a bit more tricky. Applying Equations (4) to
+Equation (3) we get:
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  \(a'(t) = k_1Re^{-k_1t}-k_2a(t)\)
+\end{enumerate}
+
+Equation (5) probably looks quite different from any you have seen
+before. Let us try to make a shrew quess what kind of solution it has.
+It says that the derivative of \(a(t)\) is the sume of two terms,
+\(k_1Re^{-k_1t}\) and \(-k_2a(t)\). With luck, this might remind us of
+the product rule:
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  if \(a(t) = u(t) \bullet v(t)\) then
+  \(a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)\)
+\end{enumerate}
+
+Can we pick \(u(t)\) and \(v(t)\) so the terms in Equation (6) match up
+with the terms in Equation (5)? In other words, can we pick \(u(t)\) and
+\(v(t)\) so that
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  \(u(t) \bullet v'(t) = k_1Re^{-k_1^t}\)
+\end{enumerate}
+
+and
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  \(v(t) \bullet u'(t) = -k_2a(t)?\)
+\end{enumerate}
+
+Since \(a(t) = u(t) \bullet v(t)\), Equation (8) can rewritten
+\(v(t) \bullet u'(t) = -k_2u(t)v(t)\), we are in business! The \(v(t)\)
+factors cancel out, leaving us with
+
+\[u'(t) = -k_2u(t)\]
+
+which looks very much like Equation (2) and can be solved in the same
+way.
+
+\(\int_0^t \frac{u'(t)}{u(t)} dt = -\int_0^t k_2dt\)
+
+Writing K = u(0):
+
+\(ln (\frac{u(t)}{K}) = -k_2t\)\\
+\(u(t) = Ke^{-k_2t}\).
+
+Putting this into Equation (7) gives
+
+\(Ke^{-k_2t}v'(t) = k_1Re^{-k_1t}\)\\
+\(v'(t) = \frac{k_1R}{K}e(k_2-k_1)^t\).
+
+If \(k_1 = k_2\) we feel confident you can complete this solution
+yourself (Exercise 1).
+
+\section{TODO Complete this exercise}\label{todo-complete-this-exercise}
+
+Exercise 1. Find \(a(t)\) if \(k_1 = k_2\).
+
+If \(k_1 \neq k_2\), then \(k_2 - k _1 \neq 0\) and so we can write
+
+\[v(t) = \frac{k_1R}{K(k_2 - k_1)}e^(k_2 -k_1)^t +c\]
+
+Where C is the constant of integratoin. Then
+
+\[a(t) = u(t) \bullet v(t) = \frac{k_1R}{k_2-k_1}e^{-k_1t} + CKe^{-k_2t}\]
 
 
 \end{document}

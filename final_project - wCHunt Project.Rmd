@@ -87,7 +87,50 @@ Finding $a(t)$ is a bit more tricky. Applying Equations (4) to Equation (3) we g
 
 Equation (5) probably looks quite different from any you have seen before. Let us try to make a shrew quess what kind of solution it has. It says that the derivative of $a(t)$ is the sume of two terms, $k_1Re^{-k_1t}$ and $-k_2a(t)$. With luck, this might remind us of the product rule:
 
-(6) if $a(t) = u(t) \bullet v(t) $
+(6) if $a(t) = u(t) \bullet v(t)$
     then $a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)$
     
 Can we pick $u(t)$ and $v(t)$ so the terms in Equation (6) match up with the terms in Equation (5)? In other words, can we pick $u(t)$ and $v(t)$ so that 
+
+(7) $u(t) \bullet v'(t) = k_1Re^{-k_1^t}$
+
+and 
+
+(8) $v(t) \bullet u'(t) = -k_2a(t)?$
+
+Since $a(t) = u(t) \bullet v(t)$, Equation (8) can rewritten 
+$v(t) \bullet u'(t) = -k_2u(t)v(t)$, we are in business! The $v(t)$ factors cancel out, leaving us with 
+
+$$u'(t) = -k_2u(t)$$
+
+which looks very much like Equation (2) and can be solved in the same way. 
+
+
+$\int_0^t \frac{u'(t)}{u(t)} dt = -\int_0^t k_2dt$
+
+Writing K = u(0):
+
+$ln (\frac{u(t)}{K}) = -k_2t$    
+$u(t) = Ke^{-k_2t}$.   
+
+Putting this into Equation (7) gives
+
+$Ke^{-k_2t}v'(t) = k_1Re^{-k_1t}$    
+$v'(t) = \frac{k_1R}{K}e(k_2-k_1)^t$.
+
+If $k_1 = k_2$ we feel confident you can complete this solution yourself (Exercise 1). 
+
+#TODO Complete this exercise
+
+Exercise 1. Find $a(t)$ if $k_1 = k_2$. 
+
+If $k_1 \neq k_2$, then $k_2 - k _1 \neq 0$ and so we can write 
+
+$$v(t) = \frac{k_1R}{K(k_2 - k_1)}e^(k_2 -k_1)^t +c$$
+
+Where C is the constant of integratoin. Then
+
+$$a(t) = u(t) \bullet v(t) = \frac{k_1R}{k_2-k_1}e^{-k_1t} + CKe^{-k_2t}$$
+
+
+
