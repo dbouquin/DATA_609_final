@@ -183,4 +183,81 @@ $= R - \frac{R}{k_2-k_1}(k_2e^{-k_1t} - k_1e^{-k_2t})$
 
 Recall that $d(t)4 is the total amount of food which has entered the duodenum by time t, including food already excreted. Since excretion is not a continuous process, we cannot hope to represent it by an equation involving derivatives. Instead, we simply note that all food arriving in the duodenum is excreted after a certain time delay. Let us suppose that the average time delay is T hours. In other words, the amount of feces produced by any time t > T is, on the average, the amount of food which had already entered the duodenum T hours earlier, at time t - T. If f(t) denotes the amount of feces produced by time t, this says:
 
+$f(t) = d(t-T) for all t > T$
+
+(10) $f(t) = R - \frac{R}{k_2-k_1}(k_2e^{-k_1(t-T)}-k_1e^{-k_2(t-T)})$
+
+for all t > T.
+
+#TODO Complete Exercise
+
+Exercise 4.
+
+(a) Determine the values of t for which r'(t) is, respectively, positive, negative, and zero.
+
+answer: $r'(t) < 0$ for all $t$
+
+(b) Determine the values of t for which r''(t) is, respectively, positive, negative, and zero.
+
+answer: $r''(t) > 0$ for all $t$
+
+(c) Determine $\lim_{t\to\infty}r(t)$
+
+answer: $\lim_{t\to\infty}r(t) =0$
+
+Exercise 5.
+
+(a) Determine the values of t for which a'(t) is, respectively, positive, negative, and zero.
+
+answer: $a'(t) > 0$ for all $t <t_0$; $a'(t_0) =0$; $a'(t) < 0$ fpr $t > t_0$. 
+
+(b) Determine the values of t for which a''(t) is, respectively, positive, negative, and zero.
+
+answer: $a''(t) < 0$ for all $t < 2t_0$; $a''(2t_0) =0$; $a''(t) > 0$ fpr $t > 2t_0$. 
+
+(c) Determine $\lim_{t\to\infty}a(t)$
+
+answer: $\lim_{t\to\infty}a(t) =0$
+
+Exercise 6.
+
+(a) Determine the values of t for which d'(t) is, respectively, positive, negative, and zero.
+
+answer: $d'(t) > 0$ for all t (must have $k_1 > k_2$). 
+
+(b) Determine the values of t for which d''(t) is, respectively, positive, negative, and zero.
+
+answer: $d''(t) > 0$ for all $t < t_0$; $d''(t_0) =0$; $d''(t) < 0$ for $t > t_0$. 
+
+(c) Determine $\lim_{t\to\infty}d(t)$
+
+answer: $\lim_{t\to\infty}d(t) =R$
+
+Exercise 7.
+
+For the function f(t) follow the instructions of Exercise 4.
+
+(a) Determine the values of t for which f'(t) is, respectively, positive, negative, and zero.
+
+answer: $f'(t) > 0$ for all $t > T$. 
+
+(b) Determine the values of t for which f''(t) is, respectively, positive, negative, and zero.
+
+answer: $f''(t) > 0$ for all $T < t < T + t_0$; $f''(T + t_0) =0$; $f''(t) < 0$ for $t > T + t_0$.
+
+(c) Determine $\lim_{t\to\infty}f(t)$
+
+answer: $\lim_{t\to\infty}f(t) =R$
+
+Exercise 8. 
+
+Using all the information in Exercise 4, 5, 6, and 7 to sketch the graphs of r, a, d, and f. You should not hvae to compute any points except r(0), a(0), d(0), and f(T), which you already know. 
+
+
+Exercise 9.
+
+Assuming that increased stay in the digestive system implies improved digestion determine from Figure 4 which method of food preparation is more desirable. Why? 
+
+
+
 
