@@ -253,11 +253,15 @@ Exercise 8.
 
 Using all the information in Exercise 4, 5, 6, and 7 to sketch the graphs of r, a, d, and f. You should not hvae to compute any points except r(0), a(0), d(0), and f(T), which you already know. 
 
+\newpage
+
+#TODO refine response. 
 
 Exercise 9.
 
 Assuming that increased stay in the digestive system implies improved digestion determine from Figure 4 which method of food preparation is more desirable. Why? 
 
+![](https://raw.githubusercontent.com/dbouquin/DATA_609_final/master/Figure4.PNG) 
 
-
+Assuming that we are looking for the feed type that stays in the sheeps stomach the longest, then we would say that the medium-ground grass would be the most desirable. We make this assumption as it stands that the sheep requires less feed for the same results. 
 
