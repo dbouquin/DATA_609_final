@@ -21,7 +21,7 @@ always_allow_html: yes
 
 ### The problem
 
-The digestive processes of sheep can highlight the nutrionaly value in varied feeding schedules or varied food prepation. This is esspecially important when raising sheep for commercial purposes. 
+The digestive processes of sheep can highlight the nutritionally value in varied feeding schedules or varied food preparation. This is especially important when raising sheep for commercial purposes. 
 
 ### The digestive process
 
@@ -63,10 +63,10 @@ Two assumptions are made:
 
 where k_1 is a positive proportionality constant.
 
-(B) Food moves out of the abomasum at a rate proportional to the amout of food in the abomasum. Since at the same time food is moving into the abomasum at the rate given by Equation (2), the assumption says
+(B) Food moves out of the abomasum at a rate proportional to the amount of food in the abomasum. Since at the same time food is moving into the abomasum at the rate given by Equation (2), the assumption says
 (3) $a'(t) = k_1r(t)-k_2a(t)$
 
-where k_2 is another positive proprtionality constant.
+where k_2 is another positive proportionality constant.
 
 ### The solutions of the equations
 
@@ -85,7 +85,7 @@ Finding $a(t)$ is a bit more tricky. Applying Equations (4) to Equation (3) we g
 
 (5) $a'(t) = k_1Re^{-k_1t}-k_2a(t)$
 
-Equation (5) probably looks quite different from any you have seen before. Let us try to make a shrew quess what kind of solution it has. It says that the derivative of $a(t)$ is the sume of two terms, $k_1Re^{-k_1t}$ and $-k_2a(t)$. With luck, this might remind us of the product rule:
+Equation (5) probably looks quite different from any you have seen before. Let us try to make a shrew guess what kind of solution it has. It says that the derivative of $a(t)$ is the sum of two terms, $k_1Re^{-k_1t}$ and $-k_2a(t)$. With luck, this might remind us of the product rule:
 
 (6) if $a(t) = u(t) \bullet v(t)$
     then $a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)$
@@ -122,7 +122,7 @@ If $k_1 = k_2$ we feel confident you can complete this solution yourself (Exerci
 
 #TODO Complete this exercise
 
-Exercise 1. Find $a(t)$ if $k_1 = k_2$. 
+## Exercise 1. Find $a(t)$ if $k_1 = k_2$. 
 
 The derivative of $a(t)$ is the sum of two terms, $k_1Re^{-k_1t}$ and $-k_2a(t)$. If $a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)$
 
@@ -149,7 +149,7 @@ $$CK = -\frac{k_1R}{k_2-k_1}$$
 
 #TODO complete this exercise 
 
-Exercise 2. 
+## Exercise 2. 
 
 (a) Find the time t at which $a(t)$ is maximum.
 
@@ -168,7 +168,7 @@ answer: $\frac{1/2}R$
 
 #4. Comparison of the Model's Predictions with Experimental Data
 
-Equations (4) and (9) are purly theoretical and are based on assumptions. To confirm their accuracy we will see if they agree with experimental data. Since the data concern is fecal excretion as a function of time, we must first translate our results into results on fecal excretion. 
+Equations (4) and (9) are purely theoretical and are based on assumptions. To confirm their accuracy we will see if they agree with experimental data. Since the data concern is fecal excretion as a function of time, we must first translate our results into results on fecal excretion. 
 
 ## 4.1 Solving for $d(t)$
 
@@ -189,9 +189,9 @@ $f(t) = d(t-T) for all t > T$
 
 for all t > T.
 
-#TODO Complete Exercise
+#TODO show work for Exercise
 
-Exercise 4.
+## Exercise 4.
 
 (a) Determine the values of t for which r'(t) is, respectively, positive, negative, and zero.
 
@@ -205,21 +205,25 @@ answer: $r''(t) > 0$ for all $t$
 
 answer: $\lim_{t\to\infty}r(t) =0$
 
-Exercise 5.
+#TODO show work for Exercise
+
+## Exercise 5.
 
 (a) Determine the values of t for which a'(t) is, respectively, positive, negative, and zero.
 
-answer: $a'(t) > 0$ for all $t <t_0$; $a'(t_0) =0$; $a'(t) < 0$ fpr $t > t_0$. 
+answer: $a'(t) > 0$ for all $t <t_0$; $a'(t_0) =0$; $a'(t) < 0$ for $t > t_0$. 
 
 (b) Determine the values of t for which a''(t) is, respectively, positive, negative, and zero.
 
-answer: $a''(t) < 0$ for all $t < 2t_0$; $a''(2t_0) =0$; $a''(t) > 0$ fpr $t > 2t_0$. 
+answer: $a''(t) < 0$ for all $t < 2t_0$; $a''(2t_0) =0$; $a''(t) > 0$ for $t > 2t_0$. 
 
 (c) Determine $\lim_{t\to\infty}a(t)$
 
 answer: $\lim_{t\to\infty}a(t) =0$
 
-Exercise 6.
+#TODO show work for Exercise
+
+## Exercise 6.
 
 (a) Determine the values of t for which d'(t) is, respectively, positive, negative, and zero.
 
@@ -233,7 +237,9 @@ answer: $d''(t) > 0$ for all $t < t_0$; $d''(t_0) =0$; $d''(t) < 0$ for $t > t_0
 
 answer: $\lim_{t\to\infty}d(t) =R$
 
-Exercise 7.
+#TODO show work for Exercise
+
+## Exercise 7.
 
 For the function f(t) follow the instructions of Exercise 4.
 
@@ -249,19 +255,20 @@ answer: $f''(t) > 0$ for all $T < t < T + t_0$; $f''(T + t_0) =0$; $f''(t) < 0$ 
 
 answer: $\lim_{t\to\infty}f(t) =R$
 
-Exercise 8. 
+#TODO show work for Exercise
+## Exercise 8. 
 
-Using all the information in Exercise 4, 5, 6, and 7 to sketch the graphs of r, a, d, and f. You should not hvae to compute any points except r(0), a(0), d(0), and f(T), which you already know. 
+Using all the information in Exercise 4, 5, 6, and 7 to sketch the graphs of r, a, d, and f. You should not have to compute any points except r(0), a(0), d(0), and f(T), which you already know. 
 
 \newpage
 
 #TODO refine response. 
 
-Exercise 9.
+## Exercise 9.
 
 Assuming that increased stay in the digestive system implies improved digestion determine from Figure 4 which method of food preparation is more desirable. Why? 
 
 ![](https://raw.githubusercontent.com/dbouquin/DATA_609_final/master/Figure4.PNG) 
 
-Assuming that we are looking for the feed type that stays in the sheeps stomach the longest, then we would say that the medium-ground grass would be the most desirable. We make this assumption as it stands that the sheep requires less feed for the same results. 
+Assuming that we are looking for the feed type that stays in the sheep's stomach the longest, then we would say that the medium-ground grass would be the most desirable. We make this assumption as it stands that the sheep requires less feed for the same results. 
 
