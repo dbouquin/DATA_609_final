@@ -132,7 +132,6 @@ $a'(t) = u(t) \bullet \frac{k_1R}{K}e(k_2-k_1)^t + v(t) \bullet -k_2u(t)$
 
 $a(t) = k_1Rte^{-k_2t}$
 
-
 If $k_1 \neq k_2$, then $k_2 - k _1 \neq 0$ and so we can write 
 
 $$v(t) = \frac{k_1R}{K(k_2 - k_1)}e^(k_2 -k_1)^t +c$$
