@@ -274,6 +274,13 @@ yourself (Exercise 1).
 
 Exercise 1. Find \(a(t)\) if \(k_1 = k_2\).
 
+The derivative of \(a(t)\) is the sum of two terms, \(k_1Re^{-k_1t}\)
+and \(-k_2a(t)\). If \(a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)\)
+
+\(k_1Re^{-k_1t}-k_2a(t) = u(t) \bullet \frac{k_1R}{K}e(k_2-k_1)^t + v(t) \bullet -k_2u(t)\)
+
+\(a(t) = k_1Rte^{-k_2t}\)
+
 If \(k_1 \neq k_2\), then \(k_2 - k _1 \neq 0\) and so we can write
 
 \[v(t) = \frac{k_1R}{K(k_2 - k_1)}e^(k_2 -k_1)^t +c\]
@@ -281,6 +288,30 @@ If \(k_1 \neq k_2\), then \(k_2 - k _1 \neq 0\) and so we can write
 Where C is the constant of integratoin. Then
 
 \[a(t) = u(t) \bullet v(t) = \frac{k_1R}{k_2-k_1}e^{-k_1t} + CKe^{-k_2t}\]
+
+Using the fact that \(a(0) = 0\), we get
+
+\[0 = \frac{k_1R}{k_2-k_1} + CK\] \[CK = -\frac{k_1R}{k_2-k_1}\] (9)
+\(a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})\)
+
+\section{TODO complete this
+exercise}\label{todo-complete-this-exercise-1}
+
+Exercise 2. (a) Find the time t at which \(a(t)\) is maximum. (b) Find
+the maximum value of \(a(t)\).
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  \(t = \frac{lnk_1-lnk_2}{k_1-k_2}\)
+\end{enumerate}
+
+\section{TODO complete this
+exercise}\label{todo-complete-this-exercise-2}
+
+Exercise 3. If k\_1 = 2 and k\_2 = 1, how much food must the abomasum be
+able to hold if a meal of amount R is fed at time t = 0?
 
 
 \end{document}
