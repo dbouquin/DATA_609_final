@@ -275,14 +275,20 @@ yourself (Exercise 1).
 \subsection{\texorpdfstring{Exercise 1. Find \(a(t)\) if
 \(k_1 = k_2\).}{Exercise 1. Find a(t) if k\_1 = k\_2.}}\label{exercise-1.-find-at-if-k_1-k_2.}
 
-The derivative of \(a(t)\) is the sum of two terms, \(k_1Re^{-k_1t}\)
-and \(-k_2a(t)\). If \(a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)\)
+\(u(t) \bullet v'(t) = k_1Re^{-k_1t}\)
+\(v'(t) = \frac{k_1Re^{-k_1t}}{u(t)}\)
 
-\(a'(t) = k_1Re^{-k_1t}-k_2a(t)\)
+---possible u't \(u'(t) = -k_2u(t)\)
+\(\int^t_0 \frac{u'(t)}{u(t)} = \int^t_0 k_2dt\)
 
-\(a'(t) = u(t) \bullet \frac{k_1R}{K}e(k_2-k_1)^t + v(t) \bullet -k_2u(t)\)
+\(v(t) \bullet Ke^{k_2t} = -k_2Ke^{k_2t}v(t)\)
+\(Ke^{k_2t} = -k_2Ke^{k_2t}\)
 
-\(a(t) = k_1Rte^{-k_2t}\)
+\(u(t) = Ke^{-k_2t}\)
+
+answer : \(a(t) = k_1Rte^{-k_2t}\)
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 If \(k_1 \neq k_2\), then \(k_2 - k _1 \neq 0\) and so we can write
 
@@ -325,8 +331,14 @@ answer:
 \section{TODO complete this
 exercise}\label{todo-complete-this-exercise-2}
 
-Exercise 3. If k\_1 = 2 and k\_2 = 1, how much food must the abomasum be
-able to hold if a meal of amount R is fed at time t = 0?
+\subsection{Exercise 3.}\label{exercise-3.}
+
+If k\_1 = 2 and k\_2 = 1, how much food must the abomasum be able to
+hold if a meal of amount R is fed at time t = 0?
+
+\(a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})\)
+\(a(t) = \frac{2R}{1-2}(e^{-2*0} - e^{-1*0})\)
+\(a(t) = \frac{2R}{-1}(1 - 1)\)
 
 answer: \(\frac{1/2}R\)
 
