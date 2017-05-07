@@ -275,6 +275,8 @@ yourself (Exercise 1).
 \subsection{\texorpdfstring{Exercise 1. Find \(a(t)\) if
 \(k_1 = k_2\).}{Exercise 1. Find a(t) if k\_1 = k\_2.}}\label{exercise-1.-find-at-if-k_1-k_2.}
 
+\(a'(t) = k_1Re^{-k_1t}-k_2a(t)\)
+
 \(u(t) \bullet v'(t) = k_1Re^{-k_1t}\)
 \(v'(t) = \frac{k_1Re^{-k_1t}}{u(t)}\)
 
@@ -314,6 +316,12 @@ exercise}\label{todo-complete-this-exercise-1}
 \item
   Find the time t at which \(a(t)\) is maximum.
 \end{enumerate}
+
+\(a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t}-e^{-k_2t})\)
+\(a(t) = \frac{k_1R}{k_2-k_1}(lnk_1-lnk_2)\)
+
+\(a(t) = \frac{1}{k_1R}\frac{(lnk_1-lnk_2)}{k_2-k_1}\)
+\(a(t) = \frac{k_1R(e^{-k_1t}-e^{-k_2t})}{k_2-k_1}\)
 
 answer: (a) \(t = \frac{lnk_1-lnk_2}{k_1-k_2}\)
 
@@ -388,9 +396,13 @@ says:
 
 for all t \textgreater{} T.
 
-\section{TODO show work for Exercise}\label{todo-show-work-for-exercise}
+\section{TODO resolve (c)}\label{todo-resolve-c}
 
 \subsection{Exercise 4.}\label{exercise-4.}
+
+Remembering that r(t) is the total amount of food which has entered the
+the rumen by time t. There is a continuous flow from the rumen to the
+abomasum
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
@@ -399,6 +411,12 @@ for all t \textgreater{} T.
   Determine the values of t for which r'(t) is, respectively, positive,
   negative, and zero.
 \end{enumerate}
+
+\(r(t) = Re^{-k_1t}\)
+
+\(= R(\frac{d}{dt}(e^{-tk_1}))\) Using the chain rule
+\(= e^{-tk_1}\frac{d}{dt}(-tk_1)R\) derivative of t is 1 :
+\(r'(t)= e^{-tk_1}Rk_1\)
 
 answer: \(r'(t) < 0\) for all \(t\)
 
@@ -410,6 +428,18 @@ answer: \(r'(t) < 0\) for all \(t\)
   Determine the values of t for which r''(t) is, respectively, positive,
   negative, and zero.
 \end{enumerate}
+
+\(= \frac{d}{dt}(R(\frac{d}{dt}(e^{-tk_1})))\)\\
+Using the chain rule:
+\(= \frac{d}{dt}(e^{-tk_1}(\frac{d}{dt}(-tk_1))R)\)\\
+factor out constants:
+\(= \frac{d}{dt}(R -(\frac{d}{dt}(t))k_1 e^{-tk_1})\)\\
+derivative of t is 1: \(= \frac{d}{dt}(R(e^{-tk_1}-k_1))\)\\
+factor out constants: \(= R(\frac{d}{dt}(e^{-tk_1}))k_1\)\\
+using the chain rule: \(= -Rk_1e^{-tk_1}(\frac{d}{dt}(-tk_1))\)\\
+factor out constants and simplify
+\(= -e^{-tk_1}R-(\frac{d}{dt}(t))k_1^2\)\\
+derivative of t is 1: \(r''(t)= e^{-tk_1}Rk_1^2\)
 
 answer: \(r''(t) > 0\) for all \(t\)
 
@@ -423,10 +453,19 @@ answer: \(r''(t) > 0\) for all \(t\)
 
 answer: \(\lim_{t\to\infty}r(t) =0\)
 
-\section{TODO show work for
-Exercise}\label{todo-show-work-for-exercise-1}
+\section{TODO refine answers for B and
+C}\label{todo-refine-answers-for-b-and-c}
 
 \subsection{Exercise 5.}\label{exercise-5.}
+
+Remembering that a(t) is the total amount of food which has entered the
+the abomasum by time t from the rumen and exiting to the duodenum. There
+is a continuous flow from the abomasum to the duodenum.
+
+We have previously solved for a(t) and \(a'(t)\)
+
+\(a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})\)
+\(a'(t) = k_1Re^{-k_1t}-k_2a(t)\)
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
@@ -436,7 +475,7 @@ Exercise}\label{todo-show-work-for-exercise-1}
   negative, and zero.
 \end{enumerate}
 
-answer: \(a'(t) > 0\) for all \(t <t_0\); \(a'(t_0) =0\); \(a'(t) < 0\)
+answer: \(a'(t) > 0\) for all \(t < t_0\); \(a'(t_0) =0\); \(a'(t) < 0\)
 for \(t > t_0\).
 
 \begin{enumerate}
@@ -461,8 +500,7 @@ answer: \(a''(t) < 0\) for all \(t < 2t_0\); \(a''(2t_0) =0\);
 
 answer: \(\lim_{t\to\infty}a(t) =0\)
 
-\section{TODO show work for
-Exercise}\label{todo-show-work-for-exercise-2}
+\section{TODO show work for Exercise}\label{todo-show-work-for-exercise}
 
 \subsection{Exercise 6.}\label{exercise-6.}
 
@@ -499,7 +537,7 @@ answer: \(d''(t) > 0\) for all \(t < t_0\); \(d''(t_0) =0\);
 answer: \(\lim_{t\to\infty}d(t) =R\)
 
 \section{TODO show work for
-Exercise}\label{todo-show-work-for-exercise-3}
+Exercise}\label{todo-show-work-for-exercise-1}
 
 \subsection{Exercise 7.}\label{exercise-7.}
 
@@ -538,7 +576,7 @@ answer: \(f''(t) > 0\) for all \(T < t < T + t_0\); \(f''(T + t_0) =0\);
 answer: \(\lim_{t\to\infty}f(t) =R\)
 
 \section{TODO show work for
-Exercise}\label{todo-show-work-for-exercise-4}
+Exercise}\label{todo-show-work-for-exercise-2}
 
 \subsection{Exercise 8.}\label{exercise-8.}
 
