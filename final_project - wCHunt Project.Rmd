@@ -16,6 +16,7 @@ output:
     toc_depth: '2'
 always_allow_html: yes
 ---
+\newpage
 
 ## Textbook Part III:
 
@@ -36,8 +37,9 @@ Sheep are a cud-chewing animal which means that unchewed food goes through a ser
   \node (f) [process, right of=d, xshift=2cm]  {Feces};
   \draw [arrow] (r) -- (a);
   \draw [arrow] (a) -- (d);
-  \draw [arrow] (d) -- (f);
+  \draw [dotted] (d) -- (f);
 \end{tikzpicture}
+
 
 ### The experiment
 
@@ -126,18 +128,28 @@ If $k_1 = k_2$ we feel confident you can complete this solution yourself (Exerci
 
 $a'(t) = k_1Re^{-k_1t}-k_2a(t)$
 
+
+$\int_0^t \frac{a'(t)}{a(t)} = \int_0^t k_1Re^{-k_1t}-k_2dt$
+$ln(\frac{a(t)}{R})= \int_0^t k_1Re^{-k_1t}-k_2dt$
+
+
+$u(t) \bullet v'(t) + v(t) \bullet u'(t) = k_1Re^{-k_1t}-k_2a(t)$
+
+$Ke^{-k_2t}*\frac{k_1R}{K}e^(k_2 - k_1)t + v(t)-k_2Ke^{-k_2t} = a(t)$
+
 $u(t) \bullet v'(t) = k_1Re^{-k_1t}$
 $v'(t) = \frac{k_1Re^{-k_1t}}{u(t)}$
 
 
 ---possible u't
 $u'(t) = -k_2u(t)$
+
 $\int^t_0 \frac{u'(t)}{u(t)} = \int^t_0 k_2dt$
 
 $v(t) \bullet Ke^{k_2t} = -k_2Ke^{k_2t}v(t)$
 $Ke^{k_2t} = -k_2Ke^{k_2t}$
 
-$u(t) = Ke^{-k_2t}$
+$u(t) = Ke^{-t k_2}$
 
 answer : $a(t) = k_1Rte^{-k_2t}$
 
@@ -309,14 +321,13 @@ answer: $f''(t) > 0$ for all $T < t < T + t_0$; $f''(T + t_0) =0$; $f''(t) < 0$ 
 
 answer: $\lim_{t\to\infty}f(t) =R$
 
-#TODO show work for Exercise
 ## Exercise 8. 
 
 Using all the information in Exercise 4, 5, 6, and 7 to sketch the graphs of r, a, d, and f. You should not have to compute any points except r(0), a(0), d(0), and f(T), which you already know. 
 
+![](https://raw.githubusercontent.com/dbouquin/DATA_609_final/master/20170507_152919.jpg)
 \newpage
 
-#TODO refine response. 
 
 ## Exercise 9.
 
