@@ -122,36 +122,22 @@ $v'(t) = \frac{k_1R}{K}e(k_2-k_1)^t$.
 
 If $k_1 = k_2$ we feel confident you can complete this solution yourself (Exercise 1). 
 
-#TODO Complete this exercise
 
 ## Exercise 1. Find $a(t)$ if $k_1 = k_2$. 
 
-$a'(t) = k_1Re^{-k_1t}-k_2a(t)$
+$a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)$   
+Using the solution from equation 8 we get:
+$u(t) = Ke^{-k_2t}$    
+Using the solution from equation 7 we get:
+$v'(t) = \frac{k_1R}{K}e^{k_2 - k_1}t$    
+Substituting the solutions for $a(t)$ we get:
+$\frac{k_1R}{K}e^{k_2 - k_1}t * Ke^{-k_2t}$    
+If k_1 = k_2 then $e^{0} = 1$    
+$\frac{k_1R}{K}t * Ke^{-k_2t}$    
+K factors out : 
+$k_1Rte^{-k_2t}$    
 
-
-$\int_0^t \frac{a'(t)}{a(t)} = \int_0^t k_1Re^{-k_1t}-k_2dt$
-$ln(\frac{a(t)}{R})= \int_0^t k_1Re^{-k_1t}-k_2dt$
-
-
-$u(t) \bullet v'(t) + v(t) \bullet u'(t) = k_1Re^{-k_1t}-k_2a(t)$
-
-$Ke^{-k_2t}*\frac{k_1R}{K}e^(k_2 - k_1)t + v(t)-k_2Ke^{-k_2t} = a(t)$
-
-$u(t) \bullet v'(t) = k_1Re^{-k_1t}$
-$v'(t) = \frac{k_1Re^{-k_1t}}{u(t)}$
-
-
----possible u't
-$u'(t) = -k_2u(t)$
-
-$\int^t_0 \frac{u'(t)}{u(t)} = \int^t_0 k_2dt$
-
-$v(t) \bullet Ke^{k_2t} = -k_2Ke^{k_2t}v(t)$
-$Ke^{k_2t} = -k_2Ke^{k_2t}$
-
-$u(t) = Ke^{-t k_2}$
-
-answer : $a(t) = k_1Rte^{-k_2t}$
+answer : $a(t) = k_1Rte^{-k_2t}$    
 
 ----
 
@@ -192,11 +178,20 @@ answer: $\frac{k_1R}{k_2-k_1}[(\frac{k_1}{k_2})^{-\frac{k_1}{k_1-k_2}}-(\frac{k_
 ## Exercise 3. 
 If k_1 = 2 and k_2 = 1, how much food must the abomasum be able to hold if a meal of amount R is fed at time t = 0?
 
-$a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$
-$a(t) = \frac{2R}{1-2}(e^{-2*0} - e^{-1*0})$
-$a(t) = \frac{2R}{-1}(1 - 1)$
 
-answer: $\frac{1/2}R$
+$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1 t} - e^{-k_2 t})$    
+
+$a(t) = \frac{k_1 R}{k_2-k_1}(\frac{1}{e^{k_1 t}} - \frac{1}{e^{k_2 t}})$   
+
+$a(t) = \frac{2 R}{1-2}(e^{-2 t_0} - e^{-1 t_0})$   
+
+$a(t) = \frac{2 R}{1-2}(e^{-2*0} - e^{-1*0})$
+
+$a(t) = \frac{2R}{1-2}(e^{-2} - e^{-1})$
+$a(t) = \frac{2R}{-1}(1 - 1)$
+$a(t) = -2R$
+
+answer: $\frac{1}{2}R$
 
 
 #4. Comparison of the Model's Predictions with Experimental Data
