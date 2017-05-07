@@ -124,13 +124,19 @@ If $k_1 = k_2$ we feel confident you can complete this solution yourself (Exerci
 
 ## Exercise 1. Find $a(t)$ if $k_1 = k_2$. 
 
-The derivative of $a(t)$ is the sum of two terms, $k_1Re^{-k_1t}$ and $-k_2a(t)$. If $a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)$
+$u(t) \bullet v'(t) = k_1Re^{-k_1t}$
+$v'(t) = \frac{k_1Re^{-k_1t}}{u(t)}$
 
-$a'(t) = k_1Re^{-k_1t}-k_2a(t)$
+---possible u't
+$u'(t) = -k_2u(t)$
+$\int^t_0 \frac{u'(t)}{u(t)} = \int^t_0 k_2dt$
 
-$a'(t) = u(t) \bullet \frac{k_1R}{K}e(k_2-k_1)^t + v(t) \bullet -k_2u(t)$
+$v(t) \bullet Ke^{k_2t} = -k_2Ke^{k_2t}v(t)$
+$Ke^{k_2t} = -k_2Ke^{k_2t}$
 
-$a(t) = k_1Rte^{-k_2t}$
+$u(t) = Ke^{-k_2t}$
+
+answer : $a(t) = k_1Rte^{-k_2t}$
 
 If $k_1 \neq k_2$, then $k_2 - k _1 \neq 0$ and so we can write 
 
@@ -161,6 +167,10 @@ answer: $\frac{k_1R}{k_2-k_1}[(\frac{k_1}{k_2})^{-\frac{k_1}{k_1-k_2}}-(\frac{k_
 #TODO complete this exercise
 
 Exercise 3. If k_1 = 2 and k_2 = 1, how much food must the abomasum be able to hold if a meal of amount R is fed at time t = 0?
+
+$a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$
+$a(t) = \frac{2R}{1-2}(e^{-2*0} - e^{-1*0})$
+$a(t) = \frac{2R}{-1}(1 - 1)$
 
 answer: $\frac{1/2}R$
 
