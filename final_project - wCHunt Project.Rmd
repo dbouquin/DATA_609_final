@@ -162,6 +162,7 @@ $$CK = -\frac{k_1R}{k_2-k_1}$$
 (a) Find the time t at which $a(t)$ is maximum.
 
 $a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t}-e^{-k_2t})$    
+
 $a(t) = \frac{k_1R}{k_2-k_1}(lnk_1-lnk_2)$    
 
 $a(t) = \frac{1}{k_1R}\frac{(lnk_1-lnk_2)}{k_2-k_1}$    
