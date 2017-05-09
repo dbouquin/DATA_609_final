@@ -123,7 +123,7 @@ $v'(t) = \frac{k_1R}{K}e(k_2-k_1)^t$.
 If $k_1 = k_2$ we feel confident you can complete this solution yourself (Exercise 1). 
 
 
-## Exercise 1. Find $a(t)$ if $k_1 = k_2$. 
+# Exercise 1. Find $a(t)$ if $k_1 = k_2$. 
 
 $a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)$   
 Using the solution from equation 8 we get:
@@ -155,42 +155,54 @@ $$0 = \frac{k_1R}{k_2-k_1} + CK$$
 $$CK = -\frac{k_1R}{k_2-k_1}$$
 (9) $a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$
 
-#TODO complete this exercise 
-
-## Exercise 2. 
+# Exercise 2. 
 
 (a) Find the time t at which $a(t)$ is maximum.
 
-$a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t}-e^{-k_2t})$    
-
-$a(t) = \frac{k_1R}{k_2-k_1}(lnk_1-lnk_2)$    
-
-$a(t) = \frac{1}{k_1R}\frac{(lnk_1-lnk_2)}{k_2-k_1}$    
-$a(t) = \frac{k_1R(e^{-k_1t}-e^{-k_2t})}{k_2-k_1}$    
+$a(t) = \frac{k_1 R}{k_2 - k_1}(e^{-k_1 t}-e^{-k_2 t})$   
+$0 = \frac{k_1 R}{k_2 - k_1}(e^{-k_1 t}-e^{-k_2 t})$   
+Divide both sides by $\frac{k_1 r}{k_2 - k_1}$      
+$e^{-k_2 t}k2 - e^{-k_1 t}k1 = 0$   
+Factor $e^{-k_1 t}$, $e^{-k_2 t}$:    
+$-e^{-k_1 t - k_2 t}(e^{k_2 t}k_1 - e^{k_1 t}k2) = 0$   
+Multiply by -1 to simplify and split into two equations:     
+$e^{-k_1 t - k_2 t} = 0 ~and~e^{k_2 t}k_1 - e^{k_1 t}k2= 0$   
+Since $e^(z)$ can never be zero for any real number, no solution exists for $e^{-k_1 t - k_2 t} \neq 0$   
+Divide both sides by $e^{k2 t}$:   
+$k_1 - e^{t (k_1 - k_2)}k2= 0$   
+Subtract k1:   
+$- e^{t (k_1 - k_2)}k2= -k_1$   
+Divide both sides by -k2:    
+$e^{t (k_1 - k_2)}= \frac{k_1}{k_2}$   
+Take the natural log: 
+$t (k_1 - k_2)= \log{(\frac{k_1}{k_2})}$   
+Solve for t:
+$t = \frac{\log{(\frac{k_1}{k_2})}}{(k_1 - k_2)}$   
 
 answer: (a) $t = \frac{lnk_1-lnk_2}{k_1-k_2}$    
 
+\newpage
+
+#TODO completed B 
+
 (b) Find the maximum value of $a(t)$.
 
-answer: $\frac{k_1R}{k_2-k_1}[(\frac{k_1}{k_2})^{-\frac{k_1}{k_1-k_2}}-(\frac{k_1}{k_2})^{-\frac{k_2}{k_1-k_2}}]$
+$a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t}-e^{-k_2t})$ 
+
+answer: $$\frac{k_1R}{k_2-k_1}[(\frac{k_1}{k_2})^{-\frac{k_1}{k_1-k_2}}-(\frac{k_1}{k_2})^{-\frac{k_2}{k_1-k_2}}]$$
 
 #TODO complete this exercise
 
 ## Exercise 3. 
-If k_1 = 2 and k_2 = 1, how much food must the abomasum be able to hold if a meal of amount R is fed at time t = 0?
+If $k_1$ = 2 and $k_2$ = 1, how much food must the abomasum be able to hold if a meal of amount R is fed at time t = 0?
 
-
-$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1 t} - e^{-k_2 t})$    
-
-$a(t) = \frac{k_1 R}{k_2-k_1}(\frac{1}{e^{k_1 t}} - \frac{1}{e^{k_2 t}})$   
-
-$a(t) = \frac{2 R}{1-2}(e^{-2 t_0} - e^{-1 t_0})$   
-
-$a(t) = \frac{2 R}{1-2}(e^{-2*0} - e^{-1*0})$
-
-$a(t) = \frac{2R}{1-2}(e^{-2} - e^{-1})$
-$a(t) = \frac{2R}{-1}(1 - 1)$
-$a(t) = -2R$
+$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1 t} - e^{-k_2 t})$      
+$a(t) = \frac{k_1 R(e^{-k_1 t}-e^{-k_2 t})}{k_2 - k_1}$     
+$a(t) = \frac{2 R}{1-2}(e^{-2~0} - e^{-1~0})$   
+$a(t) = \frac{2 R}{1-2}(e^{0} - e^{0})$  
+$a(t) = \frac{2R}{1-2}(1 - 1)$  
+$a(t) = \frac{2R}{-1}(1 - 1)$  
+$a(t) = -2R$  
 
 answer: $\frac{1}{2}R$
 
