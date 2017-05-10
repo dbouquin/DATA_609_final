@@ -183,15 +183,15 @@ answer: (a) $t = $
 
 \newpage
 
-#TODO completed B 
-
 (b) Find the maximum value of $a(t)$.
 
 $a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t}-e^{-k_2t})$ 
 
 $$\frac{k1 R}{k2 - k1}(e^{-k1 \frac{\log{(\frac{k1}{k2})}}{(k1 - k2)}}-e^{-k2 \frac{\log{(\frac{k1}{k2})}}{(k1 - k2)}})$$
+$$e^{-k1 \frac{\log{(\frac{k1}{k2})}}{(k1 - k2)}}=\frac{k_1}{k_2}^{-\frac{k_1}{k_1 - k_2}}$$
+Therefore the maximum value of $a(t)$ is : 
 
-answer: $$\frac{k_1R}{k_2-k_1}[(\frac{k_1}{k_2})^{-\frac{k_1}{k_1-k_2}}-(\frac{k_1}{k_2})^{-\frac{k_2}{k_1-k_2}}]$$
+$$\frac{k_1R}{k_2-k_1}[(\frac{k_1}{k_2})^{-\frac{k_1}{k_1-k_2}}-(\frac{k_1}{k_2})^{-\frac{k_2}{k_1-k_2}}]$$
 
 #TODO complete this exercise
 
