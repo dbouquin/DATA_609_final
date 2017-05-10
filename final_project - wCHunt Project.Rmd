@@ -279,14 +279,33 @@ Remembering that a(t) is the total amount of food which has entered the the abom
 
 We have previously solved for a(t) and $a'(t)$
 
-$a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$
+$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$
 $a'(t) = k_1Re^{-k_1t}-k_2a(t)$
 
 (a) Determine the values of t for which a'(t) is, respectively, positive, negative, and zero.
 
-answer: $a'(t) > 0$ for all $t < t_0$; $a'(t_0) =0$; $a'(t) < 0$ for $t > t_0$. 
+$a'(t) =k_1Re^{-k_1t}-k_2a(t)$
+
+answer: $a'(t) > 0$ for all $t < t_0$; 
+
+$a'(t) = (0)$
+
+answer: $a'(t_0) = 0$; 
+
+$a'(t) < 0$ for $t > t_0$. 
 
 (b) Determine the values of t for which a''(t) is, respectively, positive, negative, and zero.
+
+$a''(t) = \frac{d}{dt}(k_1Re^{-k_1t}-k_2a(t))$
+$=k_1 R(\frac{d}{dt}(e^{-k_1 t}))- k_2 (\frac{d}{dt}(a(t)))$
+Apply the chain rule:
+$=- k_2 (\frac{d}{dt}(a(t)))+ e^{-k_1 t}\frac{d}{dt}({-k_1 t})k1 R$
+Simplify the expression: 
+$=-e^{-k1 t}k1^2 R(\frac{d}{dt}(t)) -k_2 \frac{d}{dt}({a(t)})$
+Derivative of t is 1:
+$=-e^{-k1 t}k1^2 R-k_2 \frac{d}{dt}({a(t)})$
+Therefore a''(t):
+$=-e^{-k1 t}k1^2 R-a'(t)k_2$
 
 answer: $a''(t) < 0$ for all $t < 2t_0$; $a''(2t_0) =0$; $a''(t) > 0$ for $t > 2t_0$. 
 
@@ -298,7 +317,13 @@ answer: $\lim_{t\to\infty}a(t) =0$
 
 ## Exercise 6.
 
+$d(t) = R - r(t) - a(t)$
+$d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})$
+
 (a) Determine the values of t for which d'(t) is, respectively, positive, negative, and zero.
+
+$d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})$
+$\frac{d}{dt} (\frac{(-e^{-k_2 t}k1 + e^{-k_1 t}k2)R}{-k_1 + k_2})$
 
 answer: $d'(t) > 0$ for all t (must have $k_1 > k_2$). 
 
