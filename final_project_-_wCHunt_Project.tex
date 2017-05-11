@@ -377,15 +377,15 @@ fecal excretion.
 Starting with Equation (1), and using Equations (4) and (9) (still
 assuming \(k_1 \neq k_2\)):
 
-\(d(t) = R - r(t) - a(t)\)\\
-\(= R - Re^{-k_1t} - \frac{k_1R}{k_2 - k_1} (e^{-k_1t}-e{-k_2t})\)
+\[d(t) = R - r(t) - a(t)\]\\
+\[= R - Re^{-k_1t} - \frac{k_1R}{k_2 - k_1} (e^{-k_1t}-e{-k_2t})\]
 
-\(= R - \frac{R}{k_2-k_1}(k_2e^{-k_1t} - k_1e^{-k_2t})\)
+\[= R - \frac{R}{k_2-k_1}(k_2e^{-k_1t} - k_1e^{-k_2t})\]
 
 \subsection{4.2 The Formula for the Amount of
 Feces}\label{the-formula-for-the-amount-of-feces}
 
-Recall that \$d(t)4 is the total amount of food which has entered the
+Recall that \(d(t)\) is the total amount of food which has entered the
 duodenum by time t, including food already excreted. Since excretion is
 not a continuous process, we cannot hope to represent it by an equation
 involving derivatives. Instead, we simply note that all food arriving in
@@ -424,11 +424,11 @@ abomasum
   negative, and zero.
 \end{enumerate}
 
-\(r(t) = Re^{-k_1t}\)
+\[r(t) = Re^{-k_1t}\]
 
-\(= R(\frac{d}{dt}(e^{-tk_1}))\) Using the chain rule
-\(= e^{-tk_1}\frac{d}{dt}(-tk_1)R\) derivative of t is 1 :
-\(r'(t)= e^{-tk_1}Rk_1\)
+\[= R(\frac{d}{dt}(e^{-tk_1}))\] Using the chain rule
+\[= e^{-tk_1}\frac{d}{dt}(-tk_1)R\] derivative of t is 1 :
+\[r'(t)= e^{-tk_1}Rk_1\]
 
 answer: \(r'(t) < 0\) for all \(t\)
 
@@ -441,17 +441,17 @@ answer: \(r'(t) < 0\) for all \(t\)
   negative, and zero.
 \end{enumerate}
 
-\(= \frac{d}{dt}(R(\frac{d}{dt}(e^{-tk_1})))\)\\
+\[= \frac{d}{dt}(R(\frac{d}{dt}(e^{-tk_1})))\]\\
 Using the chain rule:
-\(= \frac{d}{dt}(e^{-tk_1}(\frac{d}{dt}(-tk_1))R)\)\\
+\[= \frac{d}{dt}(e^{-tk_1}(\frac{d}{dt}(-tk_1))R)\]\\
 factor out constants:
-\(= \frac{d}{dt}(R -(\frac{d}{dt}(t))k_1 e^{-tk_1})\)\\
-derivative of t is 1: \(= \frac{d}{dt}(R(e^{-tk_1}-k_1))\)\\
-factor out constants: \(= R(\frac{d}{dt}(e^{-tk_1}))k_1\)\\
-using the chain rule: \(= -Rk_1e^{-tk_1}(\frac{d}{dt}(-tk_1))\)\\
+\[= \frac{d}{dt}(R -(\frac{d}{dt}(t))k_1 e^{-tk_1})\]\\
+derivative of t is 1: \[= \frac{d}{dt}(R(e^{-tk_1}-k_1))\]\\
+factor out constants: \[= R(\frac{d}{dt}(e^{-tk_1}))k_1\]\\
+using the chain rule: \[= -Rk_1e^{-tk_1}(\frac{d}{dt}(-tk_1))\]\\
 factor out constants and simplify
-\(= -e^{-tk_1}R-(\frac{d}{dt}(t))k_1^2\)\\
-derivative of t is 1: \(r''(t)= e^{-tk_1}Rk_1^2\)
+\[= -e^{-tk_1}R-(\frac{d}{dt}(t))k_1^2\]\\
+derivative of t is 1: \[r''(t)= e^{-tk_1}Rk_1^2\]
 
 answer: \(r''(t) > 0\) for all \(t\)
 
@@ -476,8 +476,8 @@ is a continuous flow from the abomasum to the duodenum.
 
 We have previously solved for a(t) and \(a'(t)\)
 
-\(a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})\)
-\(a'(t) = k_1Re^{-k_1t}-k_2a(t)\)
+\[a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})\]
+\[a'(t) = k_1Re^{-k_1t}-k_2a(t)\]
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
@@ -487,7 +487,7 @@ We have previously solved for a(t) and \(a'(t)\)
   negative, and zero.
 \end{enumerate}
 
-\(a'(t) =k_1Re^{-k_1t}-k_2a(t)\)
+\[a'(t) =k_1Re^{-k_1t}-k_2a(t)\]
 
 answer: \(a'(t) > 0\) for all \(t < t_0\);
 
@@ -506,14 +506,14 @@ answer: \(a'(t_0) = 0\);
   negative, and zero.
 \end{enumerate}
 
-\(a''(t) = \frac{d}{dt}(k_1Re^{-k_1t}-k_2a(t))\)
-\(=k_1 R(\frac{d}{dt}(e^{-k_1 t}))- k_2 (\frac{d}{dt}(a(t)))\) Apply the
+\[a''(t) = \frac{d}{dt}(k_1Re^{-k_1t}-k_2a(t))\]
+\[=k_1 R(\frac{d}{dt}(e^{-k_1 t}))- k_2 (\frac{d}{dt}(a(t)))\] Apply the
 chain rule:
-\(=- k_2 (\frac{d}{dt}(a(t)))+ e^{-k_1 t}\frac{d}{dt}({-k_1 t})k1 R\)
+\[=- k_2 (\frac{d}{dt}(a(t)))+ e^{-k_1 t}\frac{d}{dt}({-k_1 t})k1 R\]
 Simplify the expression:
-\(=-e^{-k1 t}k1^2 R(\frac{d}{dt}(t)) -k_2 \frac{d}{dt}({a(t)})\)
-Derivative of t is 1: \(=-e^{-k1 t}k1^2 R-k_2 \frac{d}{dt}({a(t)})\)
-Therefore a''(t): \(=-e^{-k1 t}k1^2 R-a'(t)k_2\)
+\[=-e^{-k1 t}k1^2 R(\frac{d}{dt}(t)) -k_2 \frac{d}{dt}({a(t)})\]
+Derivative of t is 1: \[=-e^{-k1 t}k1^2 R-k_2 \frac{d}{dt}({a(t)})\]
+Therefore a''(t): \[=-e^{-k1 t}k1^2 R-a'(t)k_2\]
 
 answer: \(a''(t) < 0\) for all \(t < 2t_0\); \(a''(2t_0) =0\);
 \(a''(t) > 0\) for \(t > 2t_0\).
@@ -532,8 +532,8 @@ answer: \(\lim_{t\to\infty}a(t) =0\)
 
 \subsection{Exercise 6.}\label{exercise-6.}
 
-\(d(t) = R - r(t) - a(t)\)
-\(d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})\)
+\[d(t) = R - r(t) - a(t)\]
+\[d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})\]
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
@@ -543,19 +543,19 @@ answer: \(\lim_{t\to\infty}a(t) =0\)
   negative, and zero.
 \end{enumerate}
 
-\(d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})\)
-\(- \frac{R (\frac{d}{dt} (-e^{-k_2 t} k1 + e^{-k1t}k2))}{-k_1 + k_2} + \frac{d}{dt} (R)\)\\
-\(\frac{d}{dt}(R) - k_2 \frac{d}{dt}(e^{-k_1 t})-k1\frac{d}{dt}(e^{-k_2 t})\frac{R}{-k_1 + k_2}\)
+\[d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})\]
+\[- \frac{R (\frac{d}{dt} (-e^{-k_2 t} k1 + e^{-k1t}k2))}{-k_1 + k_2} + \frac{d}{dt} (R)\]\\
+\[\frac{d}{dt}(R) - k_2 \frac{d}{dt}(e^{-k_1 t})-k1\frac{d}{dt}(e^{-k_2 t})\frac{R}{-k_1 + k_2}\]
 Using the chain rule and derivative of R is zero:
-\(- \frac{R(-k_1 \frac{d}{dt}(e^{-k_2 t})) + e^{-k_1 t}\frac{d}{dt}(-k_1 t)k_2)}{-k_1 + k_2}\)
+\[- \frac{R(-k_1 \frac{d}{dt}(e^{-k_2 t})) + e^{-k_1 t}\frac{d}{dt}(-k_1 t)k_2)}{-k_1 + k_2}\]
 Factor out constants and derivative of t is 1:
-\(- \frac{R(-k_1 \frac{d}{dt}(e^{-k_2 t})) + 1e^{-k_1 t}k_2)}{-k_1 + k_2}\)
+\[- \frac{R(-k_1 \frac{d}{dt}(e^{-k_2 t})) + 1e^{-k_1 t}k_2)}{-k_1 + k_2}\]
 Using chain rule:
-\(- \frac{R(-e^{-k_1 t}k_1 k_2 - e^{-k_2 t} \frac{d}{dt} (-k_2 t)k_1}{-k_1 + k_2}\)
+\[- \frac{R(-e^{-k_1 t}k_1 k_2 - e^{-k_2 t} \frac{d}{dt} (-k_2 t)k_1}{-k_1 + k_2}\]
 Factor out:
-\(- \frac{R(-e^{-k_1 t}k_1 k_2 - -k_2 \frac{d}{dt}(t)e^{-k_2 t}k_1)}{-k_1 + k_2}\)
+\[- \frac{R(-e^{-k_1 t}k_1 k_2 - -k_2 \frac{d}{dt}(t)e^{-k_2 t}k_1)}{-k_1 + k_2}\]
 Simplify and derivative of t is 1:
-\(d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}\)
+\[d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}\]
 
 answer: \(d'(t) > 0\) for all t (must have \(k_1 > k_2\)).
 
@@ -568,18 +568,17 @@ answer: \(d'(t) > 0\) for all t (must have \(k_1 > k_2\)).
   negative, and zero.
 \end{enumerate}
 
-\(d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}\)\\
-\(= -\frac{R(k_1 k_2 (\frac{d}{dt}(e^{-k_2 t})) - -k_1 \frac{d}{dt}(t)e^{-k_1 t}k_1 k_2 )}{-k_1 + k_2}\)
+\[d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}\]\\
+\[= -\frac{R(k_1 k_2 (\frac{d}{dt}(e^{-k_2 t})) - -k_1 \frac{d}{dt}(t)e^{-k_1 t}k_1 k_2 )}{-k_1 + k_2}\]
 Simplify and the derivative of t is 1:
-\(= -\frac{R(k_1 k_2 (\frac{d}{dt}(e^{-k_2 t})) - e^{-k_1 t}k_1^2 k_2 )}{-k_1 + k_2}\)\\
+\[= -\frac{R(k_1 k_2 (\frac{d}{dt}(e^{-k_2 t})) - e^{-k_1 t}k_1^2 k_2 )}{-k_1 + k_2}\]\\
 Use the chain rule:
-\(= -\frac{R(e^{-k_1 t}k_1^2 k_2 + e^{-k_2 t} \frac{d}{dt}(t)k_1 k_2 }{-k_1 + k_2}\)\\
+\[= -\frac{R(e^{-k_1 t}k_1^2 k_2 + e^{-k_2 t} \frac{d}{dt}(t)k_1 k_2 }{-k_1 + k_2}\]\\
 Factor out constants:
-\(= -\frac{R(e^{-k_1 t}k_1^2 k_2 + - k_2 \frac{d}{dt}(t) e^{-k_2 t}k_1 k_2} {-k_1 + k_2}\)\\
+\[= -\frac{R(e^{-k_1 t}k_1^2 k_2 + - k_2 \frac{d}{dt}(t) e^{-k_2 t}k_1 k_2} {-k_1 + k_2}\]\\
 Derivative of t is 1 and simplify:
-\(= - \frac{R (e^{-k_1 t}k_1^2 k_2) - e^{k_2 t} k_1 k_2^2)}{-k_1 + k_2}\)\\
-\(d''(t) = \frac{k_1 k_2 R e^{t(-k_1-k_2)}(k_1 e^{k_2 t}-k_2 e^{k_1 t})}{k_1 - k_2}\)
-
+\[= - \frac{R (e^{-k_1 t}k_1^2 k_2) - e^{k_2 t} k_1 k_2^2)}{-k_1 + k_2}\]\\
+\[d''(t) = \frac{k_1 k_2 R e^{t(-k_1-k_2)}(k_1 e^{k_2 t}-k_2 e^{k_1 t})}{k_1 - k_2}\]\\
 answer: \(d''(t) > 0\) for all \(t < t_0\); \(d''(t_0) =0\);
 \(d''(t) < 0\) for \(t > t_0\).
 
@@ -600,7 +599,7 @@ Exercise}\label{todo-show-work-for-exercise-1}
 
 For the function f(t) follow the instructions of Exercise 4.
 
-\(f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})\)
+\[f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})\]
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
@@ -608,28 +607,28 @@ For the function f(t) follow the instructions of Exercise 4.
 \item
   Determine the values of t for which f'(t) is, respectively, positive,
   negative, and zero.
-  \(=- \frac{R \frac{d}{dt}(-e^{-k_2 (t-T)}k_1 + e^{-k_1(t - T)}k_2))}{-k_1 + k_2} + \frac{d}{dt}(R)\)
+  \[=- \frac{R \frac{d}{dt}(-e^{-k_2 (t-T)}k_1 + e^{-k_1(t - T)}k_2))}{-k_1 + k_2} + \frac{d}{dt}(R)\]
 \end{enumerate}
 
 Factor out constants:
-\(=\frac{d}{dt}(R) - k_2(\frac{d}{dt}(e^{-k_1(t - T)})) - k_1 (\frac{d}{dt}(e^{-k_2(t-T)})) \frac{R}{-k_1 + k_2}\)
+\[=\frac{d}{dt}(R) - k_2(\frac{d}{dt}(e^{-k_1(t - T)})) - k_1 (\frac{d}{dt}(e^{-k_2(t-T)})) \frac{R}{-k_1 + k_2}\]
 Using the chain rule:
-\(=\frac{d}{dt}(R)-\frac{R(-k_1)(\frac{d}{dt}(e^{-k_2(t-T)})) + e^{-k_1(t-T)}\frac{d}{dt}(-k_1(t-T)))k_2)}{-k_1+ k_2}\)
+\[=\frac{d}{dt}(R)-\frac{R(-k_1)(\frac{d}{dt}(e^{-k_2(t-T)})) + e^{-k_1(t-T)}\frac{d}{dt}(-k_1(t-T)))k_2)}{-k_1+ k_2}\]
 Factor out constants:
-\(=\frac{d}{dt}(R) - \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+-k_1(\frac{d}{d_t}(t-T))e^(-k_1(t-T))k_2)}{-k_1 + k_2}\)
+\[=\frac{d}{dt}(R) - \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+-k_1(\frac{d}{d_t}(t-T))e^(-k_1(t-T))k_2)}{-k_1 + k_2}\]
 Differentiate the sum term:
-\(=\frac{d}{dt}(R) - \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+ \frac{d}{dt}(t) + \frac{d}{dt}(-T)e^{-k1(t-T)k_1 k_2}}{-k_1 + k_2}\)
+\[=\frac{d}{dt}(R) - \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+ \frac{d}{dt}(t) + \frac{d}{dt}(-T)e^{-k1(t-T)k_1 k_2}}{-k_1 + k_2}\]
 Derivate of t is 1 and R is 0:
-\(=- \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+ \frac{d}{dt}(-T)e^{-k1(t-T)k_1 k_2}}{-k_1 + k_2}\)
+\[=- \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+ \frac{d}{dt}(-T)e^{-k1(t-T)k_1 k_2}}{-k_1 + k_2}\]
 Using the chain rule:
-\(=-\frac{R(-e^{-k_1 (t-T)}k_1 k_2(\frac{d}{dt}(-T)))- e^{-k_2(t-T)}(\frac{d}{dt}(-k_2(t-T)))k_1}{-k_1 + k_2}\)
+\[=-\frac{R(-e^{-k_1 (t-T)}k_1 k_2(\frac{d}{dt}(-T)))- e^{-k_2(t-T)}(\frac{d}{dt}(-k_2(t-T)))k_1}{-k_1 + k_2}\]
 Factor out constants:
-\(=-\frac{R(-e^{-k_1 (t-T)}k_1 k_2(\frac{d}{dt}(-T)))- -k_2(\frac{d}{dt}(t-T))e^{-k_2 (t-T)}k_1}{-k_1 + k_2}\)
+\[=-\frac{R(-e^{-k_1 (t-T)}k_1 k_2(\frac{d}{dt}(-T)))- -k_2(\frac{d}{dt}(t-T))e^{-k_2 (t-T)}k_1}{-k_1 + k_2}\]
 Differentiate the sum term:
-\(=-\frac{R(-e^{-k_1(t-T)}k_1 k_2(\frac{d}{dt}(-T)) + \frac{d}{dt}(t)+\frac{d}{dt}(-T)e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}\)
+\[=-\frac{R(-e^{-k_1(t-T)}k_1 k_2(\frac{d}{dt}(-T)) + \frac{d}{dt}(t)+\frac{d}{dt}(-T)e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}\]
 The derivative of t is 1 and -T is zero
-\(=-\frac{R(-e^{-k_1(t-T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}\)
-\(f'(t)=-\frac{-e^{-k_1 (t -T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2)R}{-k_1 + k_2}\)
+\[=-\frac{R(-e^{-k_1(t-T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}\]
+\[f'(t)=-\frac{-e^{-k_1 (t -T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2)R}{-k_1 + k_2}\]
 
 answer: \(f'(t) > 0\) for all \(t > T\).
 
@@ -642,11 +641,45 @@ answer: \(f'(t) > 0\) for all \(t > T\).
   negative, and zero.
 \end{enumerate}
 
-\(=\frac{d}{dt}(\frac{d}{dt}(R - \frac{(-e^{-k_2(t-T)}k_1) + e^{-k_1(t-T)}k_2)R}{-k_1+k_2}))\)
+\[=\frac{d}{dt}(\frac{d}{dt}(R - \frac{(-e^{-k_2(t-T)}k_1) + e^{-k_1(t-T)}k_2)R}{-k_1+k_2}))\]
 Differentiate and factor out:
-\(=\frac{d}{dt}(\frac{d}{dt}(R) - \frac{R \frac{d}{dt}(-e^{-k_2(t-T)}k_1 + e^{-k_1(t-T)}k_2)}{-k_1+k_2}))\)
+\[=\frac{d}{dt}(\frac{d}{dt}(R) - \frac{R \frac{d}{dt}(-e^{-k_2(t-T)}k_1 + e^{-k_1(t-T)}k_2)}{-k_1+k_2}))\]
 Factor out:
-\(=\frac{d}{dt}(-\frac{R}{-k_1 + k_2}k_2\frac{d}{dt}(e^{-k_1(t-T)})-k_1\frac{d}{dt}(e^{-k_2(t-T)})+\frac{d}{dt}(R))\)
+\[=\frac{d}{dt}(-\frac{R}{-k_1 + k_2}k_2\frac{d}{dt}(e^{-k_1(t-T)})-k_1\frac{d}{dt}(e^{-k_2(t-T)})+\frac{d}{dt}(R))\]
+Using the chain rule:
+\[=\frac{d}{dt}(-\frac{R(e^{-k_1(t-T)}\frac{d}{dt}(-k_1(t-T))k_2 - k_1(\frac{d}{dt}(e^{-k_2(t-T)}))}{-k_1 +k_2}+\frac{d}{dt}(R))\]
+Factor out:
+\[= \frac{d}{dt}(-\frac{R(k_2-k_1 \frac{d}{dt}(t-T)e^{-k_1(t-T)}-k_1( \frac{d}{dt}(e^{-k_2(t-T)})))}{-k_1+k_2} + \frac{d}{dt}(R))\]
+Differentiate the sum
+\[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1\frac{d}{dt}(t)+\frac{d}{dt}(-T)-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))}{-k_1+k_2}+\frac{d}{dt}(R))\]
+The derivate of t is 1 and -T is zero:
+\[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1(1+0)-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))}{-k_1+k_2}+\frac{d}{dt}(R))\]
+Use the chain rule:
+\[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-e^{-k_2(t-T)}\frac{d}{dt}(-k_2(t-T))k_1 }{-k_1+k_2}+\frac{d}{dt}(R))\]
+Factor out:
+\[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1-k_2\frac{d}{dt}(t-T)e^{-k_2(t-T)})  }{-k_1+k_2}+\frac{d}{dt}(R))\]
+Differentiate the sum:
+\[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1(e^{-k_2(t-T)}-k_2\frac{d}{dt}(t)+\frac{d}{dt}(-T)}{-k_1+k_2}+\frac{d}{dt}(R))\]
+The derivate of t is 1 and, -T and R is zero:
+\[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1(e^{-k_2(t-T)}-k_2(1+0)}{-k_1+k_2}+0)\]
+Factor out:
+\[=-\frac{R\frac{d}{dt}(-e^{-k_1(t-T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2))}{-k_1 + k_2}\]
+Use the chain rule:
+\[=-\frac{R(k_1 k_2(\frac{d}{dt}(e^{-k_2(t-T)}))-e^{-k_1(t-T)}\frac{d}{dt}(-k_1(t-T))k_1 k_2)}{-k_1 k_2}\]
+Factor out:
+\[=-\frac{R(k_1 k_2 \frac{d}{dt}(e^{-k_2(t-T)}))--k_1\frac{d}{dt}(t-T)e^{-k_1(t-T)}k_1 k_2}{-k_1 k_2}\]
+Simply
+\[=-\frac{R(k_1 k_2 \frac{d}{dt}(e^{-k_2(t-T)}))+\frac{d}{dt}(t)+\frac{d}{dt}(-T)e^{-k_1(t-T)}k_1^2 k_2}{-k_1 k_2}\]
+The derivate of t is 1:
+\[=-\frac{R(k_1 k_2 \frac{d}{dt}(e^{-k_2(t-T)}))+(1+\frac{d}{dt}(-T))e^{-k_1(t-T)}k_1^2 k_2}{-k_1 k_2}\]
+Using the chain rule:
+\[=-\frac{R(e^{-k_1(t-T)}k_1^2k_2(1+\frac{d}{dt}(t-T))+-k_2(\frac{d}{dt}(t-T)e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}\]
+Factor and differentiate the sum term by term:
+\[=-\frac{R(e^{-k_1(t-T)k_1^2k_2}(1+\frac{d}{dt}(-T))- \frac{d}{dt}(t)+\frac{d}{dt}(-T)e^{-k_2(t-T)}k_1 k_2^2)}{-k_1 + k_2}\]
+Derivate of t is 1 and -T is zero:
+\[=-\frac{R(e^{-k_1(t-T)k_1^2k_2}(1+0)-e^{-k_2(t-T)}k_1 k_2^2)(1+0)}{-k_1 + k_2}\]
+Answer:
+\[=-\frac{(e^{-k_1 (t-T)}k_1^2 k_2 -e{-k_2(t-T)}k_1 k_2^2)R}{-k_1 + k_2}\]
 
 answer: \(f''(t) > 0\) for all \(T < t < T + t_0\); \(f''(T + t_0) =0\);
 \(f''(t) < 0\) for \(t > T + t_0\).
