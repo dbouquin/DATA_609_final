@@ -366,9 +366,29 @@ answer: $\lim_{t\to\infty}d(t) =R$
 For the function f(t) follow the instructions of Exercise 4.
 
 $f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})$
-$=\frac{d}{dt}(R) - \frac{R (k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})}{- k_1+k_2}$
 
 (a) Determine the values of t for which f'(t) is, respectively, positive, negative, and zero.
+$=- \frac{R \frac{d}{dt}(-e^{-k_2 (t-T)}k_1 + e^{-k_1(t - T)}k_2))}{-k_1 + k_2} + \frac{d}{dt}(R)$
+
+Factor out constants:
+$=\frac{d}{dt}(R) - k_2(\frac{d}{dt}(e^{-k_1(t - T)})) - k_1 (\frac{d}{dt}(e^{-k_2(t-T)})) \frac{R}{-k_1 + k_2}$
+Using the chain rule:
+$=\frac{d}{dt}(R)-\frac{R(-k_1)(\frac{d}{dt}(e^{-k_2(t-T)})) + e^{-k_1(t-T)}\frac{d}{dt}(-k_1(t-T)))k_2)}{-k_1+ k_2}$
+Factor out constants:
+$=\frac{d}{dt}(R) - \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+-k_1(\frac{d}{d_t}(t-T))e^(-k_1(t-T))k_2)}{-k_1 + k_2}$
+Differentiate the sum term:
+$=\frac{d}{dt}(R) - \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+ \frac{d}{dt}(t) + \frac{d}{dt}(-T)e^{-k1(t-T)k_1 k_2}}{-k_1 + k_2}$
+Derivate of t is 1 and R is 0:
+$=- \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+ \frac{d}{dt}(-T)e^{-k1(t-T)k_1 k_2}}{-k_1 + k_2}$
+Using the chain rule:
+$=-\frac{R(-e^{-k_1 (t-T)}k_1 k_2(\frac{d}{dt}(-T)))- e^{-k_2(t-T)}(\frac{d}{dt}(-k_2(t-T)))k_1}{-k_1 + k_2}$
+Factor out constants:
+$=-\frac{R(-e^{-k_1 (t-T)}k_1 k_2(\frac{d}{dt}(-T)))- -k_2(\frac{d}{dt}(t-T))e^{-k_2 (t-T)}k_1}{-k_1 + k_2}$
+Differentiate the sum term:
+$=-\frac{R(-e^{-k_1(t-T)}k_1 k_2(\frac{d}{dt}(-T)) + \frac{d}{dt}(t)+\frac{d}{dt}(-T)e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}$
+The derivative of t is 1 and -T is zero
+$=-\frac{R(-e^{-k_1(t-T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}$
+$f'(t)=-\frac{-e^{-k_1 (t -T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2)R}{-k_1 + k_2}$
 
 answer: $f'(t) > 0$ for all $t > T$. 
 
