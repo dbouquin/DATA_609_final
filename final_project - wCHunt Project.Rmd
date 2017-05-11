@@ -322,12 +322,36 @@ $d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})$
 
 (a) Determine the values of t for which d'(t) is, respectively, positive, negative, and zero.
 
+
 $d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})$
-$\frac{d}{dt} (\frac{(-e^{-k_2 t}k1 + e^{-k_1 t}k2)R}{-k_1 + k_2})$
+$- \frac{R (\frac{d}{dt} (-e^{-k_2 t} k1 + e^{-k1t}k2))}{-k_1 + k_2} + \frac{d}{dt} (R)$   
+$\frac{d}{dt}(R) - k_2 \frac{d}{dt}(e^{-k_1 t})-k1\frac{d}{dt}(e^{-k_2 t})\frac{R}{-k_1 + k_2}$
+Using the chain rule and derivative of R is zero:
+$- \frac{R(-k_1 \frac{d}{dt}(e^{-k_2 t})) + e^{-k_1 t}\frac{d}{dt}(-k_1 t)k_2)}{-k_1 + k_2}$
+Factor out constants and derivative of t is 1:
+$- \frac{R(-k_1 \frac{d}{dt}(e^{-k_2 t})) + 1e^{-k_1 t}k_2)}{-k_1 + k_2}$
+Using chain rule:
+$- \frac{R(-e^{-k_1 t}k_1 k_2 - e^{-k_2 t} \frac{d}{dt} (-k_2 t)k_1}{-k_1 + k_2}$
+Factor out: 
+$- \frac{R(-e^{-k_1 t}k_1 k_2 - -k_2 \frac{d}{dt}(t)e^{-k_2 t}k_1)}{-k_1 + k_2}$
+Simplify and derivative of t is 1:
+$d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}$
 
 answer: $d'(t) > 0$ for all t (must have $k_1 > k_2$). 
 
 (b) Determine the values of t for which d''(t) is, respectively, positive, negative, and zero.
+
+$d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}$    
+$= -\frac{R(k_1 k_2 (\frac{d}{dt}(e^{-k_2 t})) - -k_1 \frac{d}{dt}(t)e^{-k_1 t}k_1 k_2 )}{-k_1 + k_2}$
+Simplify and the derivative of t is 1:
+$= -\frac{R(k_1 k_2 (\frac{d}{dt}(e^{-k_2 t})) - e^{-k_1 t}k_1^2 k_2 )}{-k_1 + k_2}$     
+Use the chain rule:
+$= -\frac{R(e^{-k_1 t}k_1^2 k_2 + e^{-k_2 t} \frac{d}{dt}(t)k_1 k_2 }{-k_1 + k_2}$     
+Factor out constants:
+$= -\frac{R(e^{-k_1 t}k_1^2 k_2 + - k_2 \frac{d}{dt}(t) e^{-k_2 t}k_1 k_2} {-k_1 + k_2}$    
+Derivative of t is 1 and simplify:
+$= - \frac{R (e^{-k_1 t}k_1^2 k_2) - e^{k_2 t} k_1 k_2^2)}{-k_1 + k_2}$    
+$d''(t) = \frac{k_1 k_2 R e^{t(-k_1-k_2)}(k_1 e^{k_2 t}-k_2 e^{k_1 t})}{k_1 - k_2}$    
 
 answer: $d''(t) > 0$ for all $t < t_0$; $d''(t_0) =0$; $d''(t) < 0$ for $t > t_0$. 
 
@@ -340,6 +364,8 @@ answer: $\lim_{t\to\infty}d(t) =R$
 ## Exercise 7.
 
 For the function f(t) follow the instructions of Exercise 4.
+
+$f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})$
 
 (a) Determine the values of t for which f'(t) is, respectively, positive, negative, and zero.
 
