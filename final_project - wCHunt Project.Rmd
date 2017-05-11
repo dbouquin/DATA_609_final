@@ -394,11 +394,17 @@ answer: $f'(t) > 0$ for all $t > T$.
 
 (b) Determine the values of t for which f''(t) is, respectively, positive, negative, and zero.
 
+$=\frac{d}{dt}(\frac{d}{dt}(R - \frac{(-e^{-k_2(t-T)}k_1) + e^{-k_1(t-T)}k_2)R}{-k_1+k_2}))$
+Differentiate and factor out:
+$=\frac{d}{dt}(\frac{d}{dt}(R) - \frac{R \frac{d}{dt}(-e^{-k_2(t-T)}k_1 + e^{-k_1(t-T)}k_2)}{-k_1+k_2}))$
+Factor out:
+$=\frac{d}{dt}(-\frac{R}{-k_1 + k_2}k_2\frac{d}{dt}(e^{-k_1(t-T)})-k_1\frac{d}{dt}(e^{-k_2(t-T)})+\frac{d}{dt}(R))$
+
 answer: $f''(t) > 0$ for all $T < t < T + t_0$; $f''(T + t_0) =0$; $f''(t) < 0$ for $t > T + t_0$.
 
 (c) Determine $\lim_{t\to\infty}f(t)$
 
-answer: $\lim_{t\to\infty}f(t) =R$
+answer: $\lim_{t\to\infty}f(t) = R$
 
 ## Exercise 8. 
 
