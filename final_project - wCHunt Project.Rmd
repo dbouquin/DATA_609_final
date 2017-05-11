@@ -366,6 +366,7 @@ answer: $\lim_{t\to\infty}d(t) =R$
 For the function f(t) follow the instructions of Exercise 4.
 
 $f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})$
+$=\frac{d}{dt}(R) - \frac{R (k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})}{- k_1+k_2}$
 
 (a) Determine the values of t for which f'(t) is, respectively, positive, negative, and zero.
 
