@@ -18,13 +18,13 @@ always_allow_html: yes
 ---
 \newpage
 
-## Textbook Part III:
+# Textbook Part III:
 
-### The problem
+## The problem
 
 The digestive processes of sheep can highlight the nutritionally value in varied feeding schedules or varied food preparation. This is especially important when raising sheep for commercial purposes. 
 
-### The digestive process
+## The digestive process
 
 Sheep are a cud-chewing animal which means that unchewed food goes through a series of storage stomachs called the rumen and the reticulum. The process is illustrated below: 
 
@@ -41,11 +41,11 @@ Sheep are a cud-chewing animal which means that unchewed food goes through a ser
 \end{tikzpicture}
 
 
-### The experiment
+## The experiment
 
 The digestive process is most observable at the beginning and at the end, we can observer and control what goes in and what comes out. 
 
-### The model 
+## The model 
 
 Suppose that at $t = 0$ a sheep is fed an amount $R$ of food which goes immediately into its rumen. This food will pass gradually from the rumen through the abomasum into the duodenum. At any later time $t$ we shall define:
 
@@ -56,7 +56,7 @@ $d(t)$ = the amount which by then has arrived in the duodenum.
 So $r(0) = R$, $a(0)$ = $d(0)$ = 0, and, for all t>0, 
 (1) $r(t) + a(t) + d(t) = R.$
 
-### The assumptions
+## The assumptions
 
 Two assumptions are made:
 (A) Food moves out of the rumen at a rate proportional to the amount of food in the rumen. Mathematically this says:
@@ -70,9 +70,9 @@ where k_1 is a positive proportionality constant.
 
 where k_2 is another positive proportionality constant.
 
-### The solutions of the equations
+## The solutions of the equations
 
-#### Solving for $r(t)$
+### Solving for $r(t)$
 
 It is straightforward to solve Equation (2) for $r(t)$. We just divide through by $r(t)$ and then integrate from 0 to t:
 
@@ -81,7 +81,7 @@ $ln(\frac{r(t)}{R}) = -k_1t$,
 since r(0) = R, and finally
 (4) $r(t) = Re^{-k_1t}$ 
 
-#### Solving for $a(t)$
+### Solving for $a(t)$
 
 Finding $a(t)$ is a bit more tricky. Applying Equations (4) to Equation (3) we get:
 
@@ -98,7 +98,7 @@ Can we pick $u(t)$ and $v(t)$ so the terms in Equation (6) match up with the ter
 
 and 
 
-(8) $v(t) \bullet u'(t) = -k_2a(t)?$
+(8) $v(t) \bullet u'(t) = -k_2a(t)$
 
 Since $a(t) = u(t) \bullet v(t)$, Equation (8) can rewritten 
 $v(t) \bullet u'(t) = -k_2u(t)v(t)$, we are in business! The $v(t)$ factors cancel out, leaving us with 
@@ -125,19 +125,19 @@ If $k_1 = k_2$ we feel confident you can complete this solution yourself (Exerci
 
 # Exercise 1. Find $a(t)$ if $k_1 = k_2$. 
 
-$a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)$   
+$$a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)$$   
 Using the solution from equation 8 we get:
-$u(t) = Ke^{-k_2t}$    
+$$u(t) = Ke^{-k_2t}$$    
 Using the solution from equation 7 we get:
-$v'(t) = \frac{k_1R}{K}e^{k_2 - k_1}t$    
+$$v'(t) = \frac{k_1R}{K}e^{k_2 - k_1}t$$    
 Substituting the solutions for $a(t)$ we get:
-$\frac{k_1R}{K}e^{k_2 - k_1}t * Ke^{-k_2t}$    
+$$\frac{k_1R}{K}e^{k_2 - k_1}t * Ke^{-k_2t}$$    
 If k_1 = k_2 then $e^{0} = 1$    
-$\frac{k_1R}{K}t * Ke^{-k_2t}$    
+$$\frac{k_1R}{K}t * Ke^{-k_2t}$$    
 K factors out : 
-$k_1Rte^{-k_2t}$    
+$$k_1Rte^{-k_2t}$$    
 
-answer : $a(t) = k_1Rte^{-k_2t}$    
+answer : $$a(t) = k_1Rte^{-k_2t}$$    
 
 ----
 

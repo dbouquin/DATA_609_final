@@ -103,15 +103,15 @@
 }
 \newpage
 
-\subsection{Textbook Part III:}\label{textbook-part-iii}
+\section{Textbook Part III:}\label{textbook-part-iii}
 
-\subsubsection{The problem}\label{the-problem}
+\subsection{The problem}\label{the-problem}
 
 The digestive processes of sheep can highlight the nutritionally value
 in varied feeding schedules or varied food preparation. This is
 especially important when raising sheep for commercial purposes.
 
-\subsubsection{The digestive process}\label{the-digestive-process}
+\subsection{The digestive process}\label{the-digestive-process}
 
 Sheep are a cud-chewing animal which means that unchewed food goes
 through a series of storage stomachs called the rumen and the reticulum.
@@ -129,12 +129,12 @@ The process is illustrated below:
   \draw [dotted] (d) -- (f);
 \end{tikzpicture}
 
-\subsubsection{The experiment}\label{the-experiment}
+\subsection{The experiment}\label{the-experiment}
 
 The digestive process is most observable at the beginning and at the
 end, we can observer and control what goes in and what comes out.
 
-\subsubsection{The model}\label{the-model}
+\subsection{The model}\label{the-model}
 
 Suppose that at \(t = 0\) a sheep is fed an amount \(R\) of food which
 goes immediately into its rumen. This food will pass gradually from the
@@ -148,7 +148,7 @@ duodenum.
 So \(r(0) = R\), \(a(0)\) = \(d(0)\) = 0, and, for all t\textgreater{}0,
 (1) \(r(t) + a(t) + d(t) = R.\)
 
-\subsubsection{The assumptions}\label{the-assumptions}
+\subsection{The assumptions}\label{the-assumptions}
 
 Two assumptions are made: (A) Food moves out of the rumen at a rate
 proportional to the amount of food in the rumen. Mathematically this
@@ -184,10 +184,10 @@ where k\_1 is a positive proportionality constant.
 
 where k\_2 is another positive proportionality constant.
 
-\subsubsection{The solutions of the
+\subsection{The solutions of the
 equations}\label{the-solutions-of-the-equations}
 
-\paragraph{\texorpdfstring{Solving for
+\subsubsection{\texorpdfstring{Solving for
 \(r(t)\)}{Solving for r(t)}}\label{solving-for-rt}
 
 It is straightforward to solve Equation (2) for \(r(t)\). We just divide
@@ -197,7 +197,7 @@ through by \(r(t)\) and then integrate from 0 to t:
 \(ln(\frac{r(t)}{R}) = -k_1t\), since r(0) = R, and finally (4)
 \(r(t) = Re^{-k_1t}\)
 
-\paragraph{\texorpdfstring{Solving for
+\subsubsection{\texorpdfstring{Solving for
 \(a(t)\)}{Solving for a(t)}}\label{solving-for-at}
 
 Finding \(a(t)\) is a bit more tricky. Applying Equations (4) to
@@ -245,7 +245,7 @@ and
 \setcounter{enumi}{7}
 \tightlist
 \item
-  \(v(t) \bullet u'(t) = -k_2a(t)?\)
+  \(v(t) \bullet u'(t) = -k_2a(t)\)
 \end{enumerate}
 
 Since \(a(t) = u(t) \bullet v(t)\), Equation (8) can rewritten
@@ -275,17 +275,17 @@ yourself (Exercise 1).
 \section{\texorpdfstring{Exercise 1. Find \(a(t)\) if
 \(k_1 = k_2\).}{Exercise 1. Find a(t) if k\_1 = k\_2.}}\label{exercise-1.-find-at-if-k_1-k_2.}
 
-\(a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)\)\\
-Using the solution from equation 8 we get: \(u(t) = Ke^{-k_2t}\)\\
+\[a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)\]\\
+Using the solution from equation 8 we get: \[u(t) = Ke^{-k_2t}\]\\
 Using the solution from equation 7 we get:
-\(v'(t) = \frac{k_1R}{K}e^{k_2 - k_1}t\)\\
+\[v'(t) = \frac{k_1R}{K}e^{k_2 - k_1}t\]\\
 Substituting the solutions for \(a(t)\) we get:
-\(\frac{k_1R}{K}e^{k_2 - k_1}t * Ke^{-k_2t}\)\\
+\[\frac{k_1R}{K}e^{k_2 - k_1}t * Ke^{-k_2t}\]\\
 If k\_1 = k\_2 then \(e^{0} = 1\)\\
-\(\frac{k_1R}{K}t * Ke^{-k_2t}\)\\
-K factors out : \(k_1Rte^{-k_2t}\)
+\[\frac{k_1R}{K}t * Ke^{-k_2t}\]\\
+K factors out : \[k_1Rte^{-k_2t}\]
 
-answer : \(a(t) = k_1Rte^{-k_2t}\)
+answer : \[a(t) = k_1Rte^{-k_2t}\]
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
