@@ -313,7 +313,7 @@ answer: $a''(t) < 0$ for all $t < 2t_0$; $a''(2t_0) =0$; $a''(t) > 0$ for $t > 2
 
 answer: $\lim_{t\to\infty}a(t) =0$
 
-#TODO show work for Exercise
+#TODO Refine Answers
 
 ## Exercise 6.
 
@@ -358,7 +358,7 @@ answer: $d''(t) > 0$ for all $t < t_0$; $d''(t_0) =0$; $d''(t) < 0$ for $t > t_0
 
 answer: $\lim_{t\to\infty}d(t) =R$
 
-#TODO show work for Exercise
+#TODO Refine Answers
 
 ## Exercise 7.
 
