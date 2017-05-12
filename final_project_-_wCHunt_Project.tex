@@ -322,10 +322,10 @@ Alternate Solution:
 
 Substituting t we get :
 \[\frac{k1 R}{k2 - k1}(e^{-k1 \frac{\log{(\frac{k1}{k2})}}{(k1 - k2)}}-e^{-k2 \frac{\log{(\frac{k1}{k2})}}{(k1 - k2)}})\]
-Using the chain rule we indentify that:
+Using the chain rule we identify that:
 \[e^{-k1 \frac{\log{(\frac{k1}{k2})}}{(k1 - k2)}}=\frac{k_1}{k_2}^{-\frac{k_1}{k_1 - k_2}}\]
-Therefore with subsitution and applying the chain rule the maximum value
-of \(a(t)\) is :
+Therefore with substitution and applying the chain rule the maximum
+value of \(a(t)\) is :
 
 \[\frac{k_1R}{k_2-k_1}[(\frac{k_1}{k_2})^{-\frac{k_1}{k_1-k_2}}-(\frac{k_1}{k_2})^{-\frac{k_2}{k_1-k_2}}]\]
 
@@ -445,8 +445,8 @@ Since our slope is positive : \(r''(t) > 0\) for all \(t\)
 \[r(t) = Re^{-k_1t}\] \[r(t) = Re^{-k_1 \infty}\] Since \(e^{-\infty}\)
 = 0 our solution is: \(\lim_{t\to\infty}r(t) =0\)
 
-\section{TODO refine answers for B and
-C}\label{todo-refine-answers-for-b-and-c}
+\section{TODO refine answers for A and
+B}\label{todo-refine-answers-for-a-and-b}
 
 \subsection{Exercise 5.}\label{exercise-5.}
 
@@ -508,10 +508,11 @@ answer: \(a''(t) < 0\) for all \(t < 2t_0\); \(a''(2t_0) =0\);
 
 \[a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})\]
 \[a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1 \infty} - e^{-k_2 \infty})\]
-Again, as we saw perviously \(e^{-\infty}\) = 0 so our solution :
+Again, as we saw previously \(e^{-\infty}\) = 0 so our solution :
 \(\lim_{t\to\infty}a(t) =0\)
 
-\section{TODO Refine Answers}\label{todo-refine-answers}
+\section{TODO Refine Answers for a and
+b}\label{todo-refine-answers-for-a-and-b-1}
 
 \subsection{Exercise 6.}\label{exercise-6.}
 
@@ -573,9 +574,15 @@ answer: \(d''(t) > 0\) for all \(t < t_0\); \(d''(t_0) =0\);
   Determine \(\lim_{t\to\infty}d(t)\)
 \end{enumerate}
 
-answer: \(\lim_{t\to\infty}d(t) =R\)
+\[d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})\]
+\[d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 \infty} - k_1 e^{-k_2 \infty})\]
+\[d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 \infty} - k_1 e^{-k_2 \infty})\]
+Since \(e^{-\infty}\) = 0 :
 
-\section{TODO Refine Answers}\label{todo-refine-answers-1}
+\[d(t) = R - \frac{R}{k_2 - k_1}(k_2*0 - k_1*0)\] Therefore, our
+solution is : \(\lim_{t\to\infty}d(t) =R\)
+
+\section{TODO Refine Answers}\label{todo-refine-answers}
 
 \subsection{Exercise 7.}\label{exercise-7.}
 
@@ -600,7 +607,7 @@ Factor out constants:
 \[=\frac{d}{dt}(R) - \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+-k_1(\frac{d}{d_t}(t-T))e^(-k_1(t-T))k_2)}{-k_1 + k_2}\]
 Differentiate the sum term:
 \[=\frac{d}{dt}(R) - \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+ \frac{d}{dt}(t) + \frac{d}{dt}(-T)e^{-k1(t-T)k_1 k_2}}{-k_1 + k_2}\]
-Derivate of t is 1 and R is 0:
+Derivative of t is 1 and R is 0:
 \[=- \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+ \frac{d}{dt}(-T)e^{-k1(t-T)k_1 k_2}}{-k_1 + k_2}\]
 Using the chain rule:
 \[=-\frac{R(-e^{-k_1 (t-T)}k_1 k_2(\frac{d}{dt}(-T)))- e^{-k_2(t-T)}(\frac{d}{dt}(-k_2(t-T)))k_1}{-k_1 + k_2}\]
@@ -634,7 +641,7 @@ Factor out:
 \[= \frac{d}{dt}(-\frac{R(k_2-k_1 \frac{d}{dt}(t-T)e^{-k_1(t-T)}-k_1( \frac{d}{dt}(e^{-k_2(t-T)})))}{-k_1+k_2} + \frac{d}{dt}(R))\]
 Differentiate the sum
 \[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1\frac{d}{dt}(t)+\frac{d}{dt}(-T)-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))}{-k_1+k_2}+\frac{d}{dt}(R))\]
-The derivate of t is 1 and -T is zero:
+The derivative of t is 1 and -T is zero:
 \[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1(1+0)-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))}{-k_1+k_2}+\frac{d}{dt}(R))\]
 Use the chain rule:
 \[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-e^{-k_2(t-T)}\frac{d}{dt}(-k_2(t-T))k_1 }{-k_1+k_2}+\frac{d}{dt}(R))\]
@@ -642,7 +649,7 @@ Factor out:
 \[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1-k_2\frac{d}{dt}(t-T)e^{-k_2(t-T)})  }{-k_1+k_2}+\frac{d}{dt}(R))\]
 Differentiate the sum:
 \[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1(e^{-k_2(t-T)}-k_2\frac{d}{dt}(t)+\frac{d}{dt}(-T)}{-k_1+k_2}+\frac{d}{dt}(R))\]
-The derivate of t is 1 and, -T and R is zero:
+The derivative of t is 1 and, -T and R is zero:
 \[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1(e^{-k_2(t-T)}-k_2(1+0)}{-k_1+k_2}+0)\]
 Factor out:
 \[=-\frac{R\frac{d}{dt}(-e^{-k_1(t-T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2))}{-k_1 + k_2}\]
@@ -652,13 +659,13 @@ Factor out:
 \[=-\frac{R(k_1 k_2 \frac{d}{dt}(e^{-k_2(t-T)}))--k_1\frac{d}{dt}(t-T)e^{-k_1(t-T)}k_1 k_2}{-k_1 k_2}\]
 Simply
 \[=-\frac{R(k_1 k_2 \frac{d}{dt}(e^{-k_2(t-T)}))+\frac{d}{dt}(t)+\frac{d}{dt}(-T)e^{-k_1(t-T)}k_1^2 k_2}{-k_1 k_2}\]
-The derivate of t is 1:
+The derivative of t is 1:
 \[=-\frac{R(k_1 k_2 \frac{d}{dt}(e^{-k_2(t-T)}))+(1+\frac{d}{dt}(-T))e^{-k_1(t-T)}k_1^2 k_2}{-k_1 k_2}\]
 Using the chain rule:
 \[=-\frac{R(e^{-k_1(t-T)}k_1^2k_2(1+\frac{d}{dt}(t-T))+-k_2(\frac{d}{dt}(t-T)e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}\]
 Factor and differentiate the sum term by term:
 \[=-\frac{R(e^{-k_1(t-T)k_1^2k_2}(1+\frac{d}{dt}(-T))- \frac{d}{dt}(t)+\frac{d}{dt}(-T)e^{-k_2(t-T)}k_1 k_2^2)}{-k_1 + k_2}\]
-Derivate of t is 1 and -T is zero:
+Derivative of t is 1 and -T is zero:
 \[=-\frac{R(e^{-k_1(t-T)k_1^2k_2}(1+0)-e^{-k_2(t-T)}k_1 k_2^2)(1+0)}{-k_1 + k_2}\]
 Answer:
 \[=-\frac{(e^{-k_1 (t-T)}k_1^2 k_2 -e{-k_2(t-T)}k_1 k_2^2)R}{-k_1 + k_2}\]
@@ -674,7 +681,11 @@ answer: \(f''(t) > 0\) for all \(T < t < T + t_0\); \(f''(T + t_0) =0\);
   Determine \(\lim_{t\to\infty}f(t)\)
 \end{enumerate}
 
-answer: \(\lim_{t\to\infty}f(t) = R\)
+\[f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})\]
+\[f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(\infty-T)}-k_1 e^{-k_2(\infty-T)})\]
+Since \(e^{-\infty}\) = 0:
+
+\(f(t) = R\) so our solution is answer: \(\lim_{t\to\infty}f(t) = R\)
 
 \subsection{Exercise 8.}\label{exercise-8.}
 
