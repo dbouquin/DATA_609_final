@@ -288,6 +288,8 @@ Since $e^{-\infty}$ = 0 our solution is: $\lim_{t\to\infty}r(t) =0$
 
 ## Exercise 5.
 
+Note that for exercise 5, 6, and 7 $t_0 = \frac{ln k_1 - ln k_2}{k_1 - lnk_2}$
+
 Remembering that a(t) is the total amount of food which has entered the the abomasum by time t from the rumen and exiting to the duodenum. There is a continuous flow from the abomasum to the duodenum. 
 
 We have previously solved for a(t) and $a'(t)$
@@ -295,7 +297,7 @@ We have previously solved for a(t) and $a'(t)$
 $$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$$
 $$a'(t) = k_1Re^{-k_1t}-k_2a(t)$$
 
-(a) Determine the values of t for which a'(t) is, respectively, positive, negative, and zero.
+(a) Determine the values of t for which C is, respectively, positive, negative, and zero.
 
 $$a'(t) = k_1Re^{-k_1t}-k_2a(t)$$
 
@@ -352,6 +354,7 @@ Factor out:
 $$- \frac{R(-e^{-k_1 t}k_1 k_2 - -k_2 \frac{d}{dt}(t)e^{-k_2 t}k_1)}{-k_1 + k_2}$$
 Simplify and derivative of t is 1:
 $$d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}$$
+
 
 answer: $d'(t) > 0$ for all t (must have $k_1 > k_2$). 
 
