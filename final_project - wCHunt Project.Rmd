@@ -297,7 +297,7 @@ $$a'(t) = k_1Re^{-k_1t}-k_2a(t)$$
 
 (a) Determine the values of t for which a'(t) is, respectively, positive, negative, and zero.
 
-$$a'(t) =k_1Re^{-k_1t}-k_2a(t)$$
+$$a'(t) = k_1Re^{-k_1t}-k_2a(t)$$
 
 answer: $a'(t) > 0$ for all $t < t_0$; 
 
@@ -329,7 +329,7 @@ $$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$$
 $$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1 \infty} - e^{-k_2 \infty})$$
 Again, as we saw previously $e^{-\infty}$ = 0 so our solution : $\lim_{t\to\infty}a(t) =0$
 
-#TODO Refine Answers for a and b
+#TODO Refine Answers for A and B
 
 ## Exercise 6.
 
@@ -380,7 +380,7 @@ Since $e^{-\infty}$ = 0 :
 $$d(t) = R - \frac{R}{k_2 - k_1}(k_2*0 - k_1*0)$$
 Therefore, our solution is : $\lim_{t\to\infty}d(t) =R$
 
-#TODO Refine Answers
+#TODO Refine Answers to A and B
 
 ## Exercise 7.
 
