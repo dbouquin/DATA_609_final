@@ -13,7 +13,7 @@ output:
     toc_depth: 2
   html_document:
     toc: yes
-    toc_depth: '2'
+    toc_depth: '3'
 always_allow_html: yes
 ---
 \newpage
@@ -164,7 +164,7 @@ $$CK = -\frac{k_1R}{k_2-k_1}$$
 
 ## Exercise 2. 
 
-(a) Find the time t at which $a(t)$ is maximum.
+### (a) Find the time t at which $a(t)$ is maximum.
 
 $$a(t) = \frac{k_1 R}{k_2 - k_1}(e^{-k_1 t}-e^{-k_2 t})$$   
 $$0 = \frac{k_1 R}{k_2 - k_1}(e^{-k_1 t}-e^{-k_2 t})$$   
@@ -192,7 +192,7 @@ $$t = \frac{lnk_1 - lnk_2}{k_1 - k_2}$$
 
 \newpage
 
-(b) Find the maximum value of $a(t)$.
+### (b) Find the maximum value of $a(t)$.
 
 $$a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t}-e^{-k_2t})$$ 
 
@@ -246,7 +246,7 @@ for all t > T.
 
 Remembering that r(t) is the total amount of food which has entered the the rumen by time t. There is a continuous flow from the rumen to the abomasum
 
-(a) Determine the values of t for which r'(t) is, respectively, positive, negative, and zero.
+### (a) Determine the values of t for which r'(t) is, respectively, positive, negative, and zero.
 
 $$r(t) = Re^{-k_1t}$$
 Factor out constants:
@@ -259,7 +259,7 @@ derivative of t is 1:
 $$r'(t)= -e^{-tk_1}k_1R$$
 Since our slope is negative: $r'(t) < 0$ for all $t$
 
-(b) Determine the values of t for which r''(t) is, respectively, positive, negative, and zero.
+### (b) Determine the values of t for which r''(t) is, respectively, positive, negative, and zero.
 
 $$= \frac{d}{dt}(R(\frac{d}{dt}(e^{-tk_1})))$$   
 Using the chain rule:
@@ -278,7 +278,7 @@ derivative of t is 1:
 $$r''(t)= e^{-tk_1}Rk_1^2$$   
 Since our slope is positive : $r''(t) > 0$ for all $t$   
 
-(c) Determine $\lim_{t\to\infty}r(t)$   
+### (c) Determine $\lim_{t\to\infty}r(t)$   
 
 $$r(t) = Re^{-k_1t}$$
 $$r(t) = Re^{-k_1 \infty}$$
@@ -312,7 +312,7 @@ Factor out constants and the derivative of t is 1:
 $$= \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}$$
 $$a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}$$
 
-(a) Determine the values of t for which C is, respectively, positive, negative, and zero.
+### (a) Determine the values of t for which C is, respectively, positive, negative, and zero.
 
 $$a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}$$
 
@@ -324,7 +324,7 @@ answer: $a'(t_0) = 0$;
 
 $a'(t) < 0$ for $t > t_0$. 
 
-(b) Determine the values of t for which a''(t) is, respectively, positive, negative, and zero.
+### (b) Determine the values of t for which a''(t) is, respectively, positive, negative, and zero.
 
 $$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$$
 Differentiate the sum, factor constants, and use the chain rule :
@@ -341,7 +341,7 @@ $$\frac{k_1(e^{-k_1 t}k_1^2-e^{-k_2 t}k_2^2)R}{-k_1+k_2}$$
 
 answer: $a''(t) < 0$ for all $t < 2t_0$; $a''(2t_0) =0$; $a''(t) > 0$ for $t > 2t_0$. 
 
-(c) Determine $\lim_{t\to\infty}a(t)$
+### (c) Determine $\lim_{t\to\infty}a(t)$
 
 $$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$$
 $$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1 \infty} - e^{-k_2 \infty})$$
@@ -354,7 +354,7 @@ Again, as we saw previously $e^{-\infty}$ = 0 so our solution : $\lim_{t\to\inft
 $$d(t) = R - r(t) - a(t)$$
 $$d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})$$
 
-(a) Determine the values of t for which d'(t) is, respectively, positive, negative, and zero.
+### (a) Determine the values of t for which d'(t) is, respectively, positive, negative, and zero.
 
 $$d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})$$
 $$- \frac{R (\frac{d}{dt} (-e^{-k_2 t} k1 + e^{-k1t}k2))}{-k_1 + k_2} + \frac{d}{dt} (R)$$   
@@ -373,7 +373,7 @@ Note $t_0 = \frac{ln k_1 - ln k_2}{k_1 - lnk_2}$
 
 answer: $d'(t) > 0$ for all t (must have $k_1 > k_2$). 
 
-(b) Determine the values of t for which d''(t) is, respectively, positive, negative, and zero.
+### (b) Determine the values of t for which d''(t) is, respectively, positive, negative, and zero.
 
 $$d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}$$    
 $$= -\frac{R(k_1 k_2 (\frac{d}{dt}(e^{-k_2 t})) - -k_1 \frac{d}{dt}(t)e^{-k_1 t}k_1 k_2 )}{-k_1 + k_2}$$
@@ -388,7 +388,7 @@ $$= - \frac{R (e^{-k_1 t}k_1^2 k_2) - e^{k_2 t} k_1 k_2^2)}{-k_1 + k_2}$$
 $$d''(t) = \frac{k_1 k_2 R e^{t(-k_1-k_2)}(k_1 e^{k_2 t}-k_2 e^{k_1 t})}{k_1 - k_2}$$   
 answer: $d''(t) > 0$ for all $t < t_0$; $d''(t_0) =0$; $d''(t) < 0$ for $t > t_0$. 
 
-(c) Determine $\lim_{t\to\infty}d(t)$
+### (c) Determine $\lim_{t\to\infty}d(t)$
 
 $$d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})$$
 $$d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 \infty} - k_1 e^{-k_2 \infty})$$
