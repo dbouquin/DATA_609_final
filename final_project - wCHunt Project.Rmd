@@ -315,10 +315,12 @@ $$a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}$
 ### (a) Determine the values of t for which C is, respectively, positive, negative, and zero.
 
 $$a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}$$
+$$a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}$$
+$$= \frac{k_1 ( -\frac{k_1}{e^{k_1 t_1}}+\frac{k_2}{e^{k_2 t_1}})R}{-k_1 + k_2}$$
+
+Therefore : 
 
 answer: $a'(t) > 0$ for all $t < t_0$; 
-
-$a'(t) = (0)$
 
 answer: $a'(t_0) = 0$; 
 
@@ -406,7 +408,7 @@ For the function f(t) follow the instructions of Exercise 4.
 
 $$f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})$$
 
-(a) Determine the values of t for which f'(t) is, respectively, positive, negative, and zero.
+### (a) Determine the values of t for which f'(t) is, respectively, positive, negative, and zero.
 $$=- \frac{R \frac{d}{dt}(-e^{-k_2 (t-T)}k_1 + e^{-k_1(t - T)}k_2))}{-k_1 + k_2} + \frac{d}{dt}(R)$$
 
 Factor out constants:
@@ -433,7 +435,7 @@ note $t_0 = \frac{ln k_1 - ln k_2}{k_1 - lnk_2}$.
 
 answer: $f'(t) > 0$ for all $t > T$. 
 
-(b) Determine the values of t for which f''(t) is, respectively, positive, negative, and zero.
+### (b) Determine the values of t for which f''(t) is, respectively, positive, negative, and zero.
 
 $$=\frac{d}{dt}(\frac{d}{dt}(R - \frac{(-e^{-k_2(t-T)}k_1) + e^{-k_1(t-T)}k_2)R}{-k_1+k_2}))$$
 Differentiate and factor out:
@@ -477,7 +479,7 @@ $$=-\frac{(e^{-k_1 (t-T)}k_1^2 k_2 -e{-k_2(t-T)}k_1 k_2^2)R}{-k_1 + k_2}$$
 
 answer: $f''(t) > 0$ for all $T < t < T + t_0$; $f''(T + t_0) =0$; $f''(t) < 0$ for $t > T + t_0$.
 
-(c) Determine $\lim_{t\to\infty}f(t)$
+### (c) Determine $\lim_{t\to\infty}f(t)$
 
 $$f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})$$
 $$f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(\infty-T)}-k_1 e^{-k_2(\infty-T)})$$

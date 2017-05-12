@@ -459,10 +459,12 @@ respectively, positive, negative, and
 zero.}\label{a-determine-the-values-of-t-for-which-c-is-respectively-positive-negative-and-zero.}
 
 \[a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}\]
+\[a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}\]
+\[= \frac{k_1 ( -\frac{k_1}{e^{k_1 t_1}}+\frac{k_2}{e^{k_2 t_1}})R}{-k_1 + k_2}\]
+
+Therefore :
 
 answer: \(a'(t) > 0\) for all \(t < t_0\);
-
-\(a'(t) = (0)\)
 
 answer: \(a'(t_0) = 0\);
 
@@ -564,14 +566,11 @@ For the function f(t) follow the instructions of Exercise 4.
 
 \[f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})\]
 
-\begin{enumerate}
-\def\labelenumi{(\alph{enumi})}
-\tightlist
-\item
-  Determine the values of t for which f'(t) is, respectively, positive,
-  negative, and zero.
-  \[=- \frac{R \frac{d}{dt}(-e^{-k_2 (t-T)}k_1 + e^{-k_1(t - T)}k_2))}{-k_1 + k_2} + \frac{d}{dt}(R)\]
-\end{enumerate}
+\subsubsection{(a) Determine the values of t for which f'(t) is,
+respectively, positive, negative, and
+zero.}\label{a-determine-the-values-of-t-for-which-ft-is-respectively-positive-negative-and-zero.}
+
+\[=- \frac{R \frac{d}{dt}(-e^{-k_2 (t-T)}k_1 + e^{-k_1(t - T)}k_2))}{-k_1 + k_2} + \frac{d}{dt}(R)\]
 
 Factor out constants:
 \[=\frac{d}{dt}(R) - k_2(\frac{d}{dt}(e^{-k_1(t - T)})) - k_1 (\frac{d}{dt}(e^{-k_2(t-T)})) \frac{R}{-k_1 + k_2}\]
@@ -597,14 +596,9 @@ note \(t_0 = \frac{ln k_1 - ln k_2}{k_1 - lnk_2}\).
 
 answer: \(f'(t) > 0\) for all \(t > T\).
 
-\begin{enumerate}
-\def\labelenumi{(\alph{enumi})}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Determine the values of t for which f''(t) is, respectively, positive,
-  negative, and zero.
-\end{enumerate}
+\subsubsection{(b) Determine the values of t for which f''(t) is,
+respectively, positive, negative, and
+zero.}\label{b-determine-the-values-of-t-for-which-ft-is-respectively-positive-negative-and-zero.}
 
 \[=\frac{d}{dt}(\frac{d}{dt}(R - \frac{(-e^{-k_2(t-T)}k_1) + e^{-k_1(t-T)}k_2)R}{-k_1+k_2}))\]
 Differentiate and factor out:
@@ -649,13 +643,8 @@ Answer:
 answer: \(f''(t) > 0\) for all \(T < t < T + t_0\); \(f''(T + t_0) =0\);
 \(f''(t) < 0\) for \(t > T + t_0\).
 
-\begin{enumerate}
-\def\labelenumi{(\alph{enumi})}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  Determine \(\lim_{t\to\infty}f(t)\)
-\end{enumerate}
+\subsubsection{\texorpdfstring{(c) Determine
+\(\lim_{t\to\infty}f(t)\)}{(c) Determine \textbackslash{}lim\_\{t\textbackslash{}to\textbackslash{}infty\}f(t)}}\label{c-determine-lim_ttoinftyft}
 
 \[f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})\]
 \[f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(\infty-T)}-k_1 e^{-k_2(\infty-T)})\]
