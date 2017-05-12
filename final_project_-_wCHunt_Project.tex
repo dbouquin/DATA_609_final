@@ -461,6 +461,21 @@ We have previously solved for a(t) and \(a'(t)\)
 
 \[a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})\]
 \[a'(t) = k_1Re^{-k_1t}-k_2a(t)\]
+\[= \frac{d}{dt}(\frac{(e^{-k_1 t}- e^{-k_2 t})k_1 R}{-k_1 + k_2})\]
+Factor out constant:
+\[=\frac{k_1 R (\frac{d}{dt}(e^{-k_1 t})-(e^{-k_2 t}))}{-k_1 + k_2}\]
+Differentiate the sum term by term:
+\[=\frac{\frac{d}{dt}(e^{-k_1 t})- \frac{d}{dt}(e^{-k_2 t})k_1 R}{-k_1 + k_2}\]
+Use the chain rule:
+\[\frac{k_1 R (-(\frac{d}{dt}(e^{-k_2t}))+\frac{\frac{d}{dt}-k_1t}{e^{k_1t}}}{-k_1 +k_2}\]
+Factor out constants:
+\[\frac{k_1 R (-(\frac{d}{dt}(e^{-k_2t}))+\frac{-k_1\frac{d}{dt}t}{e^{k_1t}}}{-k_1 +k_2}\]
+
+The derivative of t is 1 and using the chain rule:
+\[\frac{k_1 R(-\frac{k_1}{e^{k_1 t}}-\frac{\frac{d}{dt}-k_2t}{e^{k_1t}}}{-k_1 +k_2}\]
+Factor out constants and the derivative of t is 1:
+\[= \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}\]
+\[a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}\]
 
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
@@ -470,7 +485,7 @@ We have previously solved for a(t) and \(a'(t)\)
   negative, and zero.
 \end{enumerate}
 
-\[a'(t) = k_1Re^{-k_1t}-k_2a(t)\]
+\[a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}\]
 
 answer: \(a'(t) > 0\) for all \(t < t_0\);
 
@@ -489,14 +504,19 @@ answer: \(a'(t_0) = 0\);
   negative, and zero.
 \end{enumerate}
 
-\[a''(t) = \frac{d}{dt}(k_1Re^{-k_1t}-k_2a(t))\]
-\[=k_1 R(\frac{d}{dt}(e^{-k_1 t}))- k_2 (\frac{d}{dt}(a(t)))\] Apply the
-chain rule:
-\[=- k_2 (\frac{d}{dt}(a(t)))+ e^{-k_1 t}\frac{d}{dt}({-k_1 t})k1 R\]
-Simplify the expression:
-\[=-e^{-k1 t}k1^2 R(\frac{d}{dt}(t)) -k_2 \frac{d}{dt}({a(t)})\]
-Derivative of t is 1: \[=-e^{-k1 t}k1^2 R-k_2 \frac{d}{dt}({a(t)})\]
-Therefore a''(t): \[=-e^{-k1 t}k1^2 R-a'(t)k_2\]
+\[a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})\] Differentiate
+the sum, factor constants, and use the chain rule :
+
+\[\frac{d}{dt}(\frac{k_1 R(e^{-k_1t}\frac{d}{dt}(-k_1t)-\frac{d}{dt}(e^{-k_2t}))}{-k_1 + k_2})\]
+Factor out constants, derivative of t is 1, and use the chain rule :
+\[\frac{d}{dt}(\frac{k_1R(e^{-k_1 t}(-k_1)- e^{-k_2t}\frac{d}{dt}(-k_2t))}{-k_1 + k_2})\]
+Factor out constants, derivate of t is 1, and differentiate the sum
+term:
+\[= k_2 \frac{d}{dt}(e^{-k_2 t})-k_1\frac{d}{dt}(e^{-k_1t})\frac{k_1R}{-k_1 + k_2}\]
+Using the chain rule, factor out constants, derivative of t is 1:
+\[=\frac{k_1 R (k_2 \frac{d}{dt}(e^{-k_2t}))+e^{-k_1t}k_1^2)}{-k_1 + k_2}\]
+Using the chain rule, factor out constants, and the derivative of t is
+1: \[\frac{k_1(e^{-k_1 t}k_1^2-e^{-k_2 t}k_2^2)R}{-k_1+k_2}\]
 
 answer: \(a''(t) < 0\) for all \(t < 2t_0\); \(a''(2t_0) =0\);
 \(a''(t) > 0\) for \(t > 2t_0\).
@@ -543,6 +563,7 @@ Factor out:
 \[- \frac{R(-e^{-k_1 t}k_1 k_2 - -k_2 \frac{d}{dt}(t)e^{-k_2 t}k_1)}{-k_1 + k_2}\]
 Simplify and derivative of t is 1:
 \[d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}\]
+Note \(t_0 = \frac{ln k_1 - ln k_2}{k_1 - lnk_2}\)
 
 answer: \(d'(t) > 0\) for all t (must have \(k_1 > k_2\)).
 
@@ -622,6 +643,8 @@ Differentiate the sum term:
 The derivative of t is 1 and -T is zero
 \[=-\frac{R(-e^{-k_1(t-T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}\]
 \[f'(t)=-\frac{-e^{-k_1 (t -T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2)R}{-k_1 + k_2}\]
+
+note \(t_0 = \frac{ln k_1 - ln k_2}{k_1 - lnk_2}\).
 
 answer: \(f'(t) > 0\) for all \(t > T\).
 
