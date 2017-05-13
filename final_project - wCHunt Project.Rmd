@@ -508,7 +508,7 @@ $$=-\frac{R(e^{-k_1(t-T)k_1^2k_2}(1+\frac{d}{dt}(-T))- \frac{d}{dt}(t)+\frac{d}{
 Derivative of t is 1 and -T is zero:
 $$=-\frac{R(e^{-k_1(t-T)k_1^2k_2}(1+0)-e^{-k_2(t-T)}k_1 k_2^2)(1+0)}{-k_1 + k_2}$$
 Answer:
-$$f''(t) =-\frac{(e^{-k_1 (t-T)}k_1^2 k_2 -e{-k_2(t-T)}k_1 k_2^2)R}{-k_1 + k_2}$$
+$$f''(t) =-\frac{(e^{-k_1 (t-T)}k_1^2 k_2 -e^{-k_2(t-T)}k_1 k_2^2)R}{-k_1 + k_2}$$
 #TODO complete sign test 
 
 Note that $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
