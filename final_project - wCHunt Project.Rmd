@@ -333,8 +333,6 @@ Therefore : $a'(t_0) = 0$;
 
 We know from our previous exercise  we can conclude that $a'(t)$ is negative or $a'(t) < 0$ for $t > t_0$. 
 
-#TODO complete sign eval for b
-
 ### (b) Determine the values of t for which a''(t) is, respectively, positive, negative, and zero.
 
 $$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$$
@@ -356,9 +354,8 @@ $$\frac{k_1 R(k_1^2(\frac{k_1}{k_2}^{\frac{k_1}{k_1 - k_2}} - k_2^2(\frac{k_1}{k
 $$-k_1 k_2 R (\frac{k_1}{k_2}^{-\frac{k_1}{k_1 - k_2}})$$                
 
 Therefore we can see that $a''(t) < 0$ for all $t < 2t_0$; 
-$$\frac{k_1(e^{-k_1 2 \frac{log(k1) - log(k2)}{k1 - k2}}k_1^2-e^{-k_2 \frac{log(k1) - 2 log(k2)}{k1 - k2}}k_2^2)R}{-k_1+k_2}$$
-
-$a''(2t_0) =0$; 
+$$\frac{k_1(e^{-k_1 2 \frac{log(k1) - log(k2)}{k1 - k2}}k_1^2-e^{-k_2 2\frac{log(k1) -log(k2)}{k1 - k2}}k_2^2)R}{-k_1+k_2}$$
+Assuming $k_1$, $k_2$, and $R$ are real numbers then $a''(2t_0) =0$; 
 
 As we saw from the previous exercise that $a''(t) > 0$ for $t > 2t_0$. 
 
