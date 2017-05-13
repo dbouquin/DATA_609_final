@@ -257,7 +257,7 @@ factor out constant:
 $$=-k_1 (\frac{d}{dt}(t))e^{-k_1 t}R$$
 derivative of t is 1: 
 $$r'(t)= -e^{-tk_1}k_1R$$
-Since our slope is negative: $r'(t) < 0$ for all $t$
+$r'(t) = -e^{-t k_1}$ and therefore $r'(t) < 0$ for all $t$.
 
 ### (b) Determine the values of t for which r''(t) is, respectively, positive, negative, and zero.
 
@@ -276,7 +276,8 @@ factor out constants and simplify
 $$= -e^{-tk_1}R-(\frac{d}{dt}(t))k_1^2$$   
 derivative of t is 1:
 $$r''(t)= e^{-tk_1}Rk_1^2$$   
-Since our slope is positive : $r''(t) > 0$ for all $t$   
+
+$r''(t) = e^{-t k_1}$ therefore for all real solutions : $r''(t) > 0$ for all $t$   
 
 ### (c) Determine $\lim_{t\to\infty}r(t)$   
 
@@ -320,7 +321,14 @@ $$= \frac{k_1 ( -\frac{k_1}{e^{k_1 t_1}}+\frac{k_2}{e^{k_2 t_1}})R}{-k_1 + k_2}$
 
 Therefore : 
 
+$$= \frac{k_1 ( -\frac{k_1}{e^{k_1*1}}+\frac{k_2}{e^{k_2*1}})R}{-k_1 + k_2}$$
+$$= \frac{(-e^{-k_1}k_1+e^{-k_2}k_2)Rk_1}{-k_1 + k_2}$$
+#TODO Refine
+
 answer: $a'(t) > 0$ for all $t < t_0$; 
+
+$$= \frac{k_1 ( -\frac{k_1}{e^{k_1*0}}+\frac{k_2}{e^{k_2*0}})R}{-k_1 + k_2}$$
+$$= \frac{k_1(-\frac{k_1}{1}+\frac{k_2}{1})R}{-k_1 + k_2}$$
 
 answer: $a'(t_0) = 0$; 
 
