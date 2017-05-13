@@ -387,11 +387,11 @@ Simplify and derivative of t is 1:
 $$d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}$$
 Note $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
 
-#TODO complete sign test 
+$$-\frac{(-e^{-k_1 \frac{ln k_1 - ln k_2}{k_1 - k_2}}k_1 k_2 + e^{-k_2 \frac{ln k_1 - ln k_2}{k_1 - k_2}}k_1 k_2)R}{-k_1 + k_2}$$
+$$\frac{k_1 k_2 R (\frac{k_2}{k_1}^{\frac{k_2}{k_1 - k_2}}-\frac{k_2}{k_1}^{\frac{k_1}{k_1 - k_2}})}{k_1 - k_2}$$
+$$k_2R(\frac{k_2}{k_1})^{\frac{k_2}{k_1 - k_2}}$$
 
-answer: $d'(t) > 0$ for all t (must have $k_1 > k_2$). 
-
-#TODO complete sign test 
+Therefore we can conclude that $d'(t)$ is positive or $d'(t) > 0$ for all t (must have $k_1 > k_2$). 
 
 ### (b) Determine the values of t for which d''(t) is, respectively, positive, negative, and zero.
 
@@ -408,7 +408,21 @@ $$= - \frac{R (e^{-k_1 t}k_1^2 k_2) - e^{k_2 t} k_1 k_2^2)}{-k_1 + k_2}$$
 $$d''(t) = \frac{k_1 k_2 R e^{t(-k_1-k_2)}(k_1 e^{k_2 t}-k_2 e^{k_1 t})}{k_1 - k_2}$$   
 
 
-answer: $d''(t) > 0$ for all $t < t_0$; $d''(t_0) =0$; $d''(t) < 0$ for $t > t_0$. 
+$$(k_1 - k_2)(k_1 e ^{k_2 t}-k_2 e^{k_1 t}) > 0$$
+
+Therefore $d''(t)$ is positive or $d''(t) > 0$ for all $t < t_0$; 
+
+Note that $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
+
+$$\frac{k_1 k_2 R e^{t(-k_1-k_2)}(k_1 e^{k_2 \frac{ln k_1 - ln k_2}{k_1 - k_2}}-k_2 e^{k_1 \frac{ln k_1 - ln k_2}{k_1 - k_2}})}{k_1 - k_2}$$
+
+$$\frac{k_1 k_2 R(k_1 (\frac{k_1}{k_2})^{\frac{k_2}{k_1 - k_2}}-k_2(\frac{k_1}{k_2}^{\frac{k_1}{k_1 - k_2}}))e^{t(-k_1 - k_2)}}{k_1 - k_2}$$
+
+$$\frac{k_1^2 k_2 R (\frac{k_1}{k_2})^{\frac{k_1}{k_1 - k_2}}e^{\frac{(-k_1 - k_2)(log(k_1) - log(k_2))}{k_1 - k_2}}}{k_1 - k_2} - \frac{k_1 k_2^2 R (\frac{k_1}{k_2})^{\frac{k_1}{k_1 - k_2}}e^{\frac{(-k_1 - k_2)(log(k_1) - log(k_2))}{k_1 - k_2}}}{k_1 - k_2}$$
+
+Therefore $d''(t)$ or $d''(t_0) =0$; 
+
+If the first part of the exercise is indeed true then $d''(t)$ is negative or $d''(t) < 0$ for $t > t_0$. 
 
 ### (c) Determine $\lim_{t\to\infty}d(t)$
 
@@ -451,9 +465,8 @@ $$f'(t)=-\frac{-e^{-k_1 (t -T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2)R}{-k_1 + k_2}$$
 
 note $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$.   
 
-#TODO complete sign test 
-
-answer: $f'(t) > 0$ for all $t > T$. 
+$$(k_1 - k_2)(e^{k_1 (T-t)}-e^{k_2(T-t)})>0$$
+Therefore $f'(t)$ is positive or $f'(t) > 0$ for all $t > T$. 
 
 ### (b) Determine the values of t for which f''(t) is, respectively, positive, negative, and zero.
 
@@ -498,7 +511,13 @@ Answer:
 $$f''(t) =-\frac{(e^{-k_1 (t-T)}k_1^2 k_2 -e{-k_2(t-T)}k_1 k_2^2)R}{-k_1 + k_2}$$
 #TODO complete sign test 
 
-answer: $f''(t) > 0$ for all $T < t < T + t_0$; $f''(T + t_0) =0$; $f''(t) < 0$ for $t > T + t_0$.
+Note that $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
+
+answer: $f''(t) > 0$ for all $T < t < T + t_0$; 
+
+$f''(T + t_0) =0$; 
+
+$f''(t) < 0$ for $t > T + t_0$.
 
 ### (c) Determine $\lim_{t\to\infty}f(t)$
 
