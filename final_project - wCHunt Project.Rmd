@@ -348,16 +348,19 @@ $$= k_2 \frac{d}{dt}(e^{-k_2 t})-k_1\frac{d}{dt}(e^{-k_1t})\frac{k_1R}{-k_1 + k_
 Using the chain rule, factor out constants, derivative of t is 1:
 $$=\frac{k_1 R (k_2 \frac{d}{dt}(e^{-k_2t}))+e^{-k_1t}k_1^2)}{-k_1 + k_2}$$
 Using the chain rule, factor out constants, and the derivative of t is 1:
-$$\frac{k_1(e^{-k_1 t}k_1^2-e^{-k_2 t}k_2^2)R}{-k_1+k_2}$$
+$$a''(t) = \frac{k_1(e^{-k_1 t}k_1^2-e^{-k_2 t}k_2^2)R}{-k_1+k_2}$$
 Note that $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
 
-#TODO complete sign information
+$$\frac{k_1(e^{-k_1 \frac{log(k1) - log(k2)}{k1 - k2}}k_1^2-e^{-k_2 \frac{log(k1) - log(k2)}{k1 - k2}}k_2^2)R}{-k_1+k_2}$$
+$$\frac{k_1 R(k_1^2(\frac{k_1}{k_2}^{\frac{k_1}{k_1 - k_2}} - k_2^2(\frac{k_1}{k_2})^{-\frac{k_2}{k_1 - k_2}}))}{k_2 - k_1}$$
+$$-k_1 k_2 R (\frac{k_1}{k_2}^{-\frac{k_1}{k_1 - k_2}})$$                
 
-Therefore: $a''(t) < 0$ for all $t < 2t_0$; 
+Therefore we can see that $a''(t) < 0$ for all $t < 2t_0$; 
+$$\frac{k_1(e^{-k_1 2 \frac{log(k1) - log(k2)}{k1 - k2}}k_1^2-e^{-k_2 \frac{log(k1) - 2 log(k2)}{k1 - k2}}k_2^2)R}{-k_1+k_2}$$
 
 $a''(2t_0) =0$; 
 
-$a''(t) > 0$ for $t > 2t_0$. 
+As we saw from the previous exercise that $a''(t) > 0$ for $t > 2t_0$. 
 
 ### (c) Determine $\lim_{t\to\infty}a(t)$
 
@@ -386,7 +389,6 @@ $$- \frac{R(-e^{-k_1 t}k_1 k_2 - -k_2 \frac{d}{dt}(t)e^{-k_2 t}k_1)}{-k_1 + k_2}
 Simplify and derivative of t is 1:
 $$d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}$$
 Note $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
-
 
 #TODO complete sign test 
 
