@@ -218,11 +218,11 @@ answer: $$\frac{1}{2}R$$
 
 \newpage
 
-#4. Comparison of the Model's Predictions with Experimental Data
+#Comparison of the Model's Predictions with Experimental Data
 
 Equations (4) and (9) are purely theoretical and are based on assumptions. To confirm their accuracy we will see if they agree with experimental data. Since the data concern is fecal excretion as a function of time, we must first translate our results into results on fecal excretion. 
 
-## 4.1 Solving for $d(t)$
+## Solving for $d(t)$
 
 Starting with Equation (1), and using Equations (4) and (9) (still assuming $k_1 \neq k_2$):
 
@@ -232,7 +232,7 @@ $$= R - Re^{-k_1t} - \frac{k_1R}{k_2 - k_1} (e^{-k_1t}-e{-k_2t})$$
 
 $$= R - \frac{R}{k_2-k_1}(k_2e^{-k_1t} - k_1e^{-k_2t})$$  
 
-## 4.2 The Formula for the Amount of Feces
+## The Formula for the Amount of Feces
 
 Recall that $d(t)$ is the total amount of food which has entered the duodenum by time t, including food already excreted. Since excretion is not a continuous process, we cannot hope to represent it by an equation involving derivatives. Instead, we simply note that all food arriving in the duodenum is excreted after a certain time delay. Let us suppose that the average time delay is T hours. In other words, the amount of feces produced by any time t > T is, on the average, the amount of food which had already entered the duodenum T hours earlier, at time t - T. If f(t) denotes the amount of feces produced by time t, this says:
 
@@ -287,7 +287,7 @@ Since $e^{-\infty}$ = 0 our solution is: $\lim_{t\to\infty}r(t) =0$
 
 ## Exercise 5.
 
-Note that for exercise 5, 6, and 7 $t_0 = \frac{ln k_1 - ln k_2}{k_1 - lnk_2}$
+Note that for exercise 5, 6, and 7 $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
 
 Remembering that a(t) is the total amount of food which has entered the the abomasum by time t from the rumen and exiting to the duodenum. There is a continuous flow from the abomasum to the duodenum. 
 
@@ -327,13 +327,13 @@ $t_0 = \frac{ln k_1 - ln k_2}{k_1 - lnk_2}$
 
 $$= \frac{k_1 ( -\frac{k_1}{e^{k_1*\frac{ln k_1 - ln k_2}{k_1 - lnk_2}}}+\frac{k_2}{e^{k_2*\frac{ln k_1 - ln k_2}{k_1 - lnk_2}}})R}{-k_1 + k_2}$$
 
-$$0 = \frac{k_1 R (k_1 \frac{k_1}{k_2}^{\frac{k_1}{log(k_2)-k_1}} - k_2 \frac{k_2}{k_1}^{\frac{k_2}{k_1 - log(k_2)}})}{k_1 - k_2}$$
+$$\frac{k_1 R (k_1 \frac{k_1}{k_2}^{\frac{k_1}{log(k_2)-k_1}} - k_2 \frac{k_2}{k_1}^{\frac{k_2}{k_1 - log(k_2)}})}{k_1 - k_2}$$
 
 Therefore : $a'(t_0) = 0$; 
 
 We know from our previous exercise  we can conclude that $a'(t)$ is negative or $a'(t) < 0$ for $t > t_0$. 
 
-##TODO complete sign eval for b
+#TODO complete sign eval for b
 
 ### (b) Determine the values of t for which a''(t) is, respectively, positive, negative, and zero.
 
@@ -349,8 +349,11 @@ Using the chain rule, factor out constants, derivative of t is 1:
 $$=\frac{k_1 R (k_2 \frac{d}{dt}(e^{-k_2t}))+e^{-k_1t}k_1^2)}{-k_1 + k_2}$$
 Using the chain rule, factor out constants, and the derivative of t is 1:
 $$\frac{k_1(e^{-k_1 t}k_1^2-e^{-k_2 t}k_2^2)R}{-k_1+k_2}$$
+Note that $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
 
-answer: $a''(t) < 0$ for all $t < 2t_0$; 
+#TODO complete sign information
+
+Therefore: $a''(t) < 0$ for all $t < 2t_0$; 
 
 $a''(2t_0) =0$; 
 
@@ -384,7 +387,8 @@ Simplify and derivative of t is 1:
 $$d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}$$
 Note $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
 
-$$\frac{k_1 k_2 R (\frac{k_2}{k_1}^{\frac{k_2}{k_1- k_2}} - (\frac{k_2}{k_1}))}$$
+
+#TODO complete sign test 
 
 answer: $d'(t) > 0$ for all t (must have $k_1 > k_2$). 
 
@@ -416,8 +420,6 @@ Since $e^{-\infty}$ = 0 :
 
 $$d(t) = R - \frac{R}{k_2 - k_1}(k_2*0 - k_1*0)$$
 Therefore, our solution is : $\lim_{t\to\infty}d(t) =R$
-
-#TODO Refine Answers to A and B
 
 ## Exercise 7.
 
