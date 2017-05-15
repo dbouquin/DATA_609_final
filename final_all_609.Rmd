@@ -32,6 +32,7 @@ library(reshape2)
 Giordano, F. R., Fox, W. P., & Horton, S. B. (2014). _A first course in mathematical modeling_. Australia: Brooks/Cole.
     
 # Textbook Part I: 
+## The Problem
 A farmer has 30 acres on which to grow tomatoes and corn. Each 100 bushels of tomatoes require 1000 gallons of water and 5 acres of land. Each 100 bushels of corn require 6000 gallons of water and 2.5 acres of land. Labor costs are $1 per bushel for both corn and tomatoes. The farm has available 30,000 gallons of water and $750 in capital. He knows he cannot sell more than 500 bushels of tomatoes and 475 bushels of corn. He estimates a profit of $2 on each bushel of tomatoes and $3 on each bushel of corn.
 
 ## How many bushels should he raise to maximize profits?
@@ -147,9 +148,9 @@ If the farmer grows 275 bushels of tomatoes and 475 bushels of corn, he can maxi
 # Textbook Part II: 
 Chapter 5.3, Project 1
 
-## Construct and perform a Monte Carlo simulation of blackjack 
-Use the following parameters:
-   
+## The problem
+Construct and perform a Monte Carlo simulation of blackjack.     
+Parameters:   
 * Play 12 games (simulations) where each game lasts two decks. When the two decks are out, the round is completed using two fresh decks (that is the last round of the game). Everything is then reset for the start of the next game.  
 * The dealer cannot see the players cards and vice versa.  
 * The player wins 3 dollars with a winning hand.  
