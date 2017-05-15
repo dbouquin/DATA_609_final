@@ -1,0 +1,1512 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Finall\_all\_609},
+            pdfauthor={Daina Bouquin, Christophe Hunt, Christina Taylor},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\usepackage{relsize}
+\usepackage{setspace}
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage[sfdefault]{roboto}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Finall\_all\_609}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Daina Bouquin, Christophe Hunt, Christina Taylor}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{May 15, 2017}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\subsubsection{Textbook Projects from:}\label{textbook-projects-from}
+
+Giordano, F. R., Fox, W. P., \& Horton, S. B. (2014). \emph{A first
+course in mathematical modeling}. Australia: Brooks/Cole.
+
+\subsection{Textbook Part I:}\label{textbook-part-i}
+
+A farmer has 30 acres on which to grow tomatoes and corn. Each 100
+bushels of tomatoes require 1000 gallons of water and 5 acres of land.
+Each 100 bushels of corn require 6000 gallons of water and 2.5 acres of
+land. Labor costs are \$1 per bushel for both corn and tomatoes. The
+farm has available 30,000 gallons of water and \$750 in capital. He
+knows he cannot sell more than 500 bushels of tomatoes and 475 bushels
+of corn. He estimates a profit of \$2 on each bushel of tomatoes and \$3
+on each bushel of corn.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  How many bushels should he raise to maximize profits?
+\end{enumerate}
+
+Let \(t\) = bushels of tomatoes (in hundreds) \(c\) = bushels of corn
+(in hundreds) \(w\) = gallons of water (in thousands) \(p\) = profit (in
+dollars) \(a\) = land (in acres)
+
+The farmer's problem can be modeled as Maximizing Profit:
+\(200t + 300c\)
+
+Subject to the following constraints: Non-negativity:
+\(t \geq 0, c \geq 0\) Water: \(t + 6c \leq 30\) Land:
+\(5t + 2.5c \leq 30\) Labor cost: \(t + c \leq 7.5\) Demand:
+\(t \leq 5, c \leq 4.75\)
+
+Apply linear programming solution
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#create LP object with 2 decision variables}
+\NormalTok{lprec =}\StringTok{ }\KeywordTok{make.lp}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\CommentTok{#set objective function and direction (maximize)}
+\KeywordTok{set.objfn}\NormalTok{(lprec,}\KeywordTok{c}\NormalTok{(}\DecValTok{200}\NormalTok{,}\DecValTok{300}\NormalTok{))}
+\KeywordTok{lp.control}\NormalTok{(lprec,}\DataTypeTok{sense=}\StringTok{'max'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $anti.degen
+## [1] "fixedvars" "stalling" 
+## 
+## $basis.crash
+## [1] "none"
+## 
+## $bb.depthlimit
+## [1] -50
+## 
+## $bb.floorfirst
+## [1] "automatic"
+## 
+## $bb.rule
+## [1] "pseudononint" "greedy"       "dynamic"      "rcostfixing" 
+## 
+## $break.at.first
+## [1] FALSE
+## 
+## $break.at.value
+## [1] 1e+30
+## 
+## $epsilon
+##       epsb       epsd      epsel     epsint epsperturb   epspivot 
+##      1e-10      1e-09      1e-12      1e-07      1e-05      2e-07 
+## 
+## $improve
+## [1] "dualfeas" "thetagap"
+## 
+## $infinite
+## [1] 1e+30
+## 
+## $maxpivot
+## [1] 250
+## 
+## $mip.gap
+## absolute relative 
+##    1e-11    1e-11 
+## 
+## $negrange
+## [1] -1e+06
+## 
+## $obj.in.basis
+## [1] TRUE
+## 
+## $pivoting
+## [1] "devex"    "adaptive"
+## 
+## $presolve
+## [1] "none"
+## 
+## $scalelimit
+## [1] 5
+## 
+## $scaling
+## [1] "geometric"   "equilibrate" "integers"   
+## 
+## $sense
+## [1] "maximize"
+## 
+## $simplextype
+## [1] "dual"   "primal"
+## 
+## $timeout
+## [1] 0
+## 
+## $verbose
+## [1] "neutral"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#add constraints}
+\KeywordTok{add.constraint}\NormalTok{(lprec, }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{6}\NormalTok{), }\StringTok{"<="}\NormalTok{, }\DecValTok{30}\NormalTok{)}
+\KeywordTok{add.constraint}\NormalTok{(lprec, }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\FloatTok{2.5}\NormalTok{), }\StringTok{"<="}\NormalTok{, }\DecValTok{30}\NormalTok{)}
+\KeywordTok{add.constraint}\NormalTok{(lprec, }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{), }\StringTok{"<="}\NormalTok{, }\FloatTok{7.5}\NormalTok{)}
+\CommentTok{#set boundaries}
+\KeywordTok{set.bounds}\NormalTok{(lprec, }\DataTypeTok{lower =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{), }\DataTypeTok{upper =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\FloatTok{4.75}\NormalTok{))}
+
+\CommentTok{#rename for printing}
+\NormalTok{RowNames <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"water"}\NormalTok{, }\StringTok{"land"}\NormalTok{, }\StringTok{"labor"}\NormalTok{)}
+\NormalTok{ColNames <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"tomatoes"}\NormalTok{,}\StringTok{"corn"}\NormalTok{)}
+\KeywordTok{dimnames}\NormalTok{(lprec) <-}\StringTok{ }\KeywordTok{list}\NormalTok{(RowNames, ColNames)}
+\CommentTok{#verify the model}
+\NormalTok{lprec}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Model name: 
+##           tomatoes      corn         
+## Maximize       200       300         
+## water            1         6  <=   30
+## land             5       2.5  <=   30
+## labor            1         1  <=  7.5
+## Kind           Std       Std         
+## Type          Real      Real         
+## Upper            5      4.75         
+## Lower            0         0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#solve the model (0 means there is a feasible solution)}
+\KeywordTok{solve}\NormalTok{(lprec)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#find extreme point}
+\KeywordTok{get.variables}\NormalTok{(lprec)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3.0 4.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#find maximize objective function value}
+\KeywordTok{get.objective}\NormalTok{(lprec)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1950
+\end{verbatim}
+
+We can see that if the farmer grows 300 bushels of tomatoes and 450
+bushels of corn, he can maximize his profit at \$1950.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Assume the farmer has the oppertunity to sign a contract with grocery
+  store to grow and deliver at least 300 bushels of tomatoes and 500
+  bushels of corn. Should he sign the contract?
+\end{enumerate}
+
+The new demand constraint is now \(t \geq 3, c \geq 5\) Intuitively, we
+can easily see that this condition is incompatible with the constraint
+of labor costs. We can verify this using linear programming:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lprec =}\StringTok{ }\KeywordTok{make.lp}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\CommentTok{#set objective function and direction (maximize)}
+\KeywordTok{set.objfn}\NormalTok{(lprec,}\KeywordTok{c}\NormalTok{(}\DecValTok{200}\NormalTok{,}\DecValTok{300}\NormalTok{))}
+\KeywordTok{lp.control}\NormalTok{(lprec,}\DataTypeTok{sense=}\StringTok{'max'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $anti.degen
+## [1] "fixedvars" "stalling" 
+## 
+## $basis.crash
+## [1] "none"
+## 
+## $bb.depthlimit
+## [1] -50
+## 
+## $bb.floorfirst
+## [1] "automatic"
+## 
+## $bb.rule
+## [1] "pseudononint" "greedy"       "dynamic"      "rcostfixing" 
+## 
+## $break.at.first
+## [1] FALSE
+## 
+## $break.at.value
+## [1] 1e+30
+## 
+## $epsilon
+##       epsb       epsd      epsel     epsint epsperturb   epspivot 
+##      1e-10      1e-09      1e-12      1e-07      1e-05      2e-07 
+## 
+## $improve
+## [1] "dualfeas" "thetagap"
+## 
+## $infinite
+## [1] 1e+30
+## 
+## $maxpivot
+## [1] 250
+## 
+## $mip.gap
+## absolute relative 
+##    1e-11    1e-11 
+## 
+## $negrange
+## [1] -1e+06
+## 
+## $obj.in.basis
+## [1] TRUE
+## 
+## $pivoting
+## [1] "devex"    "adaptive"
+## 
+## $presolve
+## [1] "none"
+## 
+## $scalelimit
+## [1] 5
+## 
+## $scaling
+## [1] "geometric"   "equilibrate" "integers"   
+## 
+## $sense
+## [1] "maximize"
+## 
+## $simplextype
+## [1] "dual"   "primal"
+## 
+## $timeout
+## [1] 0
+## 
+## $verbose
+## [1] "neutral"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#add constraints}
+\KeywordTok{add.constraint}\NormalTok{(lprec, }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{6}\NormalTok{), }\StringTok{"<="}\NormalTok{, }\DecValTok{30}\NormalTok{)}
+\KeywordTok{add.constraint}\NormalTok{(lprec, }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\FloatTok{2.5}\NormalTok{), }\StringTok{"<="}\NormalTok{, }\DecValTok{30}\NormalTok{)}
+\KeywordTok{add.constraint}\NormalTok{(lprec, }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{), }\StringTok{"<="}\NormalTok{, }\FloatTok{7.5}\NormalTok{)}
+\CommentTok{#set boundaries}
+\KeywordTok{set.bounds}\NormalTok{(lprec, }\DataTypeTok{lower =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{5}\NormalTok{))}
+
+\CommentTok{#solve the model}
+\KeywordTok{solve}\NormalTok{(lprec)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+As shown, there is no feasible solution. The farmer should not sign the
+contract, because realistically, he cannot deliver.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Assume the farmer can obtain an additional 10,000 gallons of water for
+  \$50. Should he obtain the additional water?
+\end{enumerate}
+
+The new water constraint is now \(t + 6c \leq 40\) The farmer's profit
+is \(200t + 300c - 50\)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lprec =}\StringTok{ }\KeywordTok{make.lp}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+\CommentTok{#set objective function and direction (maximize)}
+\KeywordTok{set.objfn}\NormalTok{(lprec,}\KeywordTok{c}\NormalTok{(}\DecValTok{200}\NormalTok{,}\DecValTok{300}\NormalTok{))}
+\KeywordTok{lp.control}\NormalTok{(lprec,}\DataTypeTok{sense=}\StringTok{'max'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $anti.degen
+## [1] "fixedvars" "stalling" 
+## 
+## $basis.crash
+## [1] "none"
+## 
+## $bb.depthlimit
+## [1] -50
+## 
+## $bb.floorfirst
+## [1] "automatic"
+## 
+## $bb.rule
+## [1] "pseudononint" "greedy"       "dynamic"      "rcostfixing" 
+## 
+## $break.at.first
+## [1] FALSE
+## 
+## $break.at.value
+## [1] 1e+30
+## 
+## $epsilon
+##       epsb       epsd      epsel     epsint epsperturb   epspivot 
+##      1e-10      1e-09      1e-12      1e-07      1e-05      2e-07 
+## 
+## $improve
+## [1] "dualfeas" "thetagap"
+## 
+## $infinite
+## [1] 1e+30
+## 
+## $maxpivot
+## [1] 250
+## 
+## $mip.gap
+## absolute relative 
+##    1e-11    1e-11 
+## 
+## $negrange
+## [1] -1e+06
+## 
+## $obj.in.basis
+## [1] TRUE
+## 
+## $pivoting
+## [1] "devex"    "adaptive"
+## 
+## $presolve
+## [1] "none"
+## 
+## $scalelimit
+## [1] 5
+## 
+## $scaling
+## [1] "geometric"   "equilibrate" "integers"   
+## 
+## $sense
+## [1] "maximize"
+## 
+## $simplextype
+## [1] "dual"   "primal"
+## 
+## $timeout
+## [1] 0
+## 
+## $verbose
+## [1] "neutral"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#add constraints}
+\KeywordTok{add.constraint}\NormalTok{(lprec, }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{6}\NormalTok{), }\StringTok{"<="}\NormalTok{, }\DecValTok{40}\NormalTok{)}
+\KeywordTok{add.constraint}\NormalTok{(lprec, }\KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\FloatTok{2.5}\NormalTok{), }\StringTok{"<="}\NormalTok{, }\DecValTok{30}\NormalTok{)}
+\KeywordTok{add.constraint}\NormalTok{(lprec, }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{), }\StringTok{"<="}\NormalTok{, }\FloatTok{7.5}\NormalTok{)}
+\CommentTok{#set boundaries}
+\KeywordTok{set.bounds}\NormalTok{(lprec, }\DataTypeTok{lower =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{), }\DataTypeTok{upper =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\FloatTok{4.75}\NormalTok{))}
+
+\NormalTok{RowNames <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"water"}\NormalTok{, }\StringTok{"land"}\NormalTok{, }\StringTok{"labor"}\NormalTok{)}
+\NormalTok{ColNames <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"tomatoes"}\NormalTok{,}\StringTok{"corn"}\NormalTok{)}
+\KeywordTok{dimnames}\NormalTok{(lprec) <-}\StringTok{ }\KeywordTok{list}\NormalTok{(RowNames, ColNames)}
+
+\CommentTok{#solve the model}
+\KeywordTok{solve}\NormalTok{(lprec)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#find extreme point}
+\KeywordTok{get.variables}\NormalTok{(lprec)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.75 4.75
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#find maximize profit}
+\KeywordTok{get.objective}\NormalTok{(lprec) }\OperatorTok{-}\StringTok{ }\DecValTok{50}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1925
+\end{verbatim}
+
+If the farmer grows 275 bushels of tomatoes and 475 bushels of corn, he
+can maximize his profit at \$1975. However, given the \$50 cost in
+acquiring extra water, his net profit actually went down to \$1925.
+Therefore, he should not obtain additional water.
+
+\newpage
+
+\subsection{Textbook part II: Chapter 5.3, Project
+1}\label{textbook-part-ii-chapter-5.3-project-1}
+
+Construct and perform a Monte Carlo simulation of blackjack as per the
+following:
+
+\begin{itemize}
+\tightlist
+\item
+  Play 12 games (simulations) where each game lasts two decks. When the
+  two decks are out, the round is completed using two fresh decks (that
+  is the last round of the game). Everything is then reset for the start
+  of the next game.\\
+\item
+  The dealer cannot see the players cards and vice versa.\\
+\item
+  The player wins 3 dollars with a winning hand.\\
+\item
+  The player loses 2 dollars with a losing hand.\\
+\item
+  No money is exchanged if there is no winner.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    There is no winner when neither has gone bust and they stand at the
+    same amount.\\
+  \item
+    If the dealer goes bust, the player automatically wins.\\
+  \end{itemize}
+\item
+  The dealer strategy is to stand at 17 or above.\\
+\item
+  The player strategy is open and can be set as desired.
+\end{itemize}
+
+\paragraph{Create a two deck game}\label{create-a-two-deck-game}
+
+The below functions create the game of blackjack from a dealt card, to a
+hand, to a round, and to a full two-deck game. Game results are stored
+as a vector: 1 = dealer win; 2 = player win; 0 = no winner. The
+resulting vector is used to calculate player winnings/losses.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create a hand for the dealer. }
+\NormalTok{deal_card <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(d_deck,decks_}\DecValTok{2}\NormalTok{)\{}
+\NormalTok{  flag_last_round <-}\StringTok{ }\DecValTok{0}
+  \ControlFlowTok{if}\NormalTok{ (}\KeywordTok{length}\NormalTok{(d_deck) }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{) \{}
+\NormalTok{    flag_last_round <-}\StringTok{ }\DecValTok{1}
+\NormalTok{    d_deck <-}\StringTok{ }\NormalTok{decks_}\DecValTok{2}
+\NormalTok{  \}}
+\NormalTok{  d_card <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(d_deck,}\DecValTok{1}\NormalTok{,}\OtherTok{FALSE}\NormalTok{)}
+\NormalTok{  d_deck <-}\StringTok{ }\NormalTok{d_deck [}\OperatorTok{!}\NormalTok{d_deck }\OperatorTok{%in%}\StringTok{ }\NormalTok{d_card }\OperatorTok{|}\StringTok{ }\KeywordTok{duplicated}\NormalTok{(d_deck)]}
+  \KeywordTok{return}\NormalTok{(}\KeywordTok{list}\NormalTok{(d_card,d_deck,flag_last_round))}
+\NormalTok{\}}
+\NormalTok{dealer_hand <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(dh_deck,decks_}\DecValTok{2}\NormalTok{) \{}
+\NormalTok{  dh_hand <-}\StringTok{ }\DecValTok{0}
+\NormalTok{  dh_last_round_flag <-}\StringTok{ }\DecValTok{0}
+\NormalTok{  dh_count <-}\StringTok{ }\DecValTok{1}
+  \ControlFlowTok{while}\NormalTok{ (}\KeywordTok{sum}\NormalTok{(dh_hand) }\OperatorTok{<}\StringTok{ }\DecValTok{17}\NormalTok{) \{}
+\NormalTok{    dh_deal <-}\StringTok{ }\KeywordTok{deal_card}\NormalTok{(dh_deck,decks_}\DecValTok{2}\NormalTok{)}
+\NormalTok{    dh_hand[dh_count] <-}\StringTok{ }\NormalTok{dh_deal[[}\DecValTok{1}\NormalTok{]]}
+\NormalTok{    dh_deck <-}\StringTok{ }\NormalTok{dh_deal[[}\DecValTok{2}\NormalTok{]]}
+    \ControlFlowTok{if}\NormalTok{ (dh_deal[[}\DecValTok{3}\NormalTok{]] }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{) \{dh_last_round_flag <-}\StringTok{ }\NormalTok{dh_deal[[}\DecValTok{3}\NormalTok{]]\}}
+\NormalTok{    dh_count <-}\StringTok{ }\NormalTok{dh_count}\OperatorTok{+}\DecValTok{1} \CommentTok{# ace = 1 if hand > 21}
+    \ControlFlowTok{if}\NormalTok{(}\KeywordTok{sum}\NormalTok{(dh_hand) }\OperatorTok{>}\StringTok{ }\DecValTok{21}\NormalTok{) \{}
+      \ControlFlowTok{if}\NormalTok{(}\DecValTok{11} \OperatorTok{%in%}\StringTok{ }\NormalTok{dh_hand) \{}
+\NormalTok{        dh_hand[}\KeywordTok{match}\NormalTok{(}\DecValTok{11}\NormalTok{,dh_hand)] <-}\StringTok{ }\DecValTok{1}
+\NormalTok{      \}}
+\NormalTok{    \}}
+\NormalTok{  \}    }
+  \KeywordTok{return}\NormalTok{(}\KeywordTok{list}\NormalTok{(dh_hand,dh_deck,dh_last_round_flag))}
+\NormalTok{\}}
+
+\CommentTok{# Create player hand }
+\NormalTok{player_hand <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(ph_deck,decks_}\DecValTok{2}\NormalTok{,threshold_p) \{}
+\NormalTok{  ph_hand <-}\StringTok{ }\DecValTok{0}
+\NormalTok{  ph_count <-}\StringTok{ }\DecValTok{1}
+\NormalTok{  ph_last_round_flag <-}\StringTok{ }\DecValTok{0}
+  \ControlFlowTok{while}\NormalTok{ (}\KeywordTok{sum}\NormalTok{(ph_hand) }\OperatorTok{<}\StringTok{ }\NormalTok{threshold_p) \{}
+\NormalTok{    ph_deal <-}\StringTok{ }\KeywordTok{deal_card}\NormalTok{(ph_deck,decks_}\DecValTok{2}\NormalTok{)}
+\NormalTok{    ph_hand[ph_count] <-}\StringTok{ }\NormalTok{ph_deal[[}\DecValTok{1}\NormalTok{]]}
+\NormalTok{    ph_deck <-}\StringTok{ }\NormalTok{ph_deal[[}\DecValTok{2}\NormalTok{]]}
+    \ControlFlowTok{if}\NormalTok{ (ph_deal[[}\DecValTok{3}\NormalTok{]] }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{) \{ph_last_round_flag <-}\StringTok{ }\NormalTok{ph_deal[[}\DecValTok{3}\NormalTok{]]\}}
+\NormalTok{    ph_count <-}\StringTok{ }\NormalTok{ph_count}\OperatorTok{+}\DecValTok{1} \CommentTok{# ace = 1 if hand > 21}
+    \ControlFlowTok{if}\NormalTok{(}\KeywordTok{sum}\NormalTok{(ph_hand) }\OperatorTok{>}\StringTok{ }\DecValTok{21}\NormalTok{) \{}
+      \ControlFlowTok{if}\NormalTok{(}\DecValTok{11} \OperatorTok{%in%}\StringTok{ }\NormalTok{ph_hand) \{}
+\NormalTok{        ph_hand[}\KeywordTok{match}\NormalTok{(}\DecValTok{11}\NormalTok{,ph_hand)] <-}\StringTok{ }\DecValTok{1}
+\NormalTok{      \}}
+\NormalTok{    \}}
+\NormalTok{  \}  }
+  \KeywordTok{return}\NormalTok{(}\KeywordTok{list}\NormalTok{(ph_hand,ph_deck,ph_last_round_flag))}
+\NormalTok{\}}
+
+\CommentTok{# Create a game }
+\NormalTok{game <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(game_deck,decks_}\DecValTok{2}\NormalTok{,threshold_p) \{ }
+  \CommentTok{#dealer hand}
+\NormalTok{  d_result <-}\StringTok{ }\KeywordTok{dealer_hand}\NormalTok{(game_deck,decks_}\DecValTok{2}\NormalTok{)}
+\NormalTok{  d_hand <-}\StringTok{ }\NormalTok{d_result[[}\DecValTok{1}\NormalTok{]]}
+\NormalTok{  game_deck <-}\StringTok{ }\NormalTok{d_result[[}\DecValTok{2}\NormalTok{]]}
+\NormalTok{  last_round_flag_d <-}\StringTok{ }\NormalTok{d_result[[}\DecValTok{3}\NormalTok{]]}
+  \CommentTok{#player hand}
+\NormalTok{  p_result <-}\StringTok{ }\KeywordTok{player_hand}\NormalTok{(game_deck,decks_}\DecValTok{2}\NormalTok{,threshold_p)}
+\NormalTok{  p_hand <-}\StringTok{ }\NormalTok{p_result[[}\DecValTok{1}\NormalTok{]]}
+\NormalTok{  game_deck <-}\StringTok{ }\NormalTok{p_result[[}\DecValTok{2}\NormalTok{]]}
+\NormalTok{  last_round_flag_p <-}\StringTok{ }\NormalTok{p_result[[}\DecValTok{3}\NormalTok{]]}
+  \ControlFlowTok{if}\NormalTok{ (last_round_flag_d }\OperatorTok{==}\StringTok{ }\DecValTok{1} \OperatorTok{||}\StringTok{ }\NormalTok{last_round_flag_p }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{) \{}
+\NormalTok{    game_last_round_flag <-}\StringTok{ }\DecValTok{1}
+\NormalTok{  \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{    game_last_round_flag <-}\StringTok{ }\DecValTok{0}
+\NormalTok{  \}}
+  \KeywordTok{return}\NormalTok{(}\KeywordTok{list}\NormalTok{(d_hand,p_hand,game_deck,game_last_round_flag))}
+\NormalTok{\}}
+
+\CommentTok{# Go through two decks- create dealer and player hand each round }
+\NormalTok{play_decks_}\DecValTok{2}\NormalTok{ <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(p2d_deck,decks_}\DecValTok{2}\NormalTok{,threshold_p) \{}
+\NormalTok{  round_counter <-}\StringTok{ }\DecValTok{1}
+\NormalTok{  p2d_last_round_flag <-}\StringTok{ }\DecValTok{0} 
+\NormalTok{  result_list.names <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Dealer_Hand"}\NormalTok{, }\StringTok{"Player_Hand"}\NormalTok{)}
+\NormalTok{  result_list <-}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"list"}\NormalTok{, }\KeywordTok{length}\NormalTok{(result_list.names))}
+  \KeywordTok{names}\NormalTok{(result_list) <-}\StringTok{ }\NormalTok{result_list.names}
+  \ControlFlowTok{while}\NormalTok{ (p2d_last_round_flag }\OperatorTok{!=}\StringTok{ }\DecValTok{1}\NormalTok{) \{}
+\NormalTok{    round_result <-}\StringTok{ }\KeywordTok{game}\NormalTok{(p2d_deck,decks_}\DecValTok{2}\NormalTok{,threshold_p)}
+\NormalTok{    result_list}\OperatorTok{$}\NormalTok{Dealer_Hand[round_counter] <-}\StringTok{ }\KeywordTok{list}\NormalTok{(round_result[[}\DecValTok{1}\NormalTok{]])}
+\NormalTok{    result_list}\OperatorTok{$}\NormalTok{Player_Hand[round_counter] <-}\StringTok{ }\KeywordTok{list}\NormalTok{(round_result[[}\DecValTok{2}\NormalTok{]])}
+\NormalTok{    p2d_deck <-}\StringTok{ }\NormalTok{round_result[[}\DecValTok{3}\NormalTok{]]}
+\NormalTok{    p2d_last_round_flag <-}\StringTok{ }\NormalTok{round_result[[}\DecValTok{4}\NormalTok{]]}
+\NormalTok{    round_counter <-}\StringTok{ }\NormalTok{round_counter}\OperatorTok{+}\DecValTok{1}
+\NormalTok{  \}}
+  \KeywordTok{return}\NormalTok{(result_list)  }
+\NormalTok{\}}
+
+\CommentTok{# Takes in list containing all hands after above running through two decks. }
+\NormalTok{results_vec <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(results_set) \{}
+\NormalTok{  winner <-}\StringTok{ }\KeywordTok{numeric}\NormalTok{(}\KeywordTok{length}\NormalTok{(results_set}\OperatorTok{$}\NormalTok{Dealer_Hand))}
+  \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(results_set}\OperatorTok{$}\NormalTok{Dealer_Hand)) \{}
+\NormalTok{    d_Hand <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(results_set}\OperatorTok{$}\NormalTok{Dealer_Hand[[i]])}
+\NormalTok{    p_Hand <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(results_set}\OperatorTok{$}\NormalTok{Player_Hand[[i]])}
+    \ControlFlowTok{if}\NormalTok{(d_Hand }\OperatorTok{<}\StringTok{ }\DecValTok{22}\NormalTok{) \{}
+      \ControlFlowTok{if}\NormalTok{(p_Hand }\OperatorTok{<}\StringTok{ }\DecValTok{22}\NormalTok{) \{}
+        \ControlFlowTok{if}\NormalTok{(d_Hand }\OperatorTok{>}\StringTok{ }\NormalTok{p_Hand) \{}
+\NormalTok{          winner[i] <-}\StringTok{ }\DecValTok{1}  
+\NormalTok{        \} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (d_Hand }\OperatorTok{<}\StringTok{ }\NormalTok{p_Hand) \{}
+\NormalTok{            winner[i] <-}\StringTok{ }\DecValTok{2}
+\NormalTok{        \} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (d_Hand }\OperatorTok{==}\StringTok{ }\NormalTok{p_Hand) \{}
+\NormalTok{            winner[i] <-}\StringTok{ }\DecValTok{0}
+\NormalTok{        \}}
+\NormalTok{      \} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{(p_Hand }\OperatorTok{>=}\StringTok{ }\DecValTok{22}\NormalTok{) \{}
+\NormalTok{          winner[i] <-}\StringTok{ }\DecValTok{1}     
+\NormalTok{      \}}
+\NormalTok{    \} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{(d_Hand }\OperatorTok{>=}\StringTok{ }\DecValTok{22}\NormalTok{)\{}
+\NormalTok{            winner[i] <-}\StringTok{ }\DecValTok{2} \CommentTok{# if dealer goes bust player wins}
+\NormalTok{      \} }
+\NormalTok{  \}}
+  \KeywordTok{return}\NormalTok{(winner)}
+\NormalTok{\}}
+
+\CommentTok{# Calculates the player winnings with assumptions: }
+\CommentTok{# player bets $2/hand    }
+\CommentTok{# player wins = player receives $3    }
+\CommentTok{# player loss = player loses $2 bet    }
+\CommentTok{# tie = $0 exchanged    }
+\CommentTok{# dealer goes bust = win for player}
+\NormalTok{calc_player_win <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(results) \{}
+\NormalTok{  winnings <-}\StringTok{ }\KeywordTok{numeric}\NormalTok{(}\KeywordTok{length}\NormalTok{(results))}
+  \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(results)) \{}
+    \ControlFlowTok{if}\NormalTok{ (results[i] }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{) winnings[i] <-}\StringTok{ }\DecValTok{0}
+    \ControlFlowTok{if}\NormalTok{ (results[i] }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{) winnings[i] <-}\StringTok{ }\OperatorTok{-}\DecValTok{2}
+    \ControlFlowTok{if}\NormalTok{ (results[i] }\OperatorTok{==}\StringTok{ }\DecValTok{2}\NormalTok{) winnings[i] <-}\StringTok{ }\DecValTok{3}      
+\NormalTok{  \}}
+  \KeywordTok{return}\NormalTok{(winnings)}
+\NormalTok{\}}
+
+\CommentTok{# Play a full two deck game, calculate winnings/losses}
+\NormalTok{play_deck2 <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(pd2_deck,threshold_p)\{}
+  \CommentTok{#create list of results per round after running two decks game}
+\NormalTok{  one_set <-}\StringTok{ }\KeywordTok{play_decks_2}\NormalTok{(pd2_deck,pd2_deck,threshold_p)}
+  \CommentTok{#create vector for results of each hand}
+\NormalTok{  outcome_vec <-}\StringTok{ }\KeywordTok{results_vec}\NormalTok{(one_set)}
+\NormalTok{  player_winnings <-}\StringTok{ }\DecValTok{0}
+\NormalTok{  player_winnings <-}\StringTok{ }\KeywordTok{calc_player_win}\NormalTok{(outcome_vec)}
+  \KeywordTok{return}\NormalTok{(}\KeywordTok{sum}\NormalTok{(player_winnings))}
+\NormalTok{\}}
+
+\CommentTok{# Create function to run the simulation for two deck games }
+\CommentTok{# Takes two decks and number of simulations as params }
+\CommentTok{# Each run uses player strategies (stand at 16 to 20); dealer stands at 17}
+\NormalTok{build_output <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(out_deck, runs) \{}
+\NormalTok{  count_obs <-}\StringTok{ }\KeywordTok{numeric}\NormalTok{(runs)}
+\NormalTok{  vec16 <-}\StringTok{ }\KeywordTok{numeric}\NormalTok{(runs)}
+\NormalTok{  vec17 <-}\StringTok{ }\KeywordTok{numeric}\NormalTok{(runs)}
+\NormalTok{  vec18 <-}\StringTok{ }\KeywordTok{numeric}\NormalTok{(runs)}
+\NormalTok{  vec19 <-}\StringTok{ }\KeywordTok{numeric}\NormalTok{(runs)}
+\NormalTok{  vec20 <-}\StringTok{ }\KeywordTok{numeric}\NormalTok{(runs)}
+  \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\NormalTok{runs)\{}
+\NormalTok{    count_obs[i] <-}\StringTok{ }\NormalTok{i}
+\NormalTok{    vec16[i] <-}\StringTok{ }\KeywordTok{play_deck2}\NormalTok{(out_deck,}\DecValTok{16}\NormalTok{)}
+\NormalTok{    vec17[i] <-}\StringTok{ }\KeywordTok{play_deck2}\NormalTok{(out_deck,}\DecValTok{17}\NormalTok{)}
+\NormalTok{    vec18[i] <-}\StringTok{ }\KeywordTok{play_deck2}\NormalTok{(out_deck,}\DecValTok{18}\NormalTok{)}
+\NormalTok{    vec19[i] <-}\StringTok{ }\KeywordTok{play_deck2}\NormalTok{(out_deck,}\DecValTok{19}\NormalTok{)}
+\NormalTok{    vec20[i] <-}\StringTok{ }\KeywordTok{play_deck2}\NormalTok{(out_deck,}\DecValTok{20}\NormalTok{)}
+\NormalTok{  \}}
+\NormalTok{  output <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\StringTok{"count_obs"}\NormalTok{=}\StringTok{ }\NormalTok{count_obs,}
+                     \StringTok{"stand_16"}\NormalTok{=vec16,}\StringTok{"stand_17"}\NormalTok{=vec17,}
+                     \StringTok{"stand_18"}\NormalTok{=vec18,}\StringTok{"stand_19"}\NormalTok{=vec19,}
+                     \StringTok{"stand_20"}\NormalTok{=vec20)}
+  \KeywordTok{return}\NormalTok{(output)  }
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{12 Simulations}\label{simulations}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{2345}\NormalTok{)}
+\CommentTok{# Create set of two decks, simulate 12 two-deck games; run sim with diff strategies}
+
+\CommentTok{# vector for two decks}
+\NormalTok{two_deck <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{8}\NormalTok{,}
+              \DecValTok{9}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}
+              \DecValTok{11}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{5}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{6}\NormalTok{,}
+              \DecValTok{7}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}
+              \DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{11}\NormalTok{)}
+
+\CommentTok{# 12 games per strategy }
+\NormalTok{output12 <-}\StringTok{ }\KeywordTok{build_output}\NormalTok{(two_deck,}\DecValTok{12}\NormalTok{)}
+\NormalTok{output12_avg <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"stand_16"}\NormalTok{=}\KeywordTok{mean}\NormalTok{(output12}\OperatorTok{$}\NormalTok{stand_}\DecValTok{16}\NormalTok{),}
+                    \StringTok{"stand_17"}\NormalTok{=}\KeywordTok{mean}\NormalTok{(output12}\OperatorTok{$}\NormalTok{stand_}\DecValTok{17}\NormalTok{),}
+                    \StringTok{"stand_18"}\NormalTok{=}\KeywordTok{mean}\NormalTok{(output12}\OperatorTok{$}\NormalTok{stand_}\DecValTok{18}\NormalTok{),}
+                    \StringTok{"stand_19"}\NormalTok{=}\KeywordTok{mean}\NormalTok{(output12}\OperatorTok{$}\NormalTok{stand_}\DecValTok{19}\NormalTok{),}
+                    \StringTok{"stand_20"}\NormalTok{=}\KeywordTok{mean}\NormalTok{(output12}\OperatorTok{$}\NormalTok{stand_}\DecValTok{20}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lr@{}}
+\caption{Winnings by Strategy}\tabularnewline
+\toprule
+stand\_16 & 12.83\tabularnewline
+stand\_17 & 10.25\tabularnewline
+stand\_18 & 8.00\tabularnewline
+stand\_19 & 10.17\tabularnewline
+stand\_20 & 9.92\tabularnewline
+\bottomrule
+\end{longtable}
+
+If you were to only look at the average winnings across 12 games, it
+would appear that standing at 16 is the best option when the dealer
+stands at 17. The below plot though illustrates just how much variation
+there is in results. Simulations of 100, 500, 1000, and 1,500 rounds are
+made below to improve decision-making.
+
+\includegraphics{final_all_609_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\paragraph{Increasing the Number of
+Simulations}\label{increasing-the-number-of-simulations}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{2345}\NormalTok{)}
+\CommentTok{# 100 simulations}
+\NormalTok{output100 <-}\StringTok{ }\KeywordTok{build_output}\NormalTok{(two_deck,}\DecValTok{100}\NormalTok{)}
+
+\CommentTok{# 500 simulations}
+\NormalTok{output500 <-}\StringTok{ }\KeywordTok{build_output}\NormalTok{(two_deck,}\DecValTok{500}\NormalTok{)}
+
+\CommentTok{# 1000 simulations}
+\NormalTok{output1000 <-}\StringTok{ }\KeywordTok{build_output}\NormalTok{(two_deck,}\DecValTok{1000}\NormalTok{)}
+
+\CommentTok{# 1500 simulations}
+\NormalTok{output1500 <-}\StringTok{ }\KeywordTok{build_output}\NormalTok{(two_deck,}\DecValTok{1500}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{final_all_609_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+\begin{longtable}[]{@{}rrrrrr@{}}
+\caption{Average Winnings by Strategy and Simulation
+Size}\tabularnewline
+\toprule
+Simulation\_Size & stand\_16 & stand\_17 & stand\_18 & stand\_19 &
+stand\_20\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Simulation\_Size & stand\_16 & stand\_17 & stand\_18 & stand\_19 &
+stand\_20\tabularnewline
+\midrule
+\endhead
+100 & 10.15 & 10.96 & 13.26 & 11.63 & 9.23\tabularnewline
+500 & 10.45 & 12.48 & 13.11 & 11.50 & 8.44\tabularnewline
+1000 & 10.01 & 12.21 & 13.74 & 11.62 & 8.71\tabularnewline
+1500 & 10.19 & 12.69 & 13.09 & 11.65 & 8.04\tabularnewline
+\bottomrule
+\end{longtable}
+
+As the number of simulations increases, the results converge. It appears
+to be that standing at 18 is the best option, as standing at 19 leaves
+the player with fewer winnings. Similarly, standing at 16, 17, or 20
+results in fewer winnings overall. Therefore if the dealer stands at 17,
+the player should stand at 18.
+
+\newpage
+
+\section{Textbook Part III:}\label{textbook-part-iii}
+
+\subsection{The problem}\label{the-problem}
+
+The digestive processes of sheep can highlight the nutritionally value
+in varied feeding schedules or varied food preparation. This is
+especially important when raising sheep for commercial purposes.
+
+\subsection{The digestive process}\label{the-digestive-process}
+
+Sheep are a cud-chewing animal which means that unchewed food goes
+through a series of storage stomachs called the rumen and the reticulum.
+The process is illustrated below:
+
+\begin{tikzpicture}[node distance = 2cm]
+  \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+  \tikzstyle{arrow} = [thick,->,>=stealth]
+  \node (r) [process, xshift=2cm] {Rumen};
+  \node (a) [process, right of=r, xshift=2cm] {Abomasum};
+  \node (d) [process, right of=a, xshift=2cm] {Duodemum};
+  \node (f) [process, right of=d, xshift=2cm]  {Feces};
+  \draw [arrow] (r) -- (a);
+  \draw [arrow] (a) -- (d);
+  \draw [dotted] (d) -- (f);
+\end{tikzpicture}
+
+\subsection{The experiment}\label{the-experiment}
+
+The digestive process is most observable at the beginning and at the
+end, we can observer and control what goes in and what comes out.
+
+\subsection{The model}\label{the-model}
+
+Suppose that at \(t = 0\) a sheep is fed an amount \(R\) of food which
+goes immediately into its rumen. This food will pass gradually from the
+rumen through the abomasum into the duodenum. At any later time \(t\) we
+shall define:
+
+\(r(t)\) = the amount of food still in the rumen; \(a(t)\) = the amount
+in the abomasum; \(d(t)\) = the amount which by then has arrived in the
+duodenum.
+
+So \(r(0) = R\), \(a(0)\) = \(d(0)\) = 0, and, for all t\textgreater{}0,
+
+~~~~~(1) \(r(t) + a(t) + d(t) = R.\)
+
+\subsection{The assumptions}\label{the-assumptions}
+
+Two assumptions are made:
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\tightlist
+\item
+  Food moves out of the rumen at a rate proportional to the amount of
+  food in the rumen. Mathematically this says:
+\end{enumerate}
+
+~~~~~(2) \(r'(t) = -k_1r(t)\)
+
+where \(k_1\) is a positive proportionality constant.
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Food moves out of the abomasum at a rate proportional to the amount of
+  food in the abomasum. Since at the same time food is moving into the
+  abomasum at the rate given by Equation (2), the assumption says
+\end{enumerate}
+
+~~~~~(3) \(a'(t) = k_1r(t)-k_2a(t)\)
+
+where \(k_2\) is another positive proportionality constant.
+
+\subsection{The solutions of the
+equations}\label{the-solutions-of-the-equations}
+
+\subsubsection{\texorpdfstring{Solving for
+\(r(t)\)}{Solving for r(t)}}\label{solving-for-rt}
+
+It is straightforward to solve Equation (2) for \(r(t)\).\\
+We just divide through by \(r(t)\) and then integrate from 0 to t:
+
+\[\int_0^t \frac{r'(t)}{r(t)} dt= - \int_0^t k_1dt\]\\
+\[ln(\frac{r(t)}{R}) = -k_1t\],
+
+since r(0) = R, and finally:
+
+~~~~~(4) \(r(t) = Re^{-k_1t}\)
+
+\subsubsection{\texorpdfstring{Solving for
+\(a(t)\)}{Solving for a(t)}}\label{solving-for-at}
+
+Finding \(a(t)\) is a bit more tricky. Applying Equations (4) to
+Equation (3) we get:
+
+~~~~~(5) \(a'(t) = k_1Re^{-k_1t}-k_2a(t)\)
+
+Equation (5) probably looks quite different from any you have seen
+before. Let us try to make a shrew guess what kind of solution it has.
+It says that the derivative of \(a(t)\) is the sum of two terms,
+\(k_1Re^{-k_1t}\) and \(-k_2a(t)\). With luck, this might remind us of
+the product rule:
+
+~~~~~(6) if \(a(t) = u(t) \bullet v(t)\) then
+\(a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)\)
+
+Can we pick \(u(t)\) and \(v(t)\) so the terms in Equation (6) match up
+with the terms in Equation (5)? In other words, can we pick \(u(t)\) and
+\(v(t)\) so that
+
+~~~~~(7) \(u(t) \bullet v'(t) = k_1Re^{-k_1^t}\)
+
+and
+
+~~~~~(8) \(v(t) \bullet u'(t) = -k_2a(t)\)
+
+Since \(a(t) = u(t) \bullet v(t)\), Equation (8) can rewritten
+\(v(t) \bullet u'(t) = -k_2u(t)v(t)\), we are in business! The \(v(t)\)
+factors cancel out, leaving us with
+
+\[u'(t) = -k_2u(t)\]
+
+which looks very much like Equation (2) and can be solved in the same
+way.
+
+\(\int_0^t \frac{u'(t)}{u(t)} dt = -\int_0^t k_2dt\)
+
+Writing K = u(0):
+
+\(ln (\frac{u(t)}{K}) = -k_2t\)\\
+\(u(t) = Ke^{-k_2t}\).
+
+Putting this into Equation (7) gives
+
+\(Ke^{-k_2t}v'(t) = k_1Re^{-k_1t}\)\\
+\(v'(t) = \frac{k_1R}{K}e(k_2-k_1)^t\).
+
+If \(k_1 = k_2\) we feel confident you can complete this solution
+yourself (Exercise 1).
+
+\subsection{\texorpdfstring{Exercise 1. Find \(a(t)\) if
+\(k_1 = k_2\).}{Exercise 1. Find a(t) if k\_1 = k\_2.}}\label{exercise-1.-find-at-if-k_1-k_2.}
+
+\[a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)\]\\
+Using the solution from equation 8 we get: \[u(t) = Ke^{-k_2t}\]\\
+Using the solution from equation 7 we get:
+\[v'(t) = \frac{k_1R}{K}e^{k_2 - k_1}t\]\\
+Substituting the solutions for \(a(t)\) we get:
+\[\frac{k_1R}{K}e^{k_2 - k_1}t * Ke^{-k_2t}\]\\
+If k\_1 = k\_2 then \(e^{0} = 1\)\\
+\[\frac{k_1R}{K}t * Ke^{-k_2t}\]\\
+K factors out : \[k_1Rte^{-k_2t}\]
+
+Solution : \[a(t) = k_1Rte^{-k_2t}\]
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+If \(k_1 \neq k_2\), then \(k_2 - k _1 \neq 0\) and so we can write
+
+\[v(t) = \frac{k_1R}{K(k_2 - k_1)}e^(k_2 -k_1)^t +c\]
+
+Where C is the constant of integration. Then
+
+\[a(t) = u(t) \bullet v(t) = \frac{k_1R}{k_2-k_1}e^{-k_1t} + CKe^{-k_2t}\]
+
+Using the fact that \(a(0) = 0\), we get
+
+\[0 = \frac{k_1R}{k_2-k_1} + CK\] \[CK = -\frac{k_1R}{k_2-k_1}\] (9)
+\(a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})\)
+
+\subsection{Exercise 2.}\label{exercise-2.}
+
+\subsubsection{\texorpdfstring{(a) Find the time t at which \(a(t)\) is
+maximum.}{(a) Find the time t at which a(t) is maximum.}}\label{a-find-the-time-t-at-which-at-is-maximum.}
+
+\[a(t) = \frac{k_1 R}{k_2 - k_1}(e^{-k_1 t}-e^{-k_2 t})\]\\
+\[0 = \frac{k_1 R}{k_2 - k_1}(e^{-k_1 t}-e^{-k_2 t})\]\\
+Divide both sides by \(\frac{k_1 r}{k_2 - k_1}\)\\
+\[e^{-k_2 t}k2 - e^{-k_1 t}k1 = 0\]\\
+Factor \(e^{-k_1 t}\), \(e^{-k_2 t}\):\\
+\[-e^{-k_1 t - k_2 t}(e^{k_2 t}k_1 - e^{k_1 t}k2) = 0\]\\
+Multiply by -1 to simplify and split into two equations:\\
+\[e^{-k_1 t - k_2 t} = 0 ~and~e^{k_2 t}k_1 - e^{k_1 t}k2= 0\]\\
+Since \(e^(z)\) can never be zero for any real number, no solution
+exists for \[e^{-k_1 t - k_2 t} \neq 0\]\\
+Divide both sides by \(e^{k2 t}\):\\
+\[k_1 - e^{t (k_1 - k_2)}k2= 0\]\\
+Subtract k1:\\
+\[- e^{t (k_1 - k_2)}k2= -k_1\]\\
+Divide both sides by -k2:\\
+\[e^{t (k_1 - k_2)}= \frac{k_1}{k_2}\]\\
+Take the log: \[t (k_1 - k_2)= \log{(\frac{k_1}{k_2})}\]\\
+Solve for t: \[t = \frac{\log{(\frac{k_1}{k_2})}}{(k_1 - k_2)}\]
+
+Alternate Solution:
+
+\[t = \frac{lnk_1 - lnk_2}{k_1 - k_2}\]
+
+\newpage
+
+\subsubsection{\texorpdfstring{(b) Find the maximum value of
+\(a(t)\).}{(b) Find the maximum value of a(t).}}\label{b-find-the-maximum-value-of-at.}
+
+\[a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t}-e^{-k_2t})\]
+
+Substituting t we get :
+\[\frac{k1 R}{k2 - k1}(e^{-k1 \frac{\log{(\frac{k1}{k2})}}{(k1 - k2)}}-e^{-k2 \frac{\log{(\frac{k1}{k2})}}{(k1 - k2)}})\]
+Using the chain rule we identify that:
+\[e^{-k1 \frac{\log{(\frac{k1}{k2})}}{(k1 - k2)}}=\frac{k_1}{k_2}^{-\frac{k_1}{k_1 - k_2}}\]
+Therefore with substitution and applying the chain rule the maximum
+value of \(a(t)\) is :
+
+\[\frac{k_1R}{k_2-k_1}[(\frac{k_1}{k_2})^{-\frac{k_1}{k_1-k_2}}-(\frac{k_1}{k_2})^{-\frac{k_2}{k_1-k_2}}]\]
+
+\subsection{Exercise 3.}\label{exercise-3.}
+
+If \(k_1\) = 2 and \(k_2\) = 1, how much food must the abomasum be able
+to hold if a meal of amount R is fed at time t = 0? If we substitute our
+values we have:
+
+\[\frac{2 R}{2 - 1}[(\frac{2}{1})^{-\frac{1}{2-1}}-(\frac{2}{1})^{-\frac{2}{2-1}}]\]
+Simplify:
+
+\[2[(\frac{2}{1})^{-1}-(\frac{2}{1})^{-2}]R\]
+\[2[(\frac{1}{2})-(\frac{1}{4})]R\] \[2[(\frac{2}{4})-(\frac{1}{4})]R\]
+\[2[\frac{1}{4}]R\] answer: \[\frac{1}{2}R\]
+
+\newpage
+
+\section{Comparison of the Model's Predictions with Experimental
+Data}\label{comparison-of-the-models-predictions-with-experimental-data}
+
+Equations (4) and (9) are purely theoretical and are based on
+assumptions. To confirm their accuracy we will see if they agree with
+experimental data. Since the data concern is fecal excretion as a
+function of time, we must first translate our results into results on
+fecal excretion.
+
+\subsection{\texorpdfstring{Solving for
+\(d(t)\)}{Solving for d(t)}}\label{solving-for-dt}
+
+Starting with Equation (1), and using Equations (4) and (9) (still
+assuming \(k_1 \neq k_2\)):
+
+\[d(t) = R - r(t) - a(t)\]
+
+\[= R - Re^{-k_1t} - \frac{k_1R}{k_2 - k_1} (e^{-k_1t}-e{-k_2t})\]
+
+\[= R - \frac{R}{k_2-k_1}(k_2e^{-k_1t} - k_1e^{-k_2t})\]
+
+\subsection{The Formula for the Amount of
+Feces}\label{the-formula-for-the-amount-of-feces}
+
+Recall that \(d(t)\) is the total amount of food which has entered the
+duodenum by time t, including food already excreted. Since excretion is
+not a continuous process, we cannot hope to represent it by an equation
+involving derivatives. Instead, we simply note that all food arriving in
+the duodenum is excreted after a certain time delay. Let us suppose that
+the average time delay is T hours. In other words, the amount of feces
+produced by any time t \textgreater{} T is, on the average, the amount
+of food which had already entered the duodenum T hours earlier, at time
+t - T. If f(t) denotes the amount of feces produced by time t, this
+says:
+
+\(f(t) = d(t-T) for all t > T\)
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  \(f(t) = R - \frac{R}{k_2-k_1}(k_2e^{-k_1(t-T)}-k_1e^{-k_2(t-T)})\)
+\end{enumerate}
+
+for all t \textgreater{} T.
+
+\subsection{Exercise 4.}\label{exercise-4.}
+
+Remembering that r(t) is the total amount of food which has entered the
+the rumen by time t. There is a continuous flow from the rumen to the
+abomasum
+
+\subsubsection{(a) Determine the values of t for which r'(t) is,
+respectively, positive, negative, and
+zero.}\label{a-determine-the-values-of-t-for-which-rt-is-respectively-positive-negative-and-zero.}
+
+\[r(t) = Re^{-k_1t}\] Factor out constants:
+\[=R(\frac{d}{dt}(e^{-k_1 t}))\] Using the chain rule :
+\[= e^{-tk_1}(\frac{d}{dt}(-tk_1))R\] factor out constant:
+\[=-k_1 (\frac{d}{dt}(t))e^{-k_1 t}R\] derivative of t is 1:
+\[r'(t)= -e^{-tk_1}k_1R\] \(r'(t) = -e^{-t k_1}\) and therefore
+\(r'(t) < 0\) for all \(t\).
+
+\subsubsection{(b) Determine the values of t for which r''(t) is,
+respectively, positive, negative, and
+zero.}\label{b-determine-the-values-of-t-for-which-rt-is-respectively-positive-negative-and-zero.}
+
+\[= \frac{d}{dt}(R(\frac{d}{dt}(e^{-tk_1})))\]\\
+Using the chain rule:
+\[= \frac{d}{dt}(e^{-tk_1}(\frac{d}{dt}(-tk_1))R)\]\\
+factor out constants:
+\[= \frac{d}{dt}(R -(\frac{d}{dt}(t))k_1 e^{-tk_1})\]\\
+derivative of t is 1: \[= \frac{d}{dt}(R(e^{-tk_1}-k_1))\]\\
+factor out constants: \[= R(\frac{d}{dt}(e^{-tk_1}))k_1\]\\
+using the chain rule: \[= -Rk_1e^{-tk_1}(\frac{d}{dt}(-tk_1))\]\\
+factor out constants and simplify
+\[= -e^{-tk_1}R-(\frac{d}{dt}(t))k_1^2\]\\
+derivative of t is 1: \[r''(t)= e^{-tk_1}Rk_1^2\]
+
+\(r''(t) = e^{-t k_1}\) therefore for all real solutions :
+\(r''(t) > 0\) for all \(t\)
+
+\subsubsection{\texorpdfstring{(c) Determine
+\(\lim_{t\to\infty}r(t)\)}{(c) Determine \textbackslash{}lim\_\{t\textbackslash{}to\textbackslash{}infty\}r(t)}}\label{c-determine-lim_ttoinftyrt}
+
+\[r(t) = Re^{-k_1t}\] \[r(t) = Re^{-k_1 \infty}\] Since \(e^{-\infty}\)
+= 0 our solution is: \(\lim_{t\to\infty}r(t) =0\)
+
+\subsection{Exercise 5.}\label{exercise-5.}
+
+Note that for exercise 5, 6, and 7
+\(t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}\)
+
+Remembering that a(t) is the total amount of food which has entered the
+the abomasum by time t from the rumen and exiting to the duodenum. There
+is a continuous flow from the abomasum to the duodenum.
+
+We have previously solved for a(t) and \(a'(t)\)
+
+\[a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})\]
+\[a'(t) = k_1Re^{-k_1t}-k_2a(t)\]
+\[= \frac{d}{dt}(\frac{(e^{-k_1 t}- e^{-k_2 t})k_1 R}{-k_1 + k_2})\]
+Factor out constant:
+\[=\frac{k_1 R (\frac{d}{dt}(e^{-k_1 t})-(e^{-k_2 t}))}{-k_1 + k_2}\]
+Differentiate the sum term by term:
+\[=\frac{\frac{d}{dt}(e^{-k_1 t})- \frac{d}{dt}(e^{-k_2 t})k_1 R}{-k_1 + k_2}\]
+Use the chain rule:
+\[\frac{k_1 R (-(\frac{d}{dt}(e^{-k_2t}))+\frac{\frac{d}{dt}-k_1t}{e^{k_1t}}}{-k_1 +k_2}\]
+Factor out constants:
+\[\frac{k_1 R (-(\frac{d}{dt}(e^{-k_2t}))+\frac{-k_1\frac{d}{dt}t}{e^{k_1t}}}{-k_1 +k_2}\]
+
+The derivative of t is 1 and using the chain rule:
+\[\frac{k_1 R(-\frac{k_1}{e^{k_1 t}}-\frac{\frac{d}{dt}-k_2t}{e^{k_1t}}}{-k_1 +k_2}\]
+Factor out constants and the derivative of t is 1:
+\[= \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}\]
+\[a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}\]
+
+\subsubsection{\texorpdfstring{(a) Determine the values of t for which
+\(a'(t)\) is, respectively, positive, negative, and
+zero.}{(a) Determine the values of t for which a'(t) is, respectively, positive, negative, and zero.}}\label{a-determine-the-values-of-t-for-which-at-is-respectively-positive-negative-and-zero.}
+
+\[a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}\]
+\[a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}\]
+\[= \frac{k_1 ( -\frac{k_1}{e^{k_1 t_1}}+\frac{k_2}{e^{k_2 t_1}})R}{-k_1 + k_2}\]
+
+Therefore assuming that:
+
+\(k_1 > 0\) and \(k_2 > k_1\) and
+\(t_0 = \frac{log(\frac{k_1}{k_2})}{k_1 - k_2}\); \(a'(t)\) is positive
+or \(a'(t) > 0\) for all \(t < t_0\);
+
+\[= \frac{k_1 ( -\frac{k_1}{e^{k_1*0}}+\frac{k_2}{e^{k_2*0}})R}{-k_1 + k_2}\]
+\(t_0 = \frac{ln k_1 - ln k_2}{k_1 - lnk_2}\)
+
+\[= \frac{k_1 ( -\frac{k_1}{e^{k_1*\frac{ln k_1 - ln k_2}{k_1 - lnk_2}}}+\frac{k_2}{e^{k_2*\frac{ln k_1 - ln k_2}{k_1 - lnk_2}}})R}{-k_1 + k_2}\]
+
+\[\frac{k_1 R (k_1 \frac{k_1}{k_2}^{\frac{k_1}{log(k_2)-k_1}} - k_2 \frac{k_2}{k_1}^{\frac{k_2}{k_1 - log(k_2)}})}{k_1 - k_2}\]
+
+Therefore : \(a'(t_0) = 0\);
+
+We know from our previous exercise we can conclude that \(a'(t)\) is
+negative or \(a'(t) < 0\) for \(t > t_0\).
+
+\subsubsection{(b) Determine the values of t for which a''(t) is,
+respectively, positive, negative, and
+zero.}\label{b-determine-the-values-of-t-for-which-at-is-respectively-positive-negative-and-zero.}
+
+\[a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})\] Differentiate
+the sum, factor constants, and use the chain rule :
+
+\[\frac{d}{dt}(\frac{k_1 R(e^{-k_1t}\frac{d}{dt}(-k_1t)-\frac{d}{dt}(e^{-k_2t}))}{-k_1 + k_2})\]
+Factor out constants, derivative of t is 1, and use the chain rule :
+\[\frac{d}{dt}(\frac{k_1R(e^{-k_1 t}(-k_1)- e^{-k_2t}\frac{d}{dt}(-k_2t))}{-k_1 + k_2})\]
+Factor out constants, derivate of t is 1, and differentiate the sum
+term:
+\[= k_2 \frac{d}{dt}(e^{-k_2 t})-k_1\frac{d}{dt}(e^{-k_1t})\frac{k_1R}{-k_1 + k_2}\]
+Using the chain rule, factor out constants, derivative of t is 1:
+\[=\frac{k_1 R (k_2 \frac{d}{dt}(e^{-k_2t}))+e^{-k_1t}k_1^2)}{-k_1 + k_2}\]
+Using the chain rule, factor out constants, and the derivative of t is
+1: \[a''(t) = \frac{k_1(e^{-k_1 t}k_1^2-e^{-k_2 t}k_2^2)R}{-k_1+k_2}\]
+Note that \(t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}\)
+
+\[\frac{k_1(e^{-k_1 \frac{log(k1) - log(k2)}{k1 - k2}}k_1^2-e^{-k_2 \frac{log(k1) - log(k2)}{k1 - k2}}k_2^2)R}{-k_1+k_2}\]
+\[\frac{k_1 R(k_1^2(\frac{k_1}{k_2}^{\frac{k_1}{k_1 - k_2}} - k_2^2(\frac{k_1}{k_2})^{-\frac{k_2}{k_1 - k_2}}))}{k_2 - k_1}\]
+\[-k_1 k_2 R (\frac{k_1}{k_2}^{-\frac{k_1}{k_1 - k_2}})\]
+
+Therefore we can see that \(a''(t) < 0\) for all \(t < 2t_0\);
+\[\frac{k_1(e^{-k_1 2 \frac{log(k1) - log(k2)}{k1 - k2}}k_1^2-e^{-k_2 2\frac{log(k1) -log(k2)}{k1 - k2}}k_2^2)R}{-k_1+k_2}\]
+Assuming \(k_1\), \(k_2\), and \(R\) are real numbers then
+\(a''(2t_0) =0\);
+
+As we saw from the previous exercise that \(a''(t) > 0\) for
+\(t > 2t_0\).
+
+\subsubsection{\texorpdfstring{(c) Determine
+\(\lim_{t\to\infty}a(t)\)}{(c) Determine \textbackslash{}lim\_\{t\textbackslash{}to\textbackslash{}infty\}a(t)}}\label{c-determine-lim_ttoinftyat}
+
+\[a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})\]
+\[a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1 \infty} - e^{-k_2 \infty})\]
+Again, as we saw previously \(e^{-\infty}\) = 0 so our solution :
+\(\lim_{t\to\infty}a(t) =0\)
+
+\subsection{Exercise 6.}\label{exercise-6.}
+
+\[d(t) = R - r(t) - a(t)\]
+\[d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})\]
+
+\subsubsection{(a) Determine the values of t for which d'(t) is,
+respectively, positive, negative, and
+zero.}\label{a-determine-the-values-of-t-for-which-dt-is-respectively-positive-negative-and-zero.}
+
+\[d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})\]
+\[- \frac{R (\frac{d}{dt} (-e^{-k_2 t} k1 + e^{-k1t}k2))}{-k_1 + k_2} + \frac{d}{dt} (R)\]\\
+\[\frac{d}{dt}(R) - k_2 \frac{d}{dt}(e^{-k_1 t})-k1\frac{d}{dt}(e^{-k_2 t})\frac{R}{-k_1 + k_2}\]
+Using the chain rule and derivative of R is zero:
+\[- \frac{R(-k_1 \frac{d}{dt}(e^{-k_2 t})) + e^{-k_1 t}\frac{d}{dt}(-k_1 t)k_2)}{-k_1 + k_2}\]
+Factor out constants and derivative of t is 1:
+\[- \frac{R(-k_1 \frac{d}{dt}(e^{-k_2 t})) + 1e^{-k_1 t}k_2)}{-k_1 + k_2}\]
+Using chain rule:
+\[- \frac{R(-e^{-k_1 t}k_1 k_2 - e^{-k_2 t} \frac{d}{dt} (-k_2 t)k_1}{-k_1 + k_2}\]
+Factor out:
+\[- \frac{R(-e^{-k_1 t}k_1 k_2 - -k_2 \frac{d}{dt}(t)e^{-k_2 t}k_1)}{-k_1 + k_2}\]
+Simplify and derivative of t is 1:
+\[d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}\]
+Note \(t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}\)
+
+\[-\frac{(-e^{-k_1 \frac{ln k_1 - ln k_2}{k_1 - k_2}}k_1 k_2 + e^{-k_2 \frac{ln k_1 - ln k_2}{k_1 - k_2}}k_1 k_2)R}{-k_1 + k_2}\]
+\[\frac{k_1 k_2 R (\frac{k_2}{k_1}^{\frac{k_2}{k_1 - k_2}}-\frac{k_2}{k_1}^{\frac{k_1}{k_1 - k_2}})}{k_1 - k_2}\]
+\[k_2R(\frac{k_2}{k_1})^{\frac{k_2}{k_1 - k_2}}\]
+
+Therefore we can conclude that \(d'(t)\) is positive or \(d'(t) > 0\)
+for all t (must have \(k_1 > k_2\)).
+
+\subsubsection{(b) Determine the values of t for which d''(t) is,
+respectively, positive, negative, and
+zero.}\label{b-determine-the-values-of-t-for-which-dt-is-respectively-positive-negative-and-zero.}
+
+\[d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}\]\\
+\[= -\frac{R(k_1 k_2 (\frac{d}{dt}(e^{-k_2 t})) - -k_1 \frac{d}{dt}(t)e^{-k_1 t}k_1 k_2 )}{-k_1 + k_2}\]
+Simplify and the derivative of t is 1:
+\[= -\frac{R(k_1 k_2 (\frac{d}{dt}(e^{-k_2 t})) - e^{-k_1 t}k_1^2 k_2 )}{-k_1 + k_2}\]\\
+Use the chain rule:
+\[= -\frac{R(e^{-k_1 t}k_1^2 k_2 + e^{-k_2 t} \frac{d}{dt}(t)k_1 k_2 }{-k_1 + k_2}\]\\
+Factor out constants:
+\[= -\frac{R(e^{-k_1 t}k_1^2 k_2 + - k_2 \frac{d}{dt}(t) e^{-k_2 t}k_1 k_2} {-k_1 + k_2}\]\\
+Derivative of t is 1 and simplify:
+\[= - \frac{R (e^{-k_1 t}k_1^2 k_2) - e^{k_2 t} k_1 k_2^2)}{-k_1 + k_2}\]\\
+\[d''(t) = \frac{k_1 k_2 R e^{t(-k_1-k_2)}(k_1 e^{k_2 t}-k_2 e^{k_1 t})}{k_1 - k_2}\]
+
+\[(k_1 - k_2)(k_1 e ^{k_2 t}-k_2 e^{k_1 t}) > 0\]
+
+Therefore \(d''(t)\) is positive or \(d''(t) > 0\) for all \(t < t_0\);
+
+Note that \(t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}\)
+
+\[\frac{k_1 k_2 R e^{t(-k_1-k_2)}(k_1 e^{k_2 \frac{ln k_1 - ln k_2}{k_1 - k_2}}-k_2 e^{k_1 \frac{ln k_1 - ln k_2}{k_1 - k_2}})}{k_1 - k_2}\]
+
+\[\frac{k_1 k_2 R(k_1 (\frac{k_1}{k_2})^{\frac{k_2}{k_1 - k_2}}-k_2(\frac{k_1}{k_2}^{\frac{k_1}{k_1 - k_2}}))e^{t(-k_1 - k_2)}}{k_1 - k_2}\]
+
+\[\frac{k_1^2 k_2 R (\frac{k_1}{k_2})^{\frac{k_1}{k_1 - k_2}}e^{\frac{(-k_1 - k_2)(log(k_1) - log(k_2))}{k_1 - k_2}}}{k_1 - k_2} - \frac{k_1 k_2^2 R (\frac{k_1}{k_2})^{\frac{k_1}{k_1 - k_2}}e^{\frac{(-k_1 - k_2)(log(k_1) - log(k_2))}{k_1 - k_2}}}{k_1 - k_2}\]
+
+Therefore \(d''(t)\) or \(d''(t_0) =0\);
+
+If the first part of the exercise is indeed true then \(d''(t)\) is
+negative or \(d''(t) < 0\) for \(t > t_0\).
+
+\subsubsection{\texorpdfstring{(c) Determine
+\(\lim_{t\to\infty}d(t)\)}{(c) Determine \textbackslash{}lim\_\{t\textbackslash{}to\textbackslash{}infty\}d(t)}}\label{c-determine-lim_ttoinftydt}
+
+\[d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})\]
+\[d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 \infty} - k_1 e^{-k_2 \infty})\]
+\[d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 \infty} - k_1 e^{-k_2 \infty})\]
+Since \(e^{-\infty}\) = 0 :
+
+\[d(t) = R - \frac{R}{k_2 - k_1}(k_2*0 - k_1*0)\] Therefore, our
+solution is : \(\lim_{t\to\infty}d(t) =R\)
+
+\subsection{Exercise 7.}\label{exercise-7.}
+
+For the function f(t) follow the instructions of Exercise 4.
+
+\[f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})\]
+
+\subsubsection{(a) Determine the values of t for which f'(t) is,
+respectively, positive, negative, and
+zero.}\label{a-determine-the-values-of-t-for-which-ft-is-respectively-positive-negative-and-zero.}
+
+\[=- \frac{R \frac{d}{dt}(-e^{-k_2 (t-T)}k_1 + e^{-k_1(t - T)}k_2))}{-k_1 + k_2} + \frac{d}{dt}(R)\]
+
+Factor out constants:
+\[=\frac{d}{dt}(R) - k_2(\frac{d}{dt}(e^{-k_1(t - T)})) - k_1 (\frac{d}{dt}(e^{-k_2(t-T)})) \frac{R}{-k_1 + k_2}\]
+Using the chain rule:
+\[=\frac{d}{dt}(R)-\frac{R(-k_1)(\frac{d}{dt}(e^{-k_2(t-T)})) + e^{-k_1(t-T)}\frac{d}{dt}(-k_1(t-T)))k_2)}{-k_1+ k_2}\]
+Factor out constants:
+\[=\frac{d}{dt}(R) - \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+-k_1(\frac{d}{d_t}(t-T))e^(-k_1(t-T))k_2)}{-k_1 + k_2}\]
+Differentiate the sum term:
+\[=\frac{d}{dt}(R) - \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+ \frac{d}{dt}(t) + \frac{d}{dt}(-T)e^{-k1(t-T)k_1 k_2}}{-k_1 + k_2}\]
+Derivative of t is 1 and R is 0:
+\[=- \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+ \frac{d}{dt}(-T)e^{-k1(t-T)k_1 k_2}}{-k_1 + k_2}\]
+Using the chain rule:
+\[=-\frac{R(-e^{-k_1 (t-T)}k_1 k_2(\frac{d}{dt}(-T)))- e^{-k_2(t-T)}(\frac{d}{dt}(-k_2(t-T)))k_1}{-k_1 + k_2}\]
+Factor out constants:
+\[=-\frac{R(-e^{-k_1 (t-T)}k_1 k_2(\frac{d}{dt}(-T)))- -k_2(\frac{d}{dt}(t-T))e^{-k_2 (t-T)}k_1}{-k_1 + k_2}\]
+Differentiate the sum term:
+\[=-\frac{R(-e^{-k_1(t-T)}k_1 k_2(\frac{d}{dt}(-T)) + \frac{d}{dt}(t)+\frac{d}{dt}(-T)e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}\]
+The derivative of t is 1 and -T is zero
+\[=-\frac{R(-e^{-k_1(t-T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}\]
+\[f'(t)=-\frac{-e^{-k_1 (t -T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2)R}{-k_1 + k_2}\]
+
+note \(t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}\).
+
+\[(k_1 - k_2)(e^{k_1 (T-t)}-e^{k_2(T-t)})>0\] Therefore \(f'(t)\) is
+positive or \(f'(t) > 0\) for all \(t > T\).
+
+\subsubsection{(b) Determine the values of t for which f''(t) is,
+respectively, positive, negative, and
+zero.}\label{b-determine-the-values-of-t-for-which-ft-is-respectively-positive-negative-and-zero.}
+
+\[=\frac{d}{dt}(\frac{d}{dt}(R - \frac{(-e^{-k_2(t-T)}k_1) + e^{-k_1(t-T)}k_2)R}{-k_1+k_2}))\]
+Differentiate and factor out:
+\[=\frac{d}{dt}(\frac{d}{dt}(R) - \frac{R \frac{d}{dt}(-e^{-k_2(t-T)}k_1 + e^{-k_1(t-T)}k_2)}{-k_1+k_2}))\]
+Factor out:
+\[=\frac{d}{dt}(-\frac{R}{-k_1 + k_2}k_2\frac{d}{dt}(e^{-k_1(t-T)})-k_1\frac{d}{dt}(e^{-k_2(t-T)})+\frac{d}{dt}(R))\]
+Using the chain rule:
+\[=\frac{d}{dt}(-\frac{R(e^{-k_1(t-T)}\frac{d}{dt}(-k_1(t-T))k_2 - k_1(\frac{d}{dt}(e^{-k_2(t-T)}))}{-k_1 +k_2}+\frac{d}{dt}(R))\]
+Factor out:
+\[= \frac{d}{dt}(-\frac{R(k_2-k_1 \frac{d}{dt}(t-T)e^{-k_1(t-T)}-k_1( \frac{d}{dt}(e^{-k_2(t-T)})))}{-k_1+k_2} + \frac{d}{dt}(R))\]
+Differentiate the sum
+\[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1\frac{d}{dt}(t)+\frac{d}{dt}(-T)-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))}{-k_1+k_2}+\frac{d}{dt}(R))\]
+The derivative of t is 1 and -T is zero:
+\[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1(1+0)-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))}{-k_1+k_2}+\frac{d}{dt}(R))\]
+Use the chain rule:
+\[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-e^{-k_2(t-T)}\frac{d}{dt}(-k_2(t-T))k_1 }{-k_1+k_2}+\frac{d}{dt}(R))\]
+Factor out:
+\[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1-k_2\frac{d}{dt}(t-T)e^{-k_2(t-T)})  }{-k_1+k_2}+\frac{d}{dt}(R))\]
+Differentiate the sum:
+\[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1(e^{-k_2(t-T)}-k_2\frac{d}{dt}(t)+\frac{d}{dt}(-T)}{-k_1+k_2}+\frac{d}{dt}(R))\]
+The derivative of t is 1 and, -T and R is zero:
+\[=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1(e^{-k_2(t-T)}-k_2(1+0)}{-k_1+k_2}+0)\]
+Factor out:
+\[=-\frac{R\frac{d}{dt}(-e^{-k_1(t-T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2))}{-k_1 + k_2}\]
+Use the chain rule:
+\[=-\frac{R(k_1 k_2(\frac{d}{dt}(e^{-k_2(t-T)}))-e^{-k_1(t-T)}\frac{d}{dt}(-k_1(t-T))k_1 k_2)}{-k_1 k_2}\]
+Factor out:
+\[=-\frac{R(k_1 k_2 \frac{d}{dt}(e^{-k_2(t-T)}))--k_1\frac{d}{dt}(t-T)e^{-k_1(t-T)}k_1 k_2}{-k_1 k_2}\]
+Simply
+\[=-\frac{R(k_1 k_2 \frac{d}{dt}(e^{-k_2(t-T)}))+\frac{d}{dt}(t)+\frac{d}{dt}(-T)e^{-k_1(t-T)}k_1^2 k_2}{-k_1 k_2}\]
+The derivative of t is 1:
+\[=-\frac{R(k_1 k_2 \frac{d}{dt}(e^{-k_2(t-T)}))+(1+\frac{d}{dt}(-T))e^{-k_1(t-T)}k_1^2 k_2}{-k_1 k_2}\]
+Using the chain rule:
+\[=-\frac{R(e^{-k_1(t-T)}k_1^2k_2(1+\frac{d}{dt}(t-T))+-k_2(\frac{d}{dt}(t-T)e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}\]
+Factor and differentiate the sum term by term:
+\[=-\frac{R(e^{-k_1(t-T)k_1^2k_2}(1+\frac{d}{dt}(-T))- \frac{d}{dt}(t)+\frac{d}{dt}(-T)e^{-k_2(t-T)}k_1 k_2^2)}{-k_1 + k_2}\]
+Derivative of t is 1 and -T is zero:
+\[=-\frac{R(e^{-k_1(t-T)k_1^2k_2}(1+0)-e^{-k_2(t-T)}k_1 k_2^2)(1+0)}{-k_1 + k_2}\]
+Answer:
+\[f''(t) =-\frac{(e^{-k_1 (t-T)}k_1^2 k_2 -e^{-k_2(t-T)}k_1 k_2^2)R}{-k_1 + k_2}\]
+
+\[\frac{-R e ^{k_1 T - k_1 t}k_1^2 k_2 - R e^{k_2T -k_2t}k_1 k_2^2}{k_2 - k_1}\]
+\[\frac{ e^{k_2 t - k_2 t}k_1 k_2^2 R}{k_2 - k_1} - \frac{ e^{k_1 t - k_1 t}k_1^2 k_2 R}{k_2 - k_1}\]
+\[0 < (k_1 - k_2)(k_1 e^{k_1(T-t)}- k_2 e^{k_2(T-t)})\]
+
+Therefore \(f''(t)\) is positive or \(f''(t) > 0\) for all
+\(T < t < T + t_0\);
+
+Note that \(t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}\)
+
+\[0 = \frac{k_1 e^{k1(\frac{log(\frac{k_2}{k_1})}{k_1 - k_2}+T)} + k_2 e^{k2(\frac{log(\frac{k_2}{k_1})}{k_1 - k_2}+T)} }{k_1 - k_2}\]
+\[T = \frac{-log(\frac{k_1}{k_2}+log(k_1)- log(k_2)}{k_1 - k_2}\]
+Therefore \(f''(t)\) is zero at \(f''(T + t_0) =0\);
+
+Having found where \(f''(t)\) is positive we can then conclude that
+\(f''(t)\) is negative or \(f''(t) < 0\) for \(t > T + t_0\).
+
+\subsubsection{\texorpdfstring{(c) Determine
+\(\lim_{t\to\infty}f(t)\)}{(c) Determine \textbackslash{}lim\_\{t\textbackslash{}to\textbackslash{}infty\}f(t)}}\label{c-determine-lim_ttoinftyft}
+
+\[f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})\]
+\[f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(\infty-T)}-k_1 e^{-k_2(\infty-T)})\]
+Since \(e^{-\infty}\) = 0:
+
+\(f(t) = R\) so our solution is answer: \(\lim_{t\to\infty}f(t) = R\)
+
+\subsection{Exercise 8.}\label{exercise-8.}
+
+Using all the information in Exercise 4, 5, 6, and 7 to sketch the
+graphs of r, a, d, and f. You should not have to compute any points
+except r(0), a(0), d(0), and f(T), which you already know.
+
+\includegraphics{https://raw.githubusercontent.com/dbouquin/DATA_609_final/master/20170507_152919.jpg}
+\newpage
+
+\subsection{Exercise 9.}\label{exercise-9.}
+
+Assuming that increased stay in the digestive system implies improved
+digestion determine from Figure 4 which method of food preparation is
+more desirable. Why?
+
+\begin{figure}
+\centering
+\includegraphics{https://raw.githubusercontent.com/dbouquin/DATA_609_final/master/Figure4.PNG}
+\caption{}
+\end{figure}
+
+Assuming that we are looking for the feed type that stays in the sheep's
+stomach the longest, then we would say that the medium-ground grass
+would be the most desirable. We make this assumption as it stands that
+the sheep requires less feed for the same results.
+
+
+\end{document}
