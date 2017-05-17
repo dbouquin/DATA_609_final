@@ -1,0 +1,550 @@
+---
+title: "DATA 609 - Final Project"
+author: "Daina Bouquin, Christophe Hunt, Christina Taylor"
+date: "April 16, 2017"
+output:
+  pdf_document:
+    fig_caption: yes
+    includes:
+      in_header: header.tex
+    keep_tex: yes
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+  html_document:
+    toc: yes
+    toc_depth: '3'
+always_allow_html: yes
+---
+\newpage
+
+# Textbook Part III:
+
+## The problem
+
+The digestive processes of sheep can highlight the nutritionally value in varied feeding schedules or varied food preparation. This is especially important when raising sheep for commercial purposes. 
+
+## The digestive process
+
+Sheep are a cud-chewing animal which means that unchewed food goes through a series of storage stomachs called the rumen and the reticulum. The process is illustrated below: 
+
+\begin{tikzpicture}[node distance = 2cm]
+  \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+  \tikzstyle{arrow} = [thick,->,>=stealth]
+  \node (r) [process, xshift=2cm] {Rumen};
+  \node (a) [process, right of=r, xshift=2cm] {Abomasum};
+  \node (d) [process, right of=a, xshift=2cm] {Duodemum};
+  \node (f) [process, right of=d, xshift=2cm]  {Feces};
+  \draw [arrow] (r) -- (a);
+  \draw [arrow] (a) -- (d);
+  \draw [dotted] (d) -- (f);
+\end{tikzpicture}
+
+
+## The experiment
+
+The digestive process is most observable at the beginning and at the end, we can observer and control what goes in and what comes out. 
+
+## The model 
+
+Suppose that at $t = 0$ a sheep is fed an amount $R$ of food which goes immediately into its rumen. This food will pass gradually from the rumen through the abomasum into the duodenum. At any later time $t$ we shall define:
+
+$r(t)$ = the amount of food still in the rumen;
+$a(t)$ = the amount in the abomasum;
+$d(t)$ = the amount which by then has arrived in the duodenum.
+
+So $r(0) = R$, $a(0)$ = $d(0)$ = 0, and, for all t>0,     
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1) $r(t) + a(t) + d(t) = R.$
+
+## The assumptions
+
+Two assumptions are made:   
+
+(A) Food moves out of the rumen at a rate proportional to the amount of food in the rumen. Mathematically this says:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2) $r'(t) = -k_1r(t)$    
+
+where $k_1$ is a positive proportionality constant.
+
+(B) Food moves out of the abomasum at a rate proportional to the amount of food in the abomasum. Since at the same time food is moving into the abomasum at the rate given by Equation (2), the assumption says
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3) $a'(t) = k_1r(t)-k_2a(t)$
+
+where $k_2$ is another positive proportionality constant.
+
+## The solutions of the equations
+
+### Solving for $r(t)$
+
+It is straightforward to solve Equation (2) for $r(t)$.      
+We just divide through by $r(t)$ and then integrate from 0 to t:
+
+$$\int_0^t \frac{r'(t)}{r(t)} dt= - \int_0^t k_1dt$$    
+$$ln(\frac{r(t)}{R}) = -k_1t$$,
+
+since r(0) = R, and finally:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(4) $r(t) = Re^{-k_1t}$ 
+
+### Solving for $a(t)$
+
+Finding $a(t)$ is a bit more tricky. Applying Equations (4) to Equation (3) we get:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5) $a'(t) = k_1Re^{-k_1t}-k_2a(t)$
+
+Equation (5) probably looks quite different from any you have seen before. Let us try to make a shrew guess what kind of solution it has. It says that the derivative of $a(t)$ is the sum of two terms, $k_1Re^{-k_1t}$ and $-k_2a(t)$. With luck, this might remind us of the product rule:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(6) if $a(t) = u(t) \bullet v(t)$
+    then $a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)$
+    
+Can we pick $u(t)$ and $v(t)$ so the terms in Equation (6) match up with the terms in Equation (5)? In other words, can we pick $u(t)$ and $v(t)$ so that 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(7) $u(t) \bullet v'(t) = k_1Re^{-k_1^t}$
+
+and 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(8) $v(t) \bullet u'(t) = -k_2a(t)$
+
+Since $a(t) = u(t) \bullet v(t)$, Equation (8) can rewritten 
+$v(t) \bullet u'(t) = -k_2u(t)v(t)$, we are in business! The $v(t)$ factors cancel out, leaving us with 
+
+$$u'(t) = -k_2u(t)$$
+
+which looks very much like Equation (2) and can be solved in the same way. 
+
+
+$\int_0^t \frac{u'(t)}{u(t)} dt = -\int_0^t k_2dt$
+
+Writing K = u(0):
+
+$ln (\frac{u(t)}{K}) = -k_2t$    
+$u(t) = Ke^{-k_2t}$.   
+
+Putting this into Equation (7) gives
+
+$Ke^{-k_2t}v'(t) = k_1Re^{-k_1t}$    
+$v'(t) = \frac{k_1R}{K}e(k_2-k_1)^t$.
+
+If $k_1 = k_2$ we feel confident you can complete this solution yourself (Exercise 1). 
+
+
+
+## Exercise 1. Find $a(t)$ if $k_1 = k_2$. 
+
+$$a'(t) = u(t) \bullet v'(t) + v(t) \bullet u'(t)$$   
+Using the solution from equation 8 we get:
+$$u(t) = Ke^{-k_2t}$$    
+Using the solution from equation 7 we get:
+$$v'(t) = \frac{k_1R}{K}e^{k_2 - k_1}t$$    
+Substituting the solutions for $a(t)$ we get:
+$$\frac{k_1R}{K}e^{k_2 - k_1}t * Ke^{-k_2t}$$    
+If k_1 = k_2 then $e^{0} = 1$    
+$$\frac{k_1R}{K}t * Ke^{-k_2t}$$    
+K factors out : 
+$$k_1Rte^{-k_2t}$$    
+
+Solution : $$a(t) = k_1Rte^{-k_2t}$$    
+
+----
+
+If $k_1 \neq k_2$, then $k_2 - k _1 \neq 0$ and so we can write 
+
+$$v(t) = \frac{k_1R}{K(k_2 - k_1)}e^(k_2 -k_1)^t +c$$
+
+Where C is the constant of integration. Then
+
+$$a(t) = u(t) \bullet v(t) = \frac{k_1R}{k_2-k_1}e^{-k_1t} + CKe^{-k_2t}$$
+
+Using the fact that $a(0) = 0$, we get 
+
+$$0 = \frac{k_1R}{k_2-k_1} + CK$$
+$$CK = -\frac{k_1R}{k_2-k_1}$$
+(9) $a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$
+
+## Exercise 2. 
+
+### (a) Find the time t at which $a(t)$ is maximum.
+
+$$a(t) = \frac{k_1 R}{k_2 - k_1}(e^{-k_1 t}-e^{-k_2 t})$$   
+$$0 = \frac{k_1 R}{k_2 - k_1}(e^{-k_1 t}-e^{-k_2 t})$$   
+Divide both sides by $\frac{k_1 r}{k_2 - k_1}$      
+$$e^{-k_2 t}k2 - e^{-k_1 t}k1 = 0$$   
+Factor $e^{-k_1 t}$, $e^{-k_2 t}$:    
+$$-e^{-k_1 t - k_2 t}(e^{k_2 t}k_1 - e^{k_1 t}k2) = 0$$   
+Multiply by -1 to simplify and split into two equations:     
+$$e^{-k_1 t - k_2 t} = 0 ~and~e^{k_2 t}k_1 - e^{k_1 t}k2= 0$$   
+Since $e^(z)$ can never be zero for any real number, no solution exists for $$e^{-k_1 t - k_2 t} \neq 0$$   
+Divide both sides by $e^{k2 t}$:   
+$$k_1 - e^{t (k_1 - k_2)}k2= 0$$   
+Subtract k1:   
+$$- e^{t (k_1 - k_2)}k2= -k_1$$   
+Divide both sides by -k2:    
+$$e^{t (k_1 - k_2)}= \frac{k_1}{k_2}$$  
+Take the log: 
+$$t (k_1 - k_2)= \log{(\frac{k_1}{k_2})}$$   
+Solve for t:
+$$t = \frac{\log{(\frac{k_1}{k_2})}}{(k_1 - k_2)}$$   
+
+Alternate Solution: 
+
+$$t = \frac{lnk_1 - lnk_2}{k_1 - k_2}$$ 
+
+\newpage
+
+### (b) Find the maximum value of $a(t)$.
+
+$$a(t) = \frac{k_1R}{k_2-k_1}(e^{-k_1t}-e^{-k_2t})$$ 
+
+Substituting t we get :
+$$\frac{k1 R}{k2 - k1}(e^{-k1 \frac{\log{(\frac{k1}{k2})}}{(k1 - k2)}}-e^{-k2 \frac{\log{(\frac{k1}{k2})}}{(k1 - k2)}})$$
+Using the chain rule we identify that:
+$$e^{-k1 \frac{\log{(\frac{k1}{k2})}}{(k1 - k2)}}=\frac{k_1}{k_2}^{-\frac{k_1}{k_1 - k_2}}$$
+Therefore with substitution and applying the chain rule the maximum value of $a(t)$ is : 
+
+$$\frac{k_1R}{k_2-k_1}[(\frac{k_1}{k_2})^{-\frac{k_1}{k_1-k_2}}-(\frac{k_1}{k_2})^{-\frac{k_2}{k_1-k_2}}]$$
+
+## Exercise 3. 
+If $k_1$ = 2 and $k_2$ = 1, how much food must the abomasum be able to hold if a meal of amount R is fed at time t = 0? If we substitute our values we have: 
+
+$$\frac{2 R}{2 - 1}[(\frac{2}{1})^{-\frac{1}{2-1}}-(\frac{2}{1})^{-\frac{2}{2-1}}]$$
+Simplify:
+
+$$2[(\frac{2}{1})^{-1}-(\frac{2}{1})^{-2}]R$$
+$$2[(\frac{1}{2})-(\frac{1}{4})]R$$
+$$2[(\frac{2}{4})-(\frac{1}{4})]R$$
+$$2[\frac{1}{4}]R$$
+answer: $$\frac{1}{2}R$$
+
+\newpage
+
+#Comparison of the Model's Predictions with Experimental Data
+
+Equations (4) and (9) are purely theoretical and are based on assumptions. To confirm their accuracy we will see if they agree with experimental data. Since the data concern is fecal excretion as a function of time, we must first translate our results into results on fecal excretion. 
+
+## Solving for $d(t)$
+
+Starting with Equation (1), and using Equations (4) and (9) (still assuming $k_1 \neq k_2$):
+
+$$d(t) = R - r(t) - a(t)$$ 
+
+$$= R - Re^{-k_1t} - \frac{k_1R}{k_2 - k_1} (e^{-k_1t}-e{-k_2t})$$   
+
+$$= R - \frac{R}{k_2-k_1}(k_2e^{-k_1t} - k_1e^{-k_2t})$$  
+
+## The Formula for the Amount of Feces
+
+Recall that $d(t)$ is the total amount of food which has entered the duodenum by time t, including food already excreted. Since excretion is not a continuous process, we cannot hope to represent it by an equation involving derivatives. Instead, we simply note that all food arriving in the duodenum is excreted after a certain time delay. Let us suppose that the average time delay is T hours. In other words, the amount of feces produced by any time t > T is, on the average, the amount of food which had already entered the duodenum T hours earlier, at time t - T. If f(t) denotes the amount of feces produced by time t, this says:
+
+$f(t) = d(t-T) for all t > T$
+
+(10) $f(t) = R - \frac{R}{k_2-k_1}(k_2e^{-k_1(t-T)}-k_1e^{-k_2(t-T)})$
+
+for all t > T.
+
+## Exercise 4.
+
+Remembering that r(t) is the total amount of food which has entered the the rumen by time t. There is a continuous flow from the rumen to the abomasum
+
+### (a) Determine the values of t for which r'(t) is, respectively, positive, negative, and zero.
+
+$$r(t) = Re^{-k_1t}$$
+Factor out constants:
+$$=R(\frac{d}{dt}(e^{-k_1 t}))$$
+Using the chain rule : 
+$$= e^{-tk_1}(\frac{d}{dt}(-tk_1))R$$
+factor out constant:
+$$=-k_1 (\frac{d}{dt}(t))e^{-k_1 t}R$$
+derivative of t is 1: 
+$$r'(t)= -e^{-tk_1}k_1R$$
+$r'(t) = -e^{-t k_1}$ and therefore $r'(t) < 0$ for all $t$.
+
+### (b) Determine the values of t for which r''(t) is, respectively, positive, negative, and zero.
+
+$$= \frac{d}{dt}(R(\frac{d}{dt}(e^{-tk_1})))$$   
+Using the chain rule:
+$$= \frac{d}{dt}(e^{-tk_1}(\frac{d}{dt}(-tk_1))R)$$   
+factor out constants:
+$$= \frac{d}{dt}(R -(\frac{d}{dt}(t))k_1 e^{-tk_1})$$   
+derivative of t is 1:
+$$= \frac{d}{dt}(R(e^{-tk_1}-k_1))$$   
+factor out constants:
+$$= R(\frac{d}{dt}(e^{-tk_1}))k_1$$   
+using the chain rule:
+$$= -Rk_1e^{-tk_1}(\frac{d}{dt}(-tk_1))$$   
+factor out constants and simplify
+$$= -e^{-tk_1}R-(\frac{d}{dt}(t))k_1^2$$   
+derivative of t is 1:
+$$r''(t)= e^{-tk_1}Rk_1^2$$   
+
+$r''(t) = e^{-t k_1}$ therefore for all real solutions : $r''(t) > 0$ for all $t$   
+
+### (c) Determine $\lim_{t\to\infty}r(t)$   
+
+$$r(t) = Re^{-k_1t}$$
+$$r(t) = Re^{-k_1 \infty}$$
+Since $e^{-\infty}$ = 0 our solution is: $\lim_{t\to\infty}r(t) =0$   
+
+## Exercise 5.
+
+Note that for exercise 5, 6, and 7 $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
+
+Remembering that a(t) is the total amount of food which has entered the the abomasum by time t from the rumen and exiting to the duodenum. There is a continuous flow from the abomasum to the duodenum. 
+
+We have previously solved for a(t) and $a'(t)$
+
+$$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$$
+$$a'(t) = k_1Re^{-k_1t}-k_2a(t)$$
+$$= \frac{d}{dt}(\frac{(e^{-k_1 t}- e^{-k_2 t})k_1 R}{-k_1 + k_2})$$
+Factor out constant:
+$$=\frac{k_1 R (\frac{d}{dt}(e^{-k_1 t})-(e^{-k_2 t}))}{-k_1 + k_2}$$
+Differentiate the sum term by term:
+$$=\frac{\frac{d}{dt}(e^{-k_1 t})- \frac{d}{dt}(e^{-k_2 t})k_1 R}{-k_1 + k_2}$$
+Use the chain rule:
+$$\frac{k_1 R (-(\frac{d}{dt}(e^{-k_2t}))+\frac{\frac{d}{dt}-k_1t}{e^{k_1t}}}{-k_1 +k_2}$$
+Factor out constants:
+$$\frac{k_1 R (-(\frac{d}{dt}(e^{-k_2t}))+\frac{-k_1\frac{d}{dt}t}{e^{k_1t}}}{-k_1 +k_2}$$
+
+The derivative of t is 1 and using the chain rule:
+$$\frac{k_1 R(-\frac{k_1}{e^{k_1 t}}-\frac{\frac{d}{dt}-k_2t}{e^{k_1t}}}{-k_1 +k_2}$$
+Factor out constants and the derivative of t is 1:
+$$= \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}$$
+$$a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}$$
+
+### (a) Determine the values of t for which $a'(t)$ is, respectively, positive, negative, and zero.
+
+$$a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}$$
+$$a'(t) = \frac{k_1 ( -\frac{k_1}{e^{k_1t}}+\frac{k_2}{e^{k_2t}})R}{-k_1 + k_2}$$
+$$= \frac{k_1 ( -\frac{k_1}{e^{k_1 t_1}}+\frac{k_2}{e^{k_2 t_1}})R}{-k_1 + k_2}$$
+
+Therefore assuming that:
+
+$k_1 > 0$ and $k_2 > k_1$ and $t_0 = \frac{log(\frac{k_1}{k_2})}{k_1 - k_2}$; $a'(t)$ is positive or $a'(t) > 0$ for all $t < t_0$; 
+
+
+$$= \frac{k_1 ( -\frac{k_1}{e^{k_1*0}}+\frac{k_2}{e^{k_2*0}})R}{-k_1 + k_2}$$
+$t_0 = \frac{ln k_1 - ln k_2}{k_1 - lnk_2}$
+
+$$= \frac{k_1 ( -\frac{k_1}{e^{k_1*\frac{ln k_1 - ln k_2}{k_1 - lnk_2}}}+\frac{k_2}{e^{k_2*\frac{ln k_1 - ln k_2}{k_1 - lnk_2}}})R}{-k_1 + k_2}$$
+
+$$\frac{k_1 R (k_1 \frac{k_1}{k_2}^{\frac{k_1}{log(k_2)-k_1}} - k_2 \frac{k_2}{k_1}^{\frac{k_2}{k_1 - log(k_2)}})}{k_1 - k_2}$$
+
+Therefore : $a'(t_0) = 0$; 
+
+We know from our previous exercise  we can conclude that $a'(t)$ is negative or $a'(t) < 0$ for $t > t_0$. 
+
+### (b) Determine the values of t for which a''(t) is, respectively, positive, negative, and zero.
+
+$$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$$
+Differentiate the sum, factor constants, and use the chain rule :
+
+$$\frac{d}{dt}(\frac{k_1 R(e^{-k_1t}\frac{d}{dt}(-k_1t)-\frac{d}{dt}(e^{-k_2t}))}{-k_1 + k_2})$$
+Factor out constants, derivative of t is 1, and use the chain rule :
+$$\frac{d}{dt}(\frac{k_1R(e^{-k_1 t}(-k_1)- e^{-k_2t}\frac{d}{dt}(-k_2t))}{-k_1 + k_2})$$
+Factor out constants, derivate of t is 1, and differentiate the sum term:
+$$= k_2 \frac{d}{dt}(e^{-k_2 t})-k_1\frac{d}{dt}(e^{-k_1t})\frac{k_1R}{-k_1 + k_2}$$
+Using the chain rule, factor out constants, derivative of t is 1:
+$$=\frac{k_1 R (k_2 \frac{d}{dt}(e^{-k_2t}))+e^{-k_1t}k_1^2)}{-k_1 + k_2}$$
+Using the chain rule, factor out constants, and the derivative of t is 1:
+$$a''(t) = \frac{k_1(e^{-k_1 t}k_1^2-e^{-k_2 t}k_2^2)R}{-k_1+k_2}$$
+Note that $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
+
+$$\frac{k_1(e^{-k_1 \frac{log(k1) - log(k2)}{k1 - k2}}k_1^2-e^{-k_2 \frac{log(k1) - log(k2)}{k1 - k2}}k_2^2)R}{-k_1+k_2}$$
+$$\frac{k_1 R(k_1^2(\frac{k_1}{k_2}^{\frac{k_1}{k_1 - k_2}} - k_2^2(\frac{k_1}{k_2})^{-\frac{k_2}{k_1 - k_2}}))}{k_2 - k_1}$$
+$$-k_1 k_2 R (\frac{k_1}{k_2}^{-\frac{k_1}{k_1 - k_2}})$$                
+
+Therefore we can see that $a''(t) < 0$ for all $t < 2t_0$; 
+$$\frac{k_1(e^{-k_1 2 \frac{log(k1) - log(k2)}{k1 - k2}}k_1^2-e^{-k_2 2\frac{log(k1) -log(k2)}{k1 - k2}}k_2^2)R}{-k_1+k_2}$$
+Assuming $k_1$, $k_2$, and $R$ are real numbers then $a''(2t_0) =0$; 
+
+As we saw from the previous exercise that $a''(t) > 0$ for $t > 2t_0$. 
+
+### (c) Determine $\lim_{t\to\infty}a(t)$
+
+$$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1t} - e^{-k_2t})$$
+$$a(t) = \frac{k_1 R}{k_2-k_1}(e^{-k_1 \infty} - e^{-k_2 \infty})$$
+Again, as we saw previously $e^{-\infty}$ = 0 so our solution : $\lim_{t\to\infty}a(t) =0$
+
+## Exercise 6.
+
+$$d(t) = R - r(t) - a(t)$$
+$$d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})$$
+
+### (a) Determine the values of t for which d'(t) is, respectively, positive, negative, and zero.
+
+$$d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})$$
+$$- \frac{R (\frac{d}{dt} (-e^{-k_2 t} k1 + e^{-k1t}k2))}{-k_1 + k_2} + \frac{d}{dt} (R)$$   
+$$\frac{d}{dt}(R) - k_2 \frac{d}{dt}(e^{-k_1 t})-k1\frac{d}{dt}(e^{-k_2 t})\frac{R}{-k_1 + k_2}$$
+Using the chain rule and derivative of R is zero:
+$$- \frac{R(-k_1 \frac{d}{dt}(e^{-k_2 t})) + e^{-k_1 t}\frac{d}{dt}(-k_1 t)k_2)}{-k_1 + k_2}$$
+Factor out constants and derivative of t is 1:
+$$- \frac{R(-k_1 \frac{d}{dt}(e^{-k_2 t})) + 1e^{-k_1 t}k_2)}{-k_1 + k_2}$$
+Using chain rule:
+$$- \frac{R(-e^{-k_1 t}k_1 k_2 - e^{-k_2 t} \frac{d}{dt} (-k_2 t)k_1}{-k_1 + k_2}$$
+Factor out: 
+$$- \frac{R(-e^{-k_1 t}k_1 k_2 - -k_2 \frac{d}{dt}(t)e^{-k_2 t}k_1)}{-k_1 + k_2}$$
+Simplify and derivative of t is 1:
+$$d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}$$
+Note $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
+
+$$-\frac{(-e^{-k_1 \frac{ln k_1 - ln k_2}{k_1 - k_2}}k_1 k_2 + e^{-k_2 \frac{ln k_1 - ln k_2}{k_1 - k_2}}k_1 k_2)R}{-k_1 + k_2}$$
+$$\frac{k_1 k_2 R (\frac{k_2}{k_1}^{\frac{k_2}{k_1 - k_2}}-\frac{k_2}{k_1}^{\frac{k_1}{k_1 - k_2}})}{k_1 - k_2}$$
+$$k_2R(\frac{k_2}{k_1})^{\frac{k_2}{k_1 - k_2}}$$
+
+Therefore we can conclude that $d'(t)$ is positive or $d'(t) > 0$ for all t (must have $k_1 > k_2$). 
+
+### (b) Determine the values of t for which d''(t) is, respectively, positive, negative, and zero.
+
+$$d'(t) = -\frac{(-e^{-k_1 t}k_1 k_2 + e^{-k_2 t}k_1 k_2)R}{-k_1 + k_2}$$    
+$$= -\frac{R(k_1 k_2 (\frac{d}{dt}(e^{-k_2 t})) - -k_1 \frac{d}{dt}(t)e^{-k_1 t}k_1 k_2 )}{-k_1 + k_2}$$
+Simplify and the derivative of t is 1:
+$$= -\frac{R(k_1 k_2 (\frac{d}{dt}(e^{-k_2 t})) - e^{-k_1 t}k_1^2 k_2 )}{-k_1 + k_2}$$     
+Use the chain rule:
+$$= -\frac{R(e^{-k_1 t}k_1^2 k_2 + e^{-k_2 t} \frac{d}{dt}(t)k_1 k_2 }{-k_1 + k_2}$$     
+Factor out constants:
+$$= -\frac{R(e^{-k_1 t}k_1^2 k_2 + - k_2 \frac{d}{dt}(t) e^{-k_2 t}k_1 k_2} {-k_1 + k_2}$$    
+Derivative of t is 1 and simplify:
+$$= - \frac{R (e^{-k_1 t}k_1^2 k_2) - e^{k_2 t} k_1 k_2^2)}{-k_1 + k_2}$$    
+$$d''(t) = \frac{k_1 k_2 R e^{t(-k_1-k_2)}(k_1 e^{k_2 t}-k_2 e^{k_1 t})}{k_1 - k_2}$$   
+
+
+$$(k_1 - k_2)(k_1 e ^{k_2 t}-k_2 e^{k_1 t}) > 0$$
+
+Therefore $d''(t)$ is positive or $d''(t) > 0$ for all $t < t_0$; 
+
+Note that $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
+
+$$\frac{k_1 k_2 R e^{t(-k_1-k_2)}(k_1 e^{k_2 \frac{ln k_1 - ln k_2}{k_1 - k_2}}-k_2 e^{k_1 \frac{ln k_1 - ln k_2}{k_1 - k_2}})}{k_1 - k_2}$$
+
+$$\frac{k_1 k_2 R(k_1 (\frac{k_1}{k_2})^{\frac{k_2}{k_1 - k_2}}-k_2(\frac{k_1}{k_2}^{\frac{k_1}{k_1 - k_2}}))e^{t(-k_1 - k_2)}}{k_1 - k_2}$$
+
+$$\frac{k_1^2 k_2 R (\frac{k_1}{k_2})^{\frac{k_1}{k_1 - k_2}}e^{\frac{(-k_1 - k_2)(log(k_1) - log(k_2))}{k_1 - k_2}}}{k_1 - k_2} - \frac{k_1 k_2^2 R (\frac{k_1}{k_2})^{\frac{k_1}{k_1 - k_2}}e^{\frac{(-k_1 - k_2)(log(k_1) - log(k_2))}{k_1 - k_2}}}{k_1 - k_2}$$
+
+Therefore $d''(t)$ or $d''(t_0) =0$; 
+
+If the first part of the exercise is indeed true then $d''(t)$ is negative or $d''(t) < 0$ for $t > t_0$. 
+
+### (c) Determine $\lim_{t\to\infty}d(t)$
+
+$$d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 t} - k_1 e^{-k_2 t})$$
+$$d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 \infty} - k_1 e^{-k_2 \infty})$$
+$$d(t) = R - \frac{R}{k_2 - k_1}(k_2 e ^{-k_1 \infty} - k_1 e^{-k_2 \infty})$$
+Since $e^{-\infty}$ = 0 : 
+
+$$d(t) = R - \frac{R}{k_2 - k_1}(k_2*0 - k_1*0)$$
+Therefore, our solution is : $\lim_{t\to\infty}d(t) =R$
+
+## Exercise 7.
+
+For the function f(t) follow the instructions of Exercise 4.
+
+$$f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})$$
+
+### (a) Determine the values of t for which f'(t) is, respectively, positive, negative, and zero.
+$$=- \frac{R \frac{d}{dt}(-e^{-k_2 (t-T)}k_1 + e^{-k_1(t - T)}k_2))}{-k_1 + k_2} + \frac{d}{dt}(R)$$
+
+Factor out constants:
+$$=\frac{d}{dt}(R) - k_2(\frac{d}{dt}(e^{-k_1(t - T)})) - k_1 (\frac{d}{dt}(e^{-k_2(t-T)})) \frac{R}{-k_1 + k_2}$$
+Using the chain rule:
+$$=\frac{d}{dt}(R)-\frac{R(-k_1)(\frac{d}{dt}(e^{-k_2(t-T)})) + e^{-k_1(t-T)}\frac{d}{dt}(-k_1(t-T)))k_2)}{-k_1+ k_2}$$
+Factor out constants:
+$$=\frac{d}{dt}(R) - \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+-k_1(\frac{d}{d_t}(t-T))e^(-k_1(t-T))k_2)}{-k_1 + k_2}$$
+Differentiate the sum term:
+$$=\frac{d}{dt}(R) - \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+ \frac{d}{dt}(t) + \frac{d}{dt}(-T)e^{-k1(t-T)k_1 k_2}}{-k_1 + k_2}$$
+Derivative of t is 1 and R is 0:
+$$=- \frac{R(-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))+ \frac{d}{dt}(-T)e^{-k1(t-T)k_1 k_2}}{-k_1 + k_2}$$
+Using the chain rule:
+$$=-\frac{R(-e^{-k_1 (t-T)}k_1 k_2(\frac{d}{dt}(-T)))- e^{-k_2(t-T)}(\frac{d}{dt}(-k_2(t-T)))k_1}{-k_1 + k_2}$$
+Factor out constants:
+$$=-\frac{R(-e^{-k_1 (t-T)}k_1 k_2(\frac{d}{dt}(-T)))- -k_2(\frac{d}{dt}(t-T))e^{-k_2 (t-T)}k_1}{-k_1 + k_2}$$
+Differentiate the sum term:
+$$=-\frac{R(-e^{-k_1(t-T)}k_1 k_2(\frac{d}{dt}(-T)) + \frac{d}{dt}(t)+\frac{d}{dt}(-T)e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}$$
+The derivative of t is 1 and -T is zero
+$$=-\frac{R(-e^{-k_1(t-T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}$$
+$$f'(t)=-\frac{-e^{-k_1 (t -T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2)R}{-k_1 + k_2}$$
+
+note $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$.   
+
+$$(k_1 - k_2)(e^{k_1 (T-t)}-e^{k_2(T-t)})>0$$
+Therefore $f'(t)$ is positive or $f'(t) > 0$ for all $t > T$. 
+
+### (b) Determine the values of t for which f''(t) is, respectively, positive, negative, and zero.
+
+$$=\frac{d}{dt}(\frac{d}{dt}(R - \frac{(-e^{-k_2(t-T)}k_1) + e^{-k_1(t-T)}k_2)R}{-k_1+k_2}))$$
+Differentiate and factor out:
+$$=\frac{d}{dt}(\frac{d}{dt}(R) - \frac{R \frac{d}{dt}(-e^{-k_2(t-T)}k_1 + e^{-k_1(t-T)}k_2)}{-k_1+k_2}))$$
+Factor out:
+$$=\frac{d}{dt}(-\frac{R}{-k_1 + k_2}k_2\frac{d}{dt}(e^{-k_1(t-T)})-k_1\frac{d}{dt}(e^{-k_2(t-T)})+\frac{d}{dt}(R))$$
+Using the chain rule:
+$$=\frac{d}{dt}(-\frac{R(e^{-k_1(t-T)}\frac{d}{dt}(-k_1(t-T))k_2 - k_1(\frac{d}{dt}(e^{-k_2(t-T)}))}{-k_1 +k_2}+\frac{d}{dt}(R))$$
+Factor out: 
+$$= \frac{d}{dt}(-\frac{R(k_2-k_1 \frac{d}{dt}(t-T)e^{-k_1(t-T)}-k_1( \frac{d}{dt}(e^{-k_2(t-T)})))}{-k_1+k_2} + \frac{d}{dt}(R))$$
+Differentiate the sum
+$$=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1\frac{d}{dt}(t)+\frac{d}{dt}(-T)-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))}{-k_1+k_2}+\frac{d}{dt}(R))$$
+The derivative of t is 1 and -T is zero:
+$$=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1(1+0)-k_1(\frac{d}{dt}(e^{-k_2(t-T)})))}{-k_1+k_2}+\frac{d}{dt}(R))$$
+Use the chain rule:
+$$=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-e^{-k_2(t-T)}\frac{d}{dt}(-k_2(t-T))k_1 }{-k_1+k_2}+\frac{d}{dt}(R))$$
+Factor out:
+$$=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1-k_2\frac{d}{dt}(t-T)e^{-k_2(t-T)})  }{-k_1+k_2}+\frac{d}{dt}(R))$$
+Differentiate the sum:
+$$=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1(e^{-k_2(t-T)}-k_2\frac{d}{dt}(t)+\frac{d}{dt}(-T)}{-k_1+k_2}+\frac{d}{dt}(R))$$
+The derivative of t is 1 and, -T and R is zero:
+$$=\frac{d}{dt}(\frac{-R(k_2(e^{-k_1(t-T)})-k_1(e^{-k_2(t-T)}-k_2(1+0)}{-k_1+k_2}+0)$$
+Factor out:
+$$=-\frac{R\frac{d}{dt}(-e^{-k_1(t-T)}k_1 k_2 + e^{-k_2(t-T)}k_1 k_2))}{-k_1 + k_2}$$
+Use the chain rule:
+$$=-\frac{R(k_1 k_2(\frac{d}{dt}(e^{-k_2(t-T)}))-e^{-k_1(t-T)}\frac{d}{dt}(-k_1(t-T))k_1 k_2)}{-k_1 k_2}$$
+Factor out:
+$$=-\frac{R(k_1 k_2 \frac{d}{dt}(e^{-k_2(t-T)}))--k_1\frac{d}{dt}(t-T)e^{-k_1(t-T)}k_1 k_2}{-k_1 k_2}$$
+Simply
+$$=-\frac{R(k_1 k_2 \frac{d}{dt}(e^{-k_2(t-T)}))+\frac{d}{dt}(t)+\frac{d}{dt}(-T)e^{-k_1(t-T)}k_1^2 k_2}{-k_1 k_2}$$
+The derivative of t is 1:
+$$=-\frac{R(k_1 k_2 \frac{d}{dt}(e^{-k_2(t-T)}))+(1+\frac{d}{dt}(-T))e^{-k_1(t-T)}k_1^2 k_2}{-k_1 k_2}$$
+Using the chain rule:
+$$=-\frac{R(e^{-k_1(t-T)}k_1^2k_2(1+\frac{d}{dt}(t-T))+-k_2(\frac{d}{dt}(t-T)e^{-k_2(t-T)}k_1 k_2)}{-k_1 + k_2}$$
+Factor and differentiate the sum term by term:
+$$=-\frac{R(e^{-k_1(t-T)k_1^2k_2}(1+\frac{d}{dt}(-T))- \frac{d}{dt}(t)+\frac{d}{dt}(-T)e^{-k_2(t-T)}k_1 k_2^2)}{-k_1 + k_2}$$
+Derivative of t is 1 and -T is zero:
+$$=-\frac{R(e^{-k_1(t-T)k_1^2k_2}(1+0)-e^{-k_2(t-T)}k_1 k_2^2)(1+0)}{-k_1 + k_2}$$
+Answer:
+$$f''(t) =-\frac{(e^{-k_1 (t-T)}k_1^2 k_2 -e^{-k_2(t-T)}k_1 k_2^2)R}{-k_1 + k_2}$$
+
+$$\frac{-R e ^{k_1 T - k_1 t}k_1^2 k_2 - R e^{k_2T -k_2t}k_1 k_2^2}{k_2 - k_1}$$
+$$\frac{ e^{k_2 t - k_2 t}k_1 k_2^2 R}{k_2 - k_1} - \frac{ e^{k_1 t - k_1 t}k_1^2 k_2 R}{k_2 - k_1}$$
+$$0 < (k_1 - k_2)(k_1 e^{k_1(T-t)}- k_2 e^{k_2(T-t)})$$
+
+Therefore $f''(t)$ is positive or $f''(t) > 0$ for all $T < t < T + t_0$; 
+
+Note that $t_0 = \frac{ln k_1 - ln k_2}{k_1 - k_2}$
+
+$$0 = \frac{k_1 e^{k1(\frac{log(\frac{k_2}{k_1})}{k_1 - k_2}+T)} + k_2 e^{k2(\frac{log(\frac{k_2}{k_1})}{k_1 - k_2}+T)} }{k_1 - k_2}$$
+$$T = \frac{-log(\frac{k_1}{k_2}+log(k_1)- log(k_2)}{k_1 - k_2}$$
+Therefore $f''(t)$ is zero at $f''(T + t_0) =0$; 
+
+Having found where $f''(t)$ is positive we can then conclude that $f''(t)$ is negative or $f''(t) < 0$ for $t > T + t_0$.
+
+### (c) Determine $\lim_{t\to\infty}f(t)$
+
+$$f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(t-T)}-k_1 e^{-k_2(t-T)})$$
+$$f(t) = R - \frac{R}{k_2 - k_1}(k_2 e^{-k_1(\infty-T)}-k_1 e^{-k_2(\infty-T)})$$
+Since $e^{-\infty}$ = 0:    
+
+$f(t) = R$ so our solution is answer: $\lim_{t\to\infty}f(t) = R$
+
+## Exercise 8. 
+
+Using all the information in Exercise 4, 5, 6, and 7 to sketch the graphs of r, a, d, and f. You should not have to compute any points except r(0), a(0), d(0), and f(T), which you already know. 
+
+![](https://raw.githubusercontent.com/dbouquin/DATA_609_final/master/20170507_152919.jpg)
+\newpage
+
+
+## Exercise 9.
+
+Assuming that increased stay in the digestive system implies improved digestion determine from Figure 4 which method of food preparation is more desirable. Why? 
+
+![](https://raw.githubusercontent.com/dbouquin/DATA_609_final/master/Figure4.PNG) 
+
+Assuming that we are looking for the feed type that stays in the sheep's stomach the longest, then we would say that the medium-ground grass would be the most desirable. We make this assumption as it stands that the sheep requires less feed for the same results. 
+
