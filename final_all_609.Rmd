@@ -87,7 +87,7 @@ get.objective(lprec)
 We can see that if the farmer grows 300 bushels of tomatoes and 450 bushels of corn, he can maximize his profit at $1950. 
 
 ## Should he sign the contract? 
-Assume the farmer has the oppertunity to sign a contract with grocery store to grow and deliver at least 300 bushels of tomatoes and 500 bushels of corn. 
+Assume the farmer has the opportunity to sign a contract with grocery store to grow and deliver at least 300 bushels of tomatoes and 500 bushels of corn. 
 
 The new demand constraint is now $t \geq 3, c \geq 5$
 Intuitively, we can easily see that this condition is incompatible with the constraint of labor costs. We can verify this using linear programming: 
@@ -151,6 +151,7 @@ Chapter 5.3, Project 1
 ## The problem
 Construct and perform a Monte Carlo simulation of blackjack.     
 Parameters:   
+
 * Play 12 games (simulations) where each game lasts two decks. When the two decks are out, the round is completed using two fresh decks (that is the last round of the game). Everything is then reset for the start of the next game.  
 * The dealer cannot see the players cards and vice versa.  
 * The player wins 3 dollars with a winning hand.  
@@ -163,7 +164,9 @@ Parameters:
 
 ## Create a two deck game
 The below functions create the game of blackjack from a dealt card, to a hand, to a round, and to a full two-deck game. Game results are stored as a vector: 1 = dealer win; 2 = player win; 0 = no winner. The resulting vector is used to calculate player winnings/losses.
+
 ### Create a hand for the dealer.
+
 ```{r}
 deal_card <- function(d_deck,decks_2){
   flag_last_round <- 0
